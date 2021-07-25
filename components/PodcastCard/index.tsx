@@ -20,7 +20,7 @@ const PodcastCard = ({
   title
 } : PodcastCardProps) : JSX.Element => {
   return (
-    <Col sm={12} lg={6} className={styles.cardContainer}>
+    <Col sm={12} lg={4} className={styles.cardContainer}>
       <Link href={href} passHref>
         <Row>
           <Col xs={4}>

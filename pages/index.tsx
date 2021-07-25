@@ -148,10 +148,17 @@ export default function Home(props: any): JSX.Element {
               href={"https://open.spotify.com/show/0e3qAxJ8c7j4noDX9birAp?si=gabJYhhcSKGM_BZ4D040zA&dl_branch=1"}
             />
             <PodcastCard
+              imageSrc={"/images/ngopini-sejenak.png"}
+              imageAlt={"Ngopini sejenak cover art"}
+              title={"Ngopini Sejenak"}
+              summary={"We talk about various topics in the adult life. I co-host it with my wife, Retno, in Bahasa Indonesia."}
+              href={"https://open.spotify.com/show/12NnDN0zkmAFM6NNYmt8dh?si=iwW08XDOSqaYcWjGjii_eQ&dl_branch=1"}
+            />
+            <PodcastCard
               imageSrc={"/images/Ujung_CoverArt.png"}
               imageAlt={"Podcast Ujung Ke Ujung cover art"}
               title={"Ujung Ke Ujung"}
-              summary={"Radita Liem and I are co-hosting this podcast in Bahasa Indonesia. We are talking and interviewing Indonesian/Indonesian diaspora that works in IT industry."}
+              summary={"We talk about career in IT industry in Bahasa Indonesia. Co-host: Radita Liem and I."}
               href={"https://ujung.ee"}
             />
           </Row>
