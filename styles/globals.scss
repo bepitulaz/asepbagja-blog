@@ -1,0 +1,27 @@
+@import "variables";
+@import "~bootstrap/scss/bootstrap.scss";
+
+a.title-article {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.red-section {
+  background: linear-gradient(to left, #981313, #AF2424);
+}
+
+.button-as-link {
+  background: none;
+  border: none;
+}
+
+.copyright-section {
+  border-top: 1px solid #fff;
+
+  p {
+    font-size: 0.8rem;
+  }
+}
