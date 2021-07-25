@@ -5,6 +5,7 @@ categories:
 - Programming
 images:
 - "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+summary: "I was interested for learning electronic again as a hobby around 2-3 years ago."
 ---
 
 As a web developer and iOS developer, I didn't know much about hardware or bare metal programming. I only learned about resistor, capasitor, transistor, etc when I was still in junior high school, thus my electronic knowledge is very limited.

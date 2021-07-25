@@ -124,7 +124,7 @@ export default function Home(props: any): JSX.Element {
         title={data.featured.metadata.title}
         excerpt={data.featured.metadata.summary}
         href={`/${data.featured.metadata.categories[0]}/${data.featured.slug}`}
-        categoryTitle={data.featured.metadata.categories[0]}
+        categoryTitle={data.featured.metadata.categories[0].toLowerCase()}
         publishedDate={data.featured.date}
         language={data.featured.language}
         imageSrc={data.featured.metadata.images[0]}
@@ -170,7 +170,7 @@ export default function Home(props: any): JSX.Element {
         <Container>
           <Row>
             <Col>
-              <SectionTitle sectionTitle="English" buttonTitle="See all" linkHref="/" />
+              <SectionTitle sectionTitle="English" buttonTitle="See all" linkHref="/en" />
             </Col>
           </Row>
           <Row className="mt-md-3">
@@ -179,21 +179,21 @@ export default function Home(props: any): JSX.Element {
               excerpt={data.en[0].metadata.summary}
               imageSrc={data.en[0].metadata.images[0]}
               imageAlt={`the thumbnail of ${data.en[0].metadata.title}`}
-              href={`/${data.en[0].metadata.categories[0]}/${data.en[0].slug}`}
+              href={`/${data.en[0].metadata.categories[0].toLowerCase()}/${data.en[0].slug}`}
             />
             <OneGrid
               title={data.en[1].metadata.title}
               excerpt={data.en[1].metadata.summary}
               imageSrc={data.en[1].metadata.images[0]}
               imageAlt={`the thumbnail of ${data.en[0].metadata.title}`}
-              href={`/${data.en[1].metadata.categories[0]}/${data.en[1].slug}`}
+              href={`/${data.en[1].metadata.categories[0].toLowerCase()}/${data.en[1].slug}`}
             />
             <TwoGrids
               title={data.en[2].metadata.title}
               excerpt={data.en[2].metadata.summary}
               imageSrc={data.en[2].metadata.images[0]}
               imageAlt={`the thumbnail of ${data.en[0].metadata.title}`}
-              href={`/${data.en[2].metadata.categories[0]}/${data.en[2].slug}`}
+              href={`/${data.en[2].metadata.categories[0].toLowerCase()}/${data.en[2].slug}`}
             />
           </Row>
         </Container>
@@ -204,7 +204,7 @@ export default function Home(props: any): JSX.Element {
         <Container>
           <Row>
             <Col>
-              <SectionTitle sectionTitle="Bahasa Indonesia" buttonTitle="Lihat" linkHref="/" />
+              <SectionTitle sectionTitle="Bahasa Indonesia" buttonTitle="Lihat" linkHref="/id" />
             </Col>
           </Row>
           <Row className="mt-md-3">
@@ -213,21 +213,21 @@ export default function Home(props: any): JSX.Element {
               excerpt={data.id[0].metadata.summary}
               imageSrc={data.id[0].metadata.images[0]}
               imageAlt={`the thumbnail of ${data.id[0].metadata.title}`}
-              href={`/${data.id[0].metadata.categories[0]}/${data.id[0].slug}`}
+              href={`/${data.id[0].metadata.categories[0].toLowerCase()}/${data.id[0].slug}`}
             />
             <OneGrid
               title={data.id[1].metadata.title}
               excerpt={data.id[1].metadata.summary}
               imageSrc={data.id[1].metadata.images[0]}
               imageAlt={`the thumbnail of ${data.id[0].metadata.title}`}
-              href={`/${data.id[1].metadata.categories[0]}/${data.id[1].slug}`}
+              href={`/${data.id[1].metadata.categories[0].toLowerCase()}/${data.id[1].slug}`}
             />
             <OneGrid
               title={data.id[2].metadata.title}
               excerpt={data.id[2].metadata.summary}
               imageSrc={data.id[2].metadata.images[0]}
               imageAlt={`the thumbnail of ${data.id[0].metadata.title}`}
-              href={`/${data.id[2].metadata.categories[0]}/${data.id[2].slug}`}
+              href={`/${data.id[2].metadata.categories[0].toLowerCase()}/${data.id[2].slug}`}
             />
           </Row>
         </Container>

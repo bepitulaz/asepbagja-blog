@@ -5,6 +5,7 @@ images:
 - "/blog-img/corporate.jpg"
 categories:
 - Personal
+summary: "A letter from my dad about how to make my company bigger."
 ---
 
 _A letter from my dad about how to make my company bigger._

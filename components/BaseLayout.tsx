@@ -17,7 +17,7 @@ const BaseLayout = (props: any) : JSX.Element => {
     <>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand>Asep Bagja</Navbar.Brand>
+          <Navbar.Brand href="/">Asep Bagja</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="mr-auto">

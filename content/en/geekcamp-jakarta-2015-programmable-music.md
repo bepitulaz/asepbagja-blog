@@ -5,6 +5,7 @@ images:
 - "/blog-img/programmable-music.png"
 categories:
 - Programming
+summary: "This is my presentation about computer generated music using Clojure and Overtone."
 ---
 
 [Geekcamp Jakarta 2015](http://geekcamp.id/) is a technology and business conference organized by KMKLabs. This is my presentation about computer generated music using Clojure and Overtone. The talk is using Bahasa Indonesia, but here I try to give the English transcript.

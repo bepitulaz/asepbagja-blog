@@ -19,7 +19,7 @@ const TwoGrids = ({
   imageAlt
 } : TwoGridProps) : JSX.Element => {
   return (
-    <Col xs={12} lg={6}>
+    <Col xs={12} lg={6} className={"pb-lg-4"}>
       <div className={styles.imageContainer}>
         <Image src={imageSrc} alt={imageAlt} layout={"fill"} objectFit={"cover"} />
       </div>

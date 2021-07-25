@@ -5,6 +5,7 @@ categories:
 - Programming
 images:
 - "/blog-img/code.jpg"
+summary: "Many peoples that desire to make business in technology industry are not always coming from computer science background."
 ---
 
 Although coding is not a basic communication skill for human, I prefer to encourage people for learning it, especially for someone who wants to expresses and develops his/her idea in technology industry but doesn't come from computer science background. There are couple of reasons according to that opinion.

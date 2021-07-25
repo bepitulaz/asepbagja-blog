@@ -5,6 +5,7 @@ categories:
 - Programming
 images:
 - "/blog-img/js-img.jpg"
+summary: "Functional programming paradigm concentrates on computing results rather than performing actions."
 ---
 
 Imperative programming is a programming paradigm that uses a sequence of statements to reach a certain goal. It focuses on how to perform actions to achieve the expected result. Otherwise, functional programming paradigm concentrates on computing results rather than performing actions. In another word, the imperative one is an annoying micromanager in your office, and the functional one is a macromanager who just describe what's the job to be done.

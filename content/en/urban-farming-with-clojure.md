@@ -5,6 +5,7 @@ categories:
 - Programming
 images:
 - "https://cdn.hackaday.io/images/1186661438911748780.JPG"
+summary: "Physical world is actually concurrent, thus why not give Clojure a shot?"
 ---
 
 Currently, I'm developing an indoor farming system to grow vegetables (at the moment is Lettuce) and herbs in my house. You can check the project's progress on [my Hackaday's page](https://hackaday.io/project/7124-tanibox-indoor-farming-system). The system should controls the lighting on and off at the correct time, logs the temperature and humidity and triggers the fan based on it, and sends the farm log to the server, so, I can predict the harvest time and the farm optimal condition in the future. At the heart of the system, I'm using Raspberry Pi as a micro controller.

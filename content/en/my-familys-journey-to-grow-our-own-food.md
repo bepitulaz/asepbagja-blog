@@ -5,6 +5,7 @@ images:
 - "/blog-img/nft.jpeg"
 categories:
 - Personal
+summary: "Hydroponic was the answer. We can plant without soil but only water."
 ---
 
 My wife's dream after we married was having a garden at home. But at that moment, we were living in an apartment with a very small balcony. It's theoritically impossible to plant anything. So, we discovered a way to plant vegetable at small space and we found it. Hydroponic was the answer. We can plant without soil but only water.

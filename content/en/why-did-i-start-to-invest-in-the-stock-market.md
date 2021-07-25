@@ -5,6 +5,7 @@ images:
 - "/blog-img/candlestick.jpg"
 categories:
 - Business
+summary: "I should find a way to invest my money."
 ---
 
 Most of you perhaps ever heard or read about [The Cashflow Quadrant](http://www.amazon.com/exec/obidos/ASIN/0446677477/mikeleeorg-20) by Robert Kiyosaki. I bought his book when I was a high school student. The book explained about quadrant of economic roles: employee, self-employed, business owner, and investor. The employee is people who have a job, I was. The self-employed is individuals who own a job, I was. The business owner is individuals who have a system that produces cash flow for themselves and other work for them; this is me now. The last is the investor, people who can make their money work for them; this is my next target.

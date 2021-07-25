@@ -5,6 +5,7 @@ categories:
 - Programming
 images:
 - "/blog-img/aquarium-post-mortem.jpeg"
+summary: "One of the biggest problem of having pet is filling its needs while the owner leaving the home."
 ---
 
 _One of the biggest problem of having pet is filling its needs while the owner leaving the home._

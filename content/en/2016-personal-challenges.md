@@ -5,6 +5,7 @@ images:
 - "/blog-img/aurora.jpg"
 categories:
 - Personal
+summary: "Annually I challenged myself with some new skills and some targets."
 ---
 
 **Happy new year 2016.**

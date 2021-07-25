@@ -14,6 +14,12 @@ module.exports = withMDX({
     defaultLocale: "en-GB",
   },
   images: {
-    domains: ["images.unsplash.com"],
+    domains: [
+      "images.unsplash.com",
+      "letsencrypt.org", 
+      "upload.wikimedia.org",
+      "cdn.hackaday.io",
+      "raw.githubusercontent.com",
+    ],
   },
 })

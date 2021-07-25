@@ -5,6 +5,7 @@ images:
 - "/blog-img/birthday.jpg"
 categories:
 - Personal
+summary: "Today, September 21, 2015, I'm officially 28 years old."
 ---
 
 Today, September 21, 2015, I'm officially 28 years old.

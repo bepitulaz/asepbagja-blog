@@ -5,6 +5,7 @@ images:
 - "https://letsencrypt.org/images/le-logo-standard.png"
 categories:
 - Programming
+summary: "Google announced that they use HTTPS as a ranking signal on 2014, and it becomes more standard in their search result"
 ---
 
 Google announced that they use HTTPS as a ranking signal [on 2014](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html), and it becomes more standard in their search result. Therefore, I decide to use HTTPS also for this blog; and it looks pretty too for having a green lock icon on the browser. I'm a Docker devotee, so I'll show you how to do it by using Docker.
