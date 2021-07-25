@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^11.0.1",
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.0.2",
+    "gray-matter": "^4.0.3",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-bootstrap": "^1.6.1",

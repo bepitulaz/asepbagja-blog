@@ -1,3 +1,6 @@
+import { promises as fs } from "fs"
+import path from "path"
+import matter from "gray-matter"
 import { GetStaticProps } from "next"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -8,28 +11,124 @@ import BaseLayout from "../components/BaseLayout"
 import Hero from "../components/Hero"
 import PodcastCard from "../components/PodcastCard"
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  console.log(context)
+export const getStaticProps: GetStaticProps = async () => {
+  const enContentDir = path.join(process.cwd(), "content", "en")
+  const idContentDir = path.join(process.cwd(), "content", "id")
+  const featuredContentDir = path.join(process.cwd(), "content", "featured")
+
+  const enFilenames = await fs.readdir(enContentDir)
+  const idFilenames = await fs.readdir(idContentDir)
+  const featuredFilenames = await fs.readdir(featuredContentDir)
+
+  // Mapping the English content here
+  const enPosts = enFilenames.map(async (filename) => {
+    const filePath = path.join(enContentDir, filename)
+    const fileContents = await fs.readFile(filePath, "utf8")
+    const content = matter(fileContents)
+
+    return {
+      filename,
+      language: content?.data?.lang ?? "English",
+      slug: content?.data?.slug ?? filename.slice(0, -3),
+      date: content?.data?.date,
+      metadata: {
+        title: content?.data?.title,
+        images: content?.data?.images,
+        categories: content?.data?.categories,
+        aliases: content?.data?.aliases ?? [],
+        summary: content?.data?.summary ?? "",
+      },
+      content: content?.content,
+    }
+  });
+
+  // Mapping the Indonesia content here
+  const idPosts = idFilenames.map(async (filename) => {
+    const filePath = path.join(idContentDir, filename)
+    const fileContents = await fs.readFile(filePath, "utf8")
+    const content = matter(fileContents)
+
+    return {
+      filename,
+      language: content?.data?.lang ?? "Bahasa Indonesia",
+      slug: content?.data?.slug ?? filename.slice(0, -3),
+      date: content?.data?.date,
+      metadata: {
+        title: content?.data?.title,
+        images: content?.data?.images,
+        categories: content?.data?.categories,
+        aliases: content?.data?.aliases ?? [],
+        summary: content?.data?.summary ?? "",
+      },
+      content: content?.content,
+    }
+  });
+
+  // Mapping the Featured content here
+  const featuredPosts = featuredFilenames.map(async (filename) => {
+    const filePath = path.join(featuredContentDir, filename)
+    const fileContents = await fs.readFile(filePath, "utf8")
+    const content = matter(fileContents)
+
+    return {
+      filename,
+      language: content?.data?.lang ?? "English",
+      slug: content?.data?.slug ?? filename.slice(0, -3),
+      date: content?.data?.date.toLocaleDateString("en-GB"),
+      metadata: {
+        title: content?.data?.title,
+        images: content?.data?.images,
+        categories: content?.data?.categories,
+        aliases: content?.data?.aliases ?? [],
+        summary: content?.data?.summary ?? "",
+      },
+      content: content?.content,
+    }
+  });
+
+  const en = await Promise.all(enPosts)
+  const id = await Promise.all(idPosts)
+  const featured = await Promise.all(featuredPosts)
+
+  // Sort the posts by date
+  const enSorted = en.sort((a, b) => b.date - a.date).map((post) => {
+    post.date = post.date.toLocaleDateString("en-GB")
+    return post
+  })
+
+  const idSorted = id.sort((a, b) => b.date - a.date).map((post) => {
+    post.date = post.date.toLocaleDateString("en-GB")
+    return post
+  })
+
   return {
-    props: {},
+    props: {
+      data: {
+        en: enSorted,
+        id: idSorted,
+        featured: featured[0],
+      },
+    },
   }
 }
 
-export default function Home(): JSX.Element {
+export default function Home(props: any): JSX.Element {
+  const { data } = props
+
   return (
     <BaseLayout>
       <Hero />
 
       {/* Newest article */}
       <FeaturedArticle
-        title={"Freelancing atau Membuat Proyek"}
-        excerpt={"We love growing plants, but we–all co-founders of Tanibox–never touch agriculture"}
-        href={"/"}
-        categoryTitle={"Tech"}
-        publishedDate={"24 July 2021"}
-        language={"English"}
-        imageSrc={"/img/blog/photo-1500937386664-56d1dfef3854.jpg"}
-        imageAlt={"Featured image"}
+        title={data.featured.metadata.title}
+        excerpt={data.featured.metadata.summary}
+        href={`/${data.featured.metadata.categories[0]}/${data.featured.slug}`}
+        categoryTitle={data.featured.metadata.categories[0]}
+        publishedDate={data.featured.date}
+        language={data.featured.language}
+        imageSrc={data.featured.metadata.images[0]}
+        imageAlt={`the thumbnail of ${data.featured.metadata.title}`}
       />
 
       {/* Latest Podcasts */}
@@ -42,18 +141,18 @@ export default function Home(): JSX.Element {
           </Row>
           <Row className="mt-md-3">
             <PodcastCard
-              imageSrc={"/img/blog/photo-1500937386664-56d1dfef3854.jpg"}
-              imageAlt={"Podcast Catatan Asep Bagja"}
-              title={"Freelancing atau Membuat Proyek"}
-              publishedDate={"23 May 2021"}
-              href={"/"}
+              imageSrc={"/images/asep-talks.png"}
+              imageAlt={"Podcast Catatan Asep Bagja cover art"}
+              title={"Catatan Asep Bagja"}
+              summary={"My solo podcast in Bahasa Indonesia. I talk various topics such as programming, finance, and hobby."}
+              href={"https://open.spotify.com/show/0e3qAxJ8c7j4noDX9birAp?si=gabJYhhcSKGM_BZ4D040zA&dl_branch=1"}
             />
             <PodcastCard
-              imageSrc={"/img/blog/photo-1500937386664-56d1dfef3854.jpg"}
-              imageAlt={"Podcast Catatan Asep Bagja"}
-              title={"Freelancing atau Membuat Proyek"}
-              publishedDate={"23 May 2021"}
-              href={"/"}
+              imageSrc={"/images/Ujung_CoverArt.png"}
+              imageAlt={"Podcast Ujung Ke Ujung cover art"}
+              title={"Ujung Ke Ujung"}
+              summary={"Radita Liem and I are co-hosting this podcast in Bahasa Indonesia. We are talking and interviewing Indonesian/Indonesian diaspora that works in IT industry."}
+              href={"https://ujung.ee"}
             />
           </Row>
         </Container>
@@ -69,25 +168,25 @@ export default function Home(): JSX.Element {
           </Row>
           <Row className="mt-md-3">
             <OneGrid
-              title="Freelancing atau Membuat Proyek"
-              excerpt="We love growing plants, but we–all co-founders of Tanibox–never touch agriculture"
-              imageSrc="/img/blog/photo-1500937386664-56d1dfef3854.jpg"
-              imageAlt="Article's feature image"
-              href="/"
+              title={data.en[0].metadata.title}
+              excerpt={data.en[0].metadata.summary}
+              imageSrc={data.en[0].metadata.images[0]}
+              imageAlt={`the thumbnail of ${data.en[0].metadata.title}`}
+              href={`/${data.en[0].metadata.categories[0]}/${data.en[0].slug}`}
             />
             <OneGrid
-              title="Freelancing atau Membuat Proyek"
-              excerpt="We love growing plants, but we–all co-founders of Tanibox–never touch agriculture"
-              imageSrc="/img/blog/photo-1500937386664-56d1dfef3854.jpg"
-              imageAlt="Article's feature image"
-              href="/"
+              title={data.en[1].metadata.title}
+              excerpt={data.en[1].metadata.summary}
+              imageSrc={data.en[1].metadata.images[0]}
+              imageAlt={`the thumbnail of ${data.en[0].metadata.title}`}
+              href={`/${data.en[1].metadata.categories[0]}/${data.en[1].slug}`}
             />
             <TwoGrids
-              title="Freelancing atau Membuat Proyek"
-              excerpt="We love growing plants, but we–all co-founders of Tanibox–never touch agriculture"
-              imageSrc="/img/blog/photo-1500937386664-56d1dfef3854.jpg"
-              imageAlt="Article's feature image"
-              href="/"
+              title={data.en[2].metadata.title}
+              excerpt={data.en[2].metadata.summary}
+              imageSrc={data.en[2].metadata.images[0]}
+              imageAlt={`the thumbnail of ${data.en[0].metadata.title}`}
+              href={`/${data.en[2].metadata.categories[0]}/${data.en[2].slug}`}
             />
           </Row>
         </Container>
@@ -103,25 +202,25 @@ export default function Home(): JSX.Element {
           </Row>
           <Row className="mt-md-3">
             <TwoGrids
-              title="Freelancing atau Membuat Proyek"
-              excerpt="We love growing plants, but we–all co-founders of Tanibox–never touch agriculture"
-              imageSrc="/img/blog/photo-1500937386664-56d1dfef3854.jpg"
-              imageAlt="Article's feature image"
-              href="/"
+              title={data.id[0].metadata.title}
+              excerpt={data.id[0].metadata.summary}
+              imageSrc={data.id[0].metadata.images[0]}
+              imageAlt={`the thumbnail of ${data.id[0].metadata.title}`}
+              href={`/${data.id[0].metadata.categories[0]}/${data.id[0].slug}`}
             />
             <OneGrid
-              title="Freelancing atau Membuat Proyek"
-              excerpt="We love growing plants, but we–all co-founders of Tanibox–never touch agriculture"
-              imageSrc="/img/blog/photo-1500937386664-56d1dfef3854.jpg"
-              imageAlt="Article's feature image"
-              href="/"
+              title={data.id[1].metadata.title}
+              excerpt={data.id[1].metadata.summary}
+              imageSrc={data.id[1].metadata.images[0]}
+              imageAlt={`the thumbnail of ${data.id[0].metadata.title}`}
+              href={`/${data.id[1].metadata.categories[0]}/${data.id[1].slug}`}
             />
             <OneGrid
-              title="Freelancing atau Membuat Proyek"
-              excerpt="We love growing plants, but we–all co-founders of Tanibox–never touch agriculture"
-              imageSrc="/img/blog/photo-1500937386664-56d1dfef3854.jpg"
-              imageAlt="Article's feature image"
-              href="/"
+              title={data.id[2].metadata.title}
+              excerpt={data.id[2].metadata.summary}
+              imageSrc={data.id[2].metadata.images[0]}
+              imageAlt={`the thumbnail of ${data.id[0].metadata.title}`}
+              href={`/${data.id[2].metadata.categories[0]}/${data.id[2].slug}`}
             />
           </Row>
         </Container>

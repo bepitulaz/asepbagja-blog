@@ -34,7 +34,7 @@ const FeaturedArticle = ({
             <SectionTitle sectionTitle="Featured article" showButton={false} />
           </Col>
         </Row>
-        <Row>
+        <Row className="mt-md-3">
           <Col md={6}>
             <Image src={imageSrc} fluid alt={imageAlt} />
           </Col>

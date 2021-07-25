@@ -7,7 +7,7 @@ import styles from "./PodcastCard.module.scss"
 interface PodcastCardProps {
   imageSrc: string
   imageAlt: string
-  publishedDate: string
+  summary: string
   href: string
   title: string
 }
@@ -15,7 +15,7 @@ interface PodcastCardProps {
 const PodcastCard = ({
   imageSrc,
   imageAlt,
-  publishedDate,
+  summary,
   href,
   title
 } : PodcastCardProps) : JSX.Element => {
@@ -25,12 +25,12 @@ const PodcastCard = ({
         <Row>
           <Col xs={4}>
             <div className={styles.imageContainer}>
-              <Image src={imageSrc} alt={imageAlt} fluid />
+              <Image src={imageSrc} alt={imageAlt} fluid rounded />
             </div>
           </Col>
           <Col xs={8} className="text-start">
-            <h3><a className={`text-white mt-3 mt-lg-0 ${styles.link}`}>{title}</a></h3>
-            <p className="text-white">{publishedDate}</p>
+            <h3><a className={`text-white mt-3 mt-lg-0 ${styles.link}`} target="_blank">{title}</a></h3>
+            <p className="text-white">{summary}</p>
           </Col>
         </Row>
       </Link>

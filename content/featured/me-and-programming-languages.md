@@ -5,6 +5,8 @@ categories:
 - Programming
 images:
 - "/blog-img/proglang-rel.jpg"
+summary: "I met her around 2003 from my high school accounting teacher. She was my very first date in programming world."
+lang: "English"
 ---
 
 _This is the story of my life about my relationship with some programming languages from the first time I learnt computer programming until now. It was like finding a life partner._

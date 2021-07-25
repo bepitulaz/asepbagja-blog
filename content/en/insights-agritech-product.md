@@ -5,6 +5,7 @@ images:
 - "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800"
 categories:
 - Business
+summary: "Some interesting insights from a couple of years building an open source software for agriculture to share with you."
 ---
 
 My company [Tanibox](https://tanibox.com) is developing agriculture software for two years. We focus on [Tania](https://usetania.org), our open source farm management software. We love growing plants, but we--all co-founders of Tanibox--never touch agriculture as an industry before Tanibox exist. So, we jumped to agriculture technology industry by trial and error. Here are some interesting insights from a couple of years building an open source software for agriculture to share with you.

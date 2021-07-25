@@ -5,6 +5,7 @@ categories:
 - Programming
 images:
 - "/blog-img/js-img.jpg"
+summary: "JavaScript has the first-class function. It means the functions in JavaScript treats as a value."
 ---
 
 In [part 1](/posts/introduction-to-functional-programming-in-javascript-part-1/), we had learned about two important concepts in functional programming paradigm: immutable data and pure function. Now, we will learn another important concept in functional programming, that is higher order function.
