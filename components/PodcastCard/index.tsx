@@ -20,21 +20,19 @@ const PodcastCard = ({
   title
 } : PodcastCardProps) : JSX.Element => {
   return (
-    <Col sm={12} lg={6}>
+    <Col sm={12} lg={6} className={styles.cardContainer}>
       <Link href={href} passHref>
-        <a className="button-as-link text-white mt-3 mt-lg-0">
-          <Row>
-            <Col xs={4}>
-              <div className={styles.imageContainer}>
-                <Image src={imageSrc} alt={imageAlt} fluid />
-              </div>
-            </Col>
-            <Col xs={8} className="text-start">
-              <h3>{title}</h3>
-              <p className="fw-light">{publishedDate}</p>
-            </Col>
-          </Row>
-        </a>
+        <Row>
+          <Col xs={4}>
+            <div className={styles.imageContainer}>
+              <Image src={imageSrc} alt={imageAlt} fluid />
+            </div>
+          </Col>
+          <Col xs={8} className="text-start">
+            <h3><a className={`text-white mt-3 mt-lg-0 ${styles.link}`}>{title}</a></h3>
+            <p className="text-white">{publishedDate}</p>
+          </Col>
+        </Row>
       </Link>
     </Col>
   )
