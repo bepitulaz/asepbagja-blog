@@ -21,8 +21,8 @@ const PodcastCard = ({
 } : PodcastCardProps) : JSX.Element => {
   return (
     <Col sm={12} lg={6}>
-      <Link href={href}>
-        <button className="button-as-link text-white mt-3 mt-lg-0">
+      <Link href={href} passHref>
+        <a className="button-as-link text-white mt-3 mt-lg-0">
           <Row>
             <Col xs={4}>
               <div className={styles.imageContainer}>
@@ -34,7 +34,7 @@ const PodcastCard = ({
               <p className="fw-light">{publishedDate}</p>
             </Col>
           </Row>
-        </button>
+        </a>
       </Link>
     </Col>
   )

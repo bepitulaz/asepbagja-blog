@@ -12,7 +12,7 @@ const Hero = () : JSX.Element => {
           <Image src="/img/asep.jpg" roundedCircle width={200} alt="Asep Bagja Priandana's photograph" />
         </Col>
         <Col xs={12} className="pt-3 text-center">
-          <p className="h4">Hi! I'm</p>
+          <p className="h4">Hi! I&apos;m</p>
           <h1>Asep Bagja Priandana</h1>
           <p className="lead">An indie hacker, full-stack programmer, podcaster, and bedroom musician.</p>
           <Link href="/about" passHref>

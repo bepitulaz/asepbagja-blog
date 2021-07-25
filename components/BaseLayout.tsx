@@ -10,7 +10,9 @@ import {
   Twitter
 } from "react-bootstrap-icons"
 
-const BaseLayout = ({ children }) : JSX.Element => {
+const BaseLayout = (props: any) : JSX.Element => {
+  const { children } = props
+
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="lg">
