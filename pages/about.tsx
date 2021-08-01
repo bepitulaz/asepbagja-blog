@@ -17,7 +17,7 @@ export default function AboutPage(): JSX.Element {
         <meta name="og:title" property="og:title" content="About | Asep Bagja" />
         <meta name="og:description" property="og:description" content="My personal blog where I share my opinion and topic that I'm interested." />
         <meta property="og:site_name" content="The Blog of Asep Bagja" />
-        <meta property="og:url" content="https://www.asepbagja.com" />  
+        <meta property="og:url" content="https://www.asepbagja.com/about" />  
         <meta name="twitter:card" content="summary" /> 
         <meta name="twitter:title" content="The Blog of Asep Bagja" />
         <meta name="twitter:description" content="My personal blog where I share my opinion and topic that I'm interested." />
@@ -32,7 +32,7 @@ export default function AboutPage(): JSX.Element {
         <meta name="theme-color" content="#ffffff" />
         <meta property="og:image" content="https://www.asepbagja.com/img/tartu.jpeg" />  
         <meta name="twitter:image" content="https://www.asepbagja.com/img/tartu.jpeg" />   
-        <link rel="canonical" href="https://www.asepbagja.com" />
+        <link rel="canonical" href="https://www.asepbagja.com/about" />
       </Head>
 
       <div style={{

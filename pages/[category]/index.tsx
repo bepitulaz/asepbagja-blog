@@ -92,7 +92,7 @@ export default function CategoryPage(props: any): JSX.Element {
         <meta name="og:title" property="og:title" content={`${capitalize(category)} | Asep Bagja`} />
         <meta name="og:description" property="og:description" content="My personal blog where I share my opinion and topic that I'm interested." />
         <meta property="og:site_name" content="The Blog of Asep Bagja" />
-        <meta property="og:url" content="https://www.asepbagja.com" />  
+        <meta property="og:url" content={`https://www.asepbagja.com/${category}`} />  
         <meta name="twitter:card" content="summary" /> 
         <meta name="twitter:title" content={`${capitalize(category)} | Asep Bagja`} />
         <meta name="twitter:description" content="My personal blog where I share my opinion and topic that I'm interested." />
