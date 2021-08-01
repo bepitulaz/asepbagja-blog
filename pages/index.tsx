@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next"
-import Head from 'next/head'
+import Head from "next/head"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
@@ -54,8 +54,8 @@ export default function Home(props: any): JSX.Element {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <meta property="og:image" content={data.featured.metadata.images[0]} />  
-        <meta name="twitter:image" content={data.featured.metadata.images[0]} />   
+        <meta property="og:image" content={`https://www.asepbagja.com${data.featured.metadata.images[0]}`} />  
+        <meta name="twitter:image" content={`https://www.asepbagja.com${data.featured.metadata.images[0]}`} />   
         <link rel="canonical" href="https://www.asepbagja.com" />
       </Head>
       

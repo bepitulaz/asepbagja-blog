@@ -75,8 +75,8 @@ export default function IndonesiaPage(props: any): JSX.Element {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <meta property="og:image" content={data[0].metadata.images[0]} />  
-        <meta name="twitter:image" content={data[0].metadata.images[0]} />   
+        <meta property="og:image" content={`https://www.asepbagja.com${data[0].metadata.images[0]}`} />  
+        <meta name="twitter:image" content={`https://www.asepbagja.com${data[0].metadata.images[0]}`} />   
         <link rel="canonical" href="https://www.asepbagja.com/id" />
       </Head>
 

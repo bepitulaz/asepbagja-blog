@@ -87,8 +87,8 @@ export default function ReadingPage(props: any): JSX.Element {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <meta property="og:image" content={article?.metadata.images[0]} />  
-        <meta name="twitter:image" content={article?.metadata.images[0]} />   
+        <meta property="og:image" content={`https://www.asepbagja.com${article?.metadata.images[0]}`} />  
+        <meta name="twitter:image" content={`https://www.asepbagja.com${article?.metadata.images[0]}`} />   
         <link rel="canonical" href={`https://www.asepbagja.com/${article?.metadata.categories?.[0]}/${slug}`} />
       </Head>
       

@@ -20,3 +20,17 @@ a.title-article {
     font-size: 0.8rem;
   }
 }
+
+.about-section {
+  a {
+    color: #AF2424;
+
+    &:hover {
+      color: #981313;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}

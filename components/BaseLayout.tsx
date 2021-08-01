@@ -43,7 +43,7 @@ const BaseLayout = (props: any) : JSX.Element => {
             <Col xs={12} md={6}>
               <Nav>
                 <Nav.Item>
-                  <Link href="/" passHref>
+                  <Link href="/about" passHref>
                     <Nav.Link className="text-white">About Asep</Nav.Link>
                   </Link>
                 </Nav.Item>
