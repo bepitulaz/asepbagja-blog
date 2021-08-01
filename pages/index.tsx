@@ -65,8 +65,8 @@ export default function Home(props: any): JSX.Element {
       <FeaturedArticle
         title={data.featured.metadata.title}
         excerpt={data.featured.metadata.summary}
-        href={`/${data.featured.metadata.categories[0]}/${data.featured.slug}`}
-        categoryTitle={data.featured.metadata.categories[0].toLowerCase()}
+        href={`/${data.featured.metadata.categories[0].toLowerCase()}/${data.featured.slug}`}
+        categoryTitle={data.featured.metadata.categories[0]}
         publishedDate={data.featured.date}
         language={data.featured.language}
         imageSrc={data.featured.metadata.images[0]}
