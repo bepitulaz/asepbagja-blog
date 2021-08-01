@@ -38,7 +38,7 @@ export default function CategoryPage(props: any): JSX.Element {
   const router = useRouter()
   const { category } = router.query
 
-  const postsByCategory = data.filter((post: Article) => {
+  const postsByCategory = data?.filter((post: Article) => {
     const capitalCategory = capitalize(category)
 
     if (typeof capitalCategory === "string") {
@@ -49,32 +49,36 @@ export default function CategoryPage(props: any): JSX.Element {
   })
 
   const ArticleLoop = (posts: any): JSX.Element => {
-    const loopComponent = posts.data.map((post: any, index: number) => {
+    const loopComponent = posts.data?.map((post: any, index: number) => {
       let component = []
       if (index < 2) {
         component.push(<TwoGrids
           key={post.slug}
           title={post.metadata.title}
           excerpt={post.metadata.summary}
-          imageSrc={post.metadata.images[0]}
+          imageSrc={post.metadata.images?.[0]}
           imageAlt={`the thumbnail of ${post.metadata.title}`}
-          href={`/${post.metadata.categories[0].toLowerCase()}/${post.slug}`}
+          href={`/${post.metadata.categories?.[0].toLowerCase()}/${post.slug}`}
         />)
       } else {
         component.push(<OneGrid
           key={post.slug}
           title={post.metadata.title}
           excerpt={post.metadata.summary}
-          imageSrc={post.metadata.images[0]}
+          imageSrc={post.metadata.images?.[0]}
           imageAlt={`the thumbnail of ${post.metadata.title}`}
-          href={`/${post.metadata.categories[0].toLowerCase()}/${post.slug}`}
+          href={`/${post.metadata.categories?.[0].toLowerCase()}/${post.slug}`}
         />)
       }
 
       return component
     })
 
-    return loopComponent
+    return loopComponent ?? (
+      <Col>
+        <p className="text-center">No articles are found.</p>
+      </Col>
+    )
   }
 
   return (
@@ -101,8 +105,8 @@ export default function CategoryPage(props: any): JSX.Element {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <meta property="og:image" content={data[0].metadata.images[0]} />  
-        <meta name="twitter:image" content={data[0].metadata.images[0]} />   
+        <meta property="og:image" content={data?.[0].metadata.images?.[0]} />  
+        <meta name="twitter:image" content={data?.[0].metadata.images?.[0]} />   
         <link rel="canonical" href={`https://www.asepbagja.com/${category}`} />
       </Head>
 

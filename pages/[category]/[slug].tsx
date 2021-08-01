@@ -60,24 +60,24 @@ export default function ReadingPage(props: any): JSX.Element {
   const router = useRouter()
   const { slug } = router.query
   
-  const filteredArticles = data.filter((post: Article) => post.slug === slug)
-  const { metadata, date, language, content } = filteredArticles?.[0]
+  const filteredArticles = data?.filter((post: Article) => post.slug === slug)
+  const article = filteredArticles?.[0]
 
   return (
     <BaseLayout>
       <Head>
-        <title>{metadata.title} | Asep Bagja</title>
+        <title>{article?.metadata.title} | Asep Bagja</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={metadata.summary} />
+        <meta name="description" content={article?.metadata.summary} />
         <meta property="og:type" content="website" />
-        <meta name="og:title" property="og:title" content={`${metadata.title} | Asep Bagja`} />
-        <meta name="og:description" property="og:description" content={metadata.summary} />
+        <meta name="og:title" property="og:title" content={`${article?.metadata.title} | Asep Bagja`} />
+        <meta name="og:description" property="og:description" content={article?.metadata.summary} />
         <meta property="og:site_name" content="The Blog of Asep Bagja" />
         <meta property="og:url" content="https://www.asepbagja.com" />  
         <meta name="twitter:card" content="summary" /> 
-        <meta name="twitter:title" content={`${metadata.title} | Asep Bagja`} />
-        <meta name="twitter:description" content={metadata.summary} />
+        <meta name="twitter:title" content={`${article?.metadata.title} | Asep Bagja`} />
+        <meta name="twitter:description" content={article?.metadata.summary} />
         <meta name="twitter:site" content="@bepitulaz" />
         <meta name="twitter:creator" content="@bepitulaz" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -87,9 +87,9 @@ export default function ReadingPage(props: any): JSX.Element {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <meta property="og:image" content={metadata.images[0]} />  
-        <meta name="twitter:image" content={metadata.images[0]} />   
-        <link rel="canonical" href={`https://www.asepbagja.com/${metadata.categories?.[0]}/${slug}`} />
+        <meta property="og:image" content={article?.metadata.images[0]} />  
+        <meta name="twitter:image" content={article?.metadata.images[0]} />   
+        <link rel="canonical" href={`https://www.asepbagja.com/${article?.metadata.categories?.[0]}/${slug}`} />
       </Head>
       
       <main className="mt-5">
@@ -98,17 +98,17 @@ export default function ReadingPage(props: any): JSX.Element {
             <Col lg={{ span: 8, offset: 2 }}>
               <div style={{ paddingBottom: 5, borderBottom: "3px solid #343a40" }}>
                 <div className="mb-3">
-                  <span className="badge bg-dark">{capitalize(metadata.categories?.[0])}</span>
+                  <span className="badge bg-dark">{capitalize(article?.metadata.categories?.[0])}</span>
                 </div>
-                <h2>{metadata.title}</h2>
-                <p className="mt-2 fw-lighter fst-italic">{metadata.summary}</p>
-                <p className="fw-lighter lh-1" style={{ fontSize: "0.8rem" }}>{date} | Language: {language}</p>
+                <h2>{article?.metadata.title}</h2>
+                <p className="mt-2 fw-lighter fst-italic">{article?.metadata.summary}</p>
+                <p className="fw-lighter lh-1" style={{ fontSize: "0.8rem" }}>{article?.date} | Language: {article?.language}</p>
               </div>
             </Col>
           </Row>
           <Row className="mt-5">
             <Col lg={{ span: 8, offset: 2 }}>
-              <HtmlContent content={content} />
+              <HtmlContent content={article?.content} />
             </Col>
           </Row>
         </Container>
