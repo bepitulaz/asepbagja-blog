@@ -34,8 +34,6 @@ My friend gave me a solution via Twitter. He mentioned about...
 
 I google-ed it. It is a new wifi module that people usually use it as a module for Arduino, but actually it can be used as a stand alone micro controller. So, I ordered it for IDR70.000, also with USB TTY programmer for IDR22000. The total shopping was just IDR99.000 (around $7). It is worth to solder permanently.
 
-![esp-8266](https://s3-ap-southeast-1.amazonaws.com/asepco/wp-content/uploads/2016/03/25200525/esp-8266.jpg)
-
 The USB TTY is used to program the micro controller. ESP8266 has 2 GPIO pins and working with 3.3 volt power. I can't use JavaScript for this hardware, thus it becomes my first time for writing my own firmware in C and deploy (flash) it to a hardware that don't have operating system. Now, I'm in progress for porting my aquarium system to use this coin size and cheap module.
 
 I will write the tutorial about how to use it in the next post.

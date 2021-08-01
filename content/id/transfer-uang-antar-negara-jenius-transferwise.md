@@ -1,5 +1,5 @@
 ---
-title: "Mengakali Biaya Transfer Uang Antar Negara Dengan Jenius dan TransferWise"
+title: "Mengakali Biaya Transfer Uang Antar Negara Dengan Jenius dan Wise"
 date: 2019-09-23
 images:
 - "/blog-img/tw-step-3.png"
@@ -16,9 +16,11 @@ summary: "TransferWise memiliki kemampuan untuk mengirim uang dengan biaya murah
 
 ### Pembaruan artikel
 
-*Per tanggal 24 November 2020, TransferWise sudah bisa kirim IDR ke luar negeri secara langsung. Jadi trik pada artikel ini tidak diperlukan lagi. Berikut ini caranya, diambil dari newsletter TransferWise yang saya dapat. Saat saya coba, sepertinya ini baru bisa dilakukan via aplikasi mobile TransferWise, karena saya tes di versi website belum ada pilihan rekeningnya. Jangan lupa, untuk melakukannya tetap harus membuat akun [TransferWise](https://transferwise.com/u/asepp1) terlebih dahulu.*
+*Per tanggal 24 November 2020, TransferWise sudah bisa kirim IDR ke luar negeri secara langsung. Jadi trik pada artikel ini tidak diperlukan lagi. Berikut ini caranya, diambil dari newsletter TransferWise yang saya dapat. Saat saya coba, sepertinya ini baru bisa dilakukan via aplikasi mobile TransferWise, karena saya tes di versi website belum ada pilihan rekeningnya. Jangan lupa, untuk melakukannya tetap harus membuat akun [Wise](https://wise.com/u/asepp1) terlebih dahulu.*
 
-{{< youtube peL7AvJbroU >}}
+*TransferWise telah berganti nama menjadi Wise. Walaupun begitu, layanannya tetap sama.*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/peL7AvJbroU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Internet membuat batas antar negara seakan tidak ada. Walaupun tinggal di Indonesia, kita bisa mencari peluang-peluang bisnis dan pasar-pasar baru di luar Indonesia untuk memasarkan produk. Seperti saya yang memanfaatkan [Estonia e-Residency](/id/artikel/apa-itu-estonia-e-residency) untuk membangun perusahaan di Eropa. Tentu saja memiliki bisnis di luar negeri artinya harus berurusan dengan mata uang asing. Untuk kasus saya, saya harus berurusan dengan mata uang Euro dan kadang-kadang US Dollar.
 
@@ -47,13 +49,13 @@ Untuk mengirimkan uang dari Estonia ke Indonesia sih enak saya tinggal buka Inte
 
 ### Apa itu TransferWise?
 
-[TransferWise](https://transferwise.com/u/asepp1) adalah perusahaan fintech yang berdiri sejak 2011 dan memiliki layanan mengirim uang antar negara dengan biaya rendah dan cepat. Pendiri perusahaan ini adalah orang Estonia yang tinggal di Inggris. Sejarah berdirinya karena si pendiri merasakan bagaimana mahalnya dia mengirimkan uang dari Inggris ke Estonia untuk membayar *mortgage* lewat transfer bank biasa. Bisa baca sejarah awalnya di [sini](https://en.wikipedia.org/wiki/TransferWise).
+[Wise](https://wise.com/u/asepp1) adalah perusahaan fintech yang berdiri sejak 2011 dan memiliki layanan mengirim uang antar negara dengan biaya rendah dan cepat. Pendiri perusahaan ini adalah orang Estonia yang tinggal di Inggris. Sejarah berdirinya karena si pendiri merasakan bagaimana mahalnya dia mengirimkan uang dari Inggris ke Estonia untuk membayar *mortgage* lewat transfer bank biasa. Bisa baca sejarah awalnya di [sini](https://en.wikipedia.org/wiki/TransferWise).
 
 Bagaimana TransferWise mengakali masalah biaya ini? Prinsipnya adalah mereka memiliki banyak akun bank dengan saldo memadai di berbagai negara. Sehingga ketika pengguna mendaftar di TransferWise, pengguna juga dapat memiliki banyak akun dalam berbagai macam mata uang. Supaya mudah dipahami, saya akan memakai kasus saya bagaimana saya mengirimkan uang dari Estonia ke Indonesia.
 
 Anggap lah saya mengirimkan 100€. Maka susunannya kira-kira akan seperti ini.
 
-![Sistem TransferWise](/blog-img/sistem-transferwise.jpg)
+![Sistem Wise](/blog-img/sistem-transferwise.jpg)
 
 Sampai sini semoga jelas ya, mengapa TransferWise bisa sangat murah dan cepat hanya dalam hitungan menit untuk mengirim dari Estonia ke Indonesia.
 
@@ -81,7 +83,7 @@ Oh, iya, karena kartu debit Jenius ini menggunakan mata uang Rupiah, jadi Transf
 
 TransferWise memiliki kemampuan untuk mengirim uang dengan biaya murah ke 59 negara termasuk Indonesia dan cepat hanya dalam hitungan menit (selama dilakukan saat hari kerja.) Sedangkan Jenius memberi kemudahan untuk membayar transaksi di *merchant* luar negeri. Catatan penting:
 
-1. Pastikan setelah membuat akun di [TransferWise](https://transferwise.com/u/asepp1), kamu membuka *balance* untuk mata uang Euro. Karena saat ini hanya *balance* Euro yang bisa di-*top up* dengan menggunakan debit Visa/Mastercard. Semisal tujuan transfermu adalah bank di Amerika Serikat, kamu bisa kirim USD dari *balance* Euro dengan biaya yang masih tetap rendah.
+1. Pastikan setelah membuat akun di [Wise](https://wise.com/u/asepp1), kamu membuka *balance* untuk mata uang Euro. Karena saat ini hanya *balance* Euro yang bisa di-*top up* dengan menggunakan debit Visa/Mastercard. Semisal tujuan transfermu adalah bank di Amerika Serikat, kamu bisa kirim USD dari *balance* Euro dengan biaya yang masih tetap rendah.
 2. Kartu Jenius yang dapat digunakan di TransferWise adalah m-Card (kartu utama) karena saya sudah coba menggunakan e-Card (kartu virtual) dan selalu ditolak oleh sistem.
 
 Semoga artikel ini bermanfaat untuk teman-teman yang memiliki urusan bisnis di luar negeri atau mengirimkan uang ke kerabat di luar negeri.

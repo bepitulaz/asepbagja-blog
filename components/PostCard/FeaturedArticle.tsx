@@ -40,13 +40,15 @@ const FeaturedArticle = ({
           </Col>
           <Col md={6} className="d-flex align-items-center pt-3 pt-md-0">
             <div>
-              <span className="badge bg-dark">{categoryTitle}</span>
+              <div className="mb-3">
+                <span className="badge bg-dark">{categoryTitle}</span>
+              </div>
               <Link href={href} passHref>
                 <a title={title} className="title-article text-body">
                   <h2>{title}</h2>
                 </a>
               </Link>
-              <p>{excerpt}</p>
+              <p className="mt-4">{excerpt}</p>
               <p className="fw-light">{publishedDate} | Language: {language}</p>
             </div>
           </Col>

@@ -1,7 +1,5 @@
-import { promises as fs } from "fs"
-import path from "path"
-import matter from "gray-matter"
 import { GetStaticProps, GetStaticPaths } from "next"
+import Head from "next/head"
 import { useRouter } from "next/router"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -10,73 +8,16 @@ import SectionTitle from "../../components/SectionTitle"
 import { OneGrid, TwoGrids } from "../../components/PostCard"
 import BaseLayout from "../../components/BaseLayout"
 import { capitalize } from "../../libs/utilities"
-import { Article } from "../../libs/data-type"
+import { Article, Content, Category } from "../../libs/data-type"
+import { readFromFileSystem } from "../../libs/file-fetch"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const idContentDir = path.join(process.cwd(), "content", "id")
-  const enContentDir = path.join(process.cwd(), "content", "en")
-  const idFilenames = await fs.readdir(idContentDir)
-  const enFilenames = await fs.readdir(enContentDir)
-
-  // Mapping the Bahasa Indonesia content here
-  const idPosts = idFilenames.map(async (filename) => {
-    const filePath = path.join(idContentDir, filename)
-    const fileContents = await fs.readFile(filePath, "utf8")
-    const content = matter(fileContents)
-
-    return {
-      filename,
-      language: content?.data?.lang ?? "Bahasa Indonesia",
-      slug: content?.data?.slug ?? filename.slice(0, -3),
-      date: content?.data?.date,
-      metadata: {
-        title: content?.data?.title,
-        images: content?.data?.images,
-        categories: content?.data?.categories,
-        aliases: content?.data?.aliases ?? [],
-        summary: content?.data?.summary ?? "",
-      },
-      content: content?.content,
-    }
-  });
-
-  // Mapping the English content here
-  const enPosts = enFilenames.map(async (filename) => {
-    const filePath = path.join(enContentDir, filename)
-    const fileContents = await fs.readFile(filePath, "utf8")
-    const content = matter(fileContents)
-
-    return {
-      filename,
-      language: content?.data?.lang ?? "English",
-      slug: content?.data?.slug ?? filename.slice(0, -3),
-      date: content?.data?.date,
-      metadata: {
-        title: content?.data?.title,
-        images: content?.data?.images,
-        categories: content?.data?.categories,
-        aliases: content?.data?.aliases ?? [],
-        summary: content?.data?.summary ?? "",
-      },
-      content: content?.content,
-    }
-  });
-
-  const id = await Promise.all(idPosts)
-  const idSorted = id.sort((a, b) => b.date - a.date).map((post) => {
-    post.date = post.date.toLocaleDateString("en-GB")
-    return post
-  })
-
-  const en = await Promise.all(enPosts)
-  const enSorted = en.sort((a, b) => b.date - a.date).map((post) => {
-    post.date = post.date.toLocaleDateString("en-GB")
-    return post
-  })
+  const idPosts = await readFromFileSystem(Content.ID)
+  const enPosts = await readFromFileSystem(Content.EN)
 
   return {
     props: {
-      data: enSorted.concat(idSorted),
+      data: idPosts.concat(enPosts),
     },
   }
 }
@@ -84,9 +25,9 @@ export const getStaticProps: GetStaticProps = async () => {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [
-      { params: { category: "business" }},
-      { params: { category: "personal" }},
-      { params: { category: "programming" }},
+      { params: { category: Category.BUSINESS }},
+      { params: { category: Category.PERSONAL }},
+      { params: { category: Category.PROGRAMMING }},
     ],
     fallback: true,
   }
@@ -112,6 +53,7 @@ export default function CategoryPage(props: any): JSX.Element {
       let component = []
       if (index < 2) {
         component.push(<TwoGrids
+          key={post.slug}
           title={post.metadata.title}
           excerpt={post.metadata.summary}
           imageSrc={post.metadata.images[0]}
@@ -120,6 +62,7 @@ export default function CategoryPage(props: any): JSX.Element {
         />)
       } else {
         component.push(<OneGrid
+          key={post.slug}
           title={post.metadata.title}
           excerpt={post.metadata.summary}
           imageSrc={post.metadata.images[0]}
@@ -136,6 +79,28 @@ export default function CategoryPage(props: any): JSX.Element {
 
   return (
     <BaseLayout>
+      <Head>
+        <title>{capitalize(category)} | Asep Bagja</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="My personal blog where I share my opinion and topic that I'm interested." />
+        <meta property="og:type" content="website" />
+        <meta name="og:title" property="og:title" content={`${capitalize(category)} | Asep Bagja`} />
+        <meta name="og:description" property="og:description" content="My personal blog where I share my opinion and topic that I'm interested." />
+        <meta property="og:site_name" content="The Blog of Asep Bagja" />
+        <meta property="og:url" content="https://www.asepbagja.com" />  
+        <meta name="twitter:card" content="summary" /> 
+        <meta name="twitter:title" content={`${capitalize(category)} | Asep Bagja`} />
+        <meta name="twitter:description" content="My personal blog where I share my opinion and topic that I'm interested." />
+        <meta name="twitter:site" content="@bepitulaz" />
+        <meta name="twitter:creator" content="@bepitulaz" />
+        <link rel="icon" type="image/png" href="/static/images/favicon.ico" />
+        <link rel="apple-touch-icon" href="/static/images/favicon.ico" />
+        <meta property="og:image" content={data[0].metadata.images[0]} />  
+        <meta name="twitter:image" content={data[0].metadata.images[0]} />   
+        <link rel="canonical" href={`https://www.asepbagja.com/${category}`} />
+      </Head>
+
       <section className="mt-5 pt-3">
         <Container>
           <Row>

@@ -1,7 +1,5 @@
-import { promises as fs } from "fs"
-import path from "path"
-import matter from "gray-matter"
 import { GetStaticProps } from "next"
+import Head from 'next/head'
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
@@ -10,103 +8,20 @@ import { OneGrid, FeaturedArticle, TwoGrids } from "../components/PostCard"
 import BaseLayout from "../components/BaseLayout"
 import Hero from "../components/Hero"
 import PodcastCard from "../components/PodcastCard"
+import { Content } from "../libs/data-type"
+import { readFromFileSystem } from "../libs/file-fetch"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const enContentDir = path.join(process.cwd(), "content", "en")
-  const idContentDir = path.join(process.cwd(), "content", "id")
-  const featuredContentDir = path.join(process.cwd(), "content", "featured")
-
-  const enFilenames = await fs.readdir(enContentDir)
-  const idFilenames = await fs.readdir(idContentDir)
-  const featuredFilenames = await fs.readdir(featuredContentDir)
-
-  // Mapping the English content here
-  const enPosts = enFilenames.map(async (filename) => {
-    const filePath = path.join(enContentDir, filename)
-    const fileContents = await fs.readFile(filePath, "utf8")
-    const content = matter(fileContents)
-
-    return {
-      filename,
-      language: content?.data?.lang ?? "English",
-      slug: content?.data?.slug ?? filename.slice(0, -3),
-      date: content?.data?.date,
-      metadata: {
-        title: content?.data?.title,
-        images: content?.data?.images,
-        categories: content?.data?.categories,
-        aliases: content?.data?.aliases ?? [],
-        summary: content?.data?.summary ?? "",
-      },
-      content: content?.content,
-    }
-  });
-
-  // Mapping the Indonesia content here
-  const idPosts = idFilenames.map(async (filename) => {
-    const filePath = path.join(idContentDir, filename)
-    const fileContents = await fs.readFile(filePath, "utf8")
-    const content = matter(fileContents)
-
-    return {
-      filename,
-      language: content?.data?.lang ?? "Bahasa Indonesia",
-      slug: content?.data?.slug ?? filename.slice(0, -3),
-      date: content?.data?.date,
-      metadata: {
-        title: content?.data?.title,
-        images: content?.data?.images,
-        categories: content?.data?.categories,
-        aliases: content?.data?.aliases ?? [],
-        summary: content?.data?.summary ?? "",
-      },
-      content: content?.content,
-    }
-  });
-
-  // Mapping the Featured content here
-  const featuredPosts = featuredFilenames.map(async (filename) => {
-    const filePath = path.join(featuredContentDir, filename)
-    const fileContents = await fs.readFile(filePath, "utf8")
-    const content = matter(fileContents)
-
-    return {
-      filename,
-      language: content?.data?.lang ?? "English",
-      slug: content?.data?.slug ?? filename.slice(0, -3),
-      date: content?.data?.date.toLocaleDateString("en-GB"),
-      metadata: {
-        title: content?.data?.title,
-        images: content?.data?.images,
-        categories: content?.data?.categories,
-        aliases: content?.data?.aliases ?? [],
-        summary: content?.data?.summary ?? "",
-      },
-      content: content?.content,
-    }
-  });
-
-  const en = await Promise.all(enPosts)
-  const id = await Promise.all(idPosts)
-  const featured = await Promise.all(featuredPosts)
-
-  // Sort the posts by date
-  const enSorted = en.sort((a, b) => b.date - a.date).map((post) => {
-    post.date = post.date.toLocaleDateString("en-GB")
-    return post
-  })
-
-  const idSorted = id.sort((a, b) => b.date - a.date).map((post) => {
-    post.date = post.date.toLocaleDateString("en-GB")
-    return post
-  })
+  const idPosts = await readFromFileSystem(Content.ID)
+  const enPosts = await readFromFileSystem(Content.EN)
+  const featuredPosts = await readFromFileSystem(Content.FEATURED)
 
   return {
     props: {
       data: {
-        en: enSorted,
-        id: idSorted,
-        featured: featured[0],
+        en: enPosts,
+        id: idPosts,
+        featured: featuredPosts[0],
       },
     },
   }
@@ -117,6 +32,28 @@ export default function Home(props: any): JSX.Element {
 
   return (
     <BaseLayout>
+      <Head>
+        <title>Home | Asep Bagja</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="My personal blog where I share my opinion and topic that I'm interested." />
+        <meta property="og:type" content="website" />
+        <meta name="og:title" property="og:title" content="Home | Asep Bagja" />
+        <meta name="og:description" property="og:description" content="My personal blog where I share my opinion and topic that I'm interested." />
+        <meta property="og:site_name" content="The Blog of Asep Bagja" />
+        <meta property="og:url" content="https://www.asepbagja.com" />  
+        <meta name="twitter:card" content="summary" /> 
+        <meta name="twitter:title" content="The Blog of Asep Bagja" />
+        <meta name="twitter:description" content="My personal blog where I share my opinion and topic that I'm interested." />
+        <meta name="twitter:site" content="@bepitulaz" />
+        <meta name="twitter:creator" content="@bepitulaz" />
+        <link rel="icon" type="image/png" href="/static/images/favicon.ico" />
+        <link rel="apple-touch-icon" href="/static/images/favicon.ico" />
+        <meta property="og:image" content={data.featured.metadata.images[0]} />  
+        <meta name="twitter:image" content={data.featured.metadata.images[0]} />   
+        <link rel="canonical" href="https://www.asepbagja.com" />
+      </Head>
+      
       <Hero />
 
       {/* Newest article */}

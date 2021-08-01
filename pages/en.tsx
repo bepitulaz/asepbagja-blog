@@ -1,49 +1,20 @@
-import { promises as fs } from "fs"
-import path from "path"
-import matter from "gray-matter"
 import { GetStaticProps } from "next"
+import Head from "next/head"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
 import SectionTitle from "../components/SectionTitle"
 import { OneGrid, TwoGrids } from "../components/PostCard"
 import BaseLayout from "../components/BaseLayout"
+import { readFromFileSystem } from "../libs/file-fetch"
+import { Content } from "../libs/data-type"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const enContentDir = path.join(process.cwd(), "content", "en")
-  const enFilenames = await fs.readdir(enContentDir)
-
-  // Mapping the English content here
-  const enPosts = enFilenames.map(async (filename) => {
-    const filePath = path.join(enContentDir, filename)
-    const fileContents = await fs.readFile(filePath, "utf8")
-    const content = matter(fileContents)
-
-    return {
-      filename,
-      language: content?.data?.lang ?? "English",
-      slug: content?.data?.slug ?? filename.slice(0, -3),
-      date: content?.data?.date,
-      metadata: {
-        title: content?.data?.title,
-        images: content?.data?.images,
-        categories: content?.data?.categories,
-        aliases: content?.data?.aliases ?? [],
-        summary: content?.data?.summary ?? "",
-      },
-      content: content?.content,
-    }
-  });
-
-  const en = await Promise.all(enPosts)
-  const enSorted = en.sort((a, b) => b.date - a.date).map((post) => {
-    post.date = post.date.toLocaleDateString("en-GB")
-    return post
-  })
+  const posts = await readFromFileSystem(Content.EN)
 
   return {
     props: {
-      data: enSorted,
+      data: posts,
     },
   }
 }
@@ -56,6 +27,7 @@ export default function EnglishPage(props: any): JSX.Element {
       let component = []
       if (index < 2) {
         component.push(<TwoGrids
+          key={post.slug}
           title={post.metadata.title}
           excerpt={post.metadata.summary}
           imageSrc={post.metadata.images[0]}
@@ -64,6 +36,7 @@ export default function EnglishPage(props: any): JSX.Element {
         />)
       } else {
         component.push(<OneGrid
+          key={post.slug}
           title={post.metadata.title}
           excerpt={post.metadata.summary}
           imageSrc={post.metadata.images[0]}
@@ -80,7 +53,27 @@ export default function EnglishPage(props: any): JSX.Element {
 
   return (
     <BaseLayout>
-
+      <Head>
+        <title>English | Asep Bagja</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="My personal blog where I share my opinion and topic that I'm interested." />
+        <meta property="og:type" content="website" />
+        <meta name="og:title" property="og:title" content="English | Asep Bagja" />
+        <meta name="og:description" property="og:description" content="My personal blog where I share my opinion and topic that I'm interested." />
+        <meta property="og:site_name" content="The Blog of Asep Bagja" />
+        <meta property="og:url" content="https://www.asepbagja.com/en" />  
+        <meta name="twitter:card" content="summary" /> 
+        <meta name="twitter:title" content="English | Asep Bagja" />
+        <meta name="twitter:description" content="My personal blog where I share my opinion and topic that I'm interested." />
+        <meta name="twitter:site" content="@bepitulaz" />
+        <meta name="twitter:creator" content="@bepitulaz" />
+        <link rel="icon" type="image/png" href="/static/images/favicon.ico" />
+        <link rel="apple-touch-icon" href="/static/images/favicon.ico" />
+        <meta property="og:image" content={data[0].metadata.images[0]} />  
+        <meta name="twitter:image" content={data[0].metadata.images[0]} />   
+        <link rel="canonical" href="https://www.asepbagja.com/en" />
+      </Head>
       
       <section className="mt-5 pt-3">
         <Container>

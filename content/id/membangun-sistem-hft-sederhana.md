@@ -10,7 +10,7 @@ aliases:
 - /artikel/membangun-sistem-hft-sederhana/
 - /posts/membangun-sistem-hft-sederhana
 - /id/artikel/membangun-sistem-hft-sederhana
-summary: "High-Frequency Trading (HFT) adalah strategi perdagangan aset di mana *trader* tidak menyimpan aset lama-lama."
+summary: "High-Frequency Trading (HFT) adalah strategi perdagangan aset di mana trader tidak menyimpan aset lama-lama."
 ---
 
 Dua minggu terakhir ini saya sibuk mengerjakan sebuah proyek sampingan pribadi yang berhubungan dengan pasar finansial, yaitu melakukan otomatisasi terhadap kegiatan perdagangan di bursa cryptocurrency. Saya yakin untuk yang sudah terbiasa melakukan kegiatan *trading* pasti sering mendengar istilah *robot trading*. Di mana perdagangan dilakukan secara otomatis oleh komputer.
