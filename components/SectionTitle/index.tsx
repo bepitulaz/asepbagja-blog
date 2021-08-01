@@ -3,7 +3,7 @@ import Link from "next/link"
 import styles from "./SectionTitle.module.scss"
 
 interface Props {
-  sectionTitle: string
+  sectionTitle: string | string[] | undefined
   showButton?: boolean
   buttonTitle?: string
   linkHref?: string

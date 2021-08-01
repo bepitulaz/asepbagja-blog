@@ -21,9 +21,15 @@ const BaseLayout = (props: any) : JSX.Element => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="mr-auto">
-              <Nav.Link href="#home">Business</Nav.Link>
-              <Nav.Link href="#podcast">Personal</Nav.Link>
-              <Nav.Link href="#podcast">Programming</Nav.Link>
+              <Link href="/business" passHref>
+                <Nav.Link>Business</Nav.Link>
+              </Link>
+              <Link href="/personal" passHref>
+                <Nav.Link>Personal</Nav.Link>
+              </Link>
+              <Link href="/programming" passHref>
+                <Nav.Link>Programming</Nav.Link>
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

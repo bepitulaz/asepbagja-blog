@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default function Home(props: any): JSX.Element {
+export default function EnglishPage(props: any): JSX.Element {
   const { data } = props
 
   const ArticleLoop = (posts: any): JSX.Element => {
