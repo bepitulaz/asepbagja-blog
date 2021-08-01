@@ -74,7 +74,7 @@ export default function ReadingPage(props: any): JSX.Element {
         <meta name="og:title" property="og:title" content={`${article?.metadata.title} | Asep Bagja`} />
         <meta name="og:description" property="og:description" content={article?.metadata.summary} />
         <meta property="og:site_name" content="The Blog of Asep Bagja" />
-        <meta property="og:url" content={`https://www.asepbagja.com/${article?.metadata.categories?.[0]}/${slug}`} />  
+        <meta property="og:url" content={`https://www.asepbagja.com/${article?.metadata.categories?.[0].toLowerCase()}/${slug}`} />  
         <meta name="twitter:card" content="summary" /> 
         <meta name="twitter:title" content={`${article?.metadata.title} | Asep Bagja`} />
         <meta name="twitter:description" content={article?.metadata.summary} />
@@ -89,7 +89,7 @@ export default function ReadingPage(props: any): JSX.Element {
         <meta name="theme-color" content="#ffffff" />
         <meta property="og:image" content={`https://www.asepbagja.com${article?.metadata.images[0]}`} />  
         <meta name="twitter:image" content={`https://www.asepbagja.com${article?.metadata.images[0]}`} />   
-        <link rel="canonical" href={`https://www.asepbagja.com/${article?.metadata.categories?.[0]}/${slug}`} />
+        <link rel="canonical" href={`https://www.asepbagja.com/${article?.metadata.categories?.[0].toLowerCase()}/${slug}`} />
       </Head>
       
       <main className="mt-5">
