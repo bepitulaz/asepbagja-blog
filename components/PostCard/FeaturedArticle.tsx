@@ -43,11 +43,9 @@ const FeaturedArticle = ({
               <div className="mb-3">
                 <span className="badge bg-dark">{categoryTitle}</span>
               </div>
-              <Link href={href} passHref>
-                <a title={title} className="title-article text-body">
-                  <h2>{title}</h2>
-                </a>
-              </Link>
+              <a href={href} title={title} className="title-article text-body">
+                <h2>{title}</h2>
+              </a>
               <p className="mt-4">{excerpt}</p>
               <p className="fw-light">{publishedDate} | Language: {language}</p>
             </div>

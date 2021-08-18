@@ -24,11 +24,9 @@ const OneGrid = ({
         <Image src={imageSrc} alt={imageAlt} layout={"fill"} objectFit={"cover"} />
       </div>
       <div className="pt-3">
-        <Link href={href} passHref>
-          <a title={title} className="title-article text-body">
-            <h4>{title}</h4>
-          </a>
-        </Link>
+        <a href={href} title={title} className="title-article text-body">
+          <h4>{title}</h4>
+        </a>
         <p>{excerpt}</p>
       </div>
     </Col>    
