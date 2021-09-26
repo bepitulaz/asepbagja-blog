@@ -8,6 +8,7 @@ import { Content, Article } from "../../libs/data-type"
 import { readFromFileSystem } from "../../libs/file-fetch"
 import BaseLayout from "../../components/BaseLayout"
 import HtmlContent from "../../components/HtmlContent"
+import Discussion from "../../components/Discussion"
 import { capitalize, markdownToHtml } from "../../libs/utilities"
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -94,23 +95,36 @@ export default function ReadingPage(props: any): JSX.Element {
       
       <main className="mt-5">
         <Container>
-          <Row>
-            <Col lg={{ span: 8, offset: 2 }}>
-              <div style={{ paddingBottom: 5, borderBottom: "3px solid #343a40" }}>
-                <div className="mb-3">
-                  <span className="badge bg-dark">{capitalize(article?.metadata.categories?.[0])}</span>
+          <article>
+            <Row>
+              <Col lg={{ span: 8, offset: 2 }}>
+                <div style={{ paddingBottom: 5, borderBottom: "3px solid #343a40" }}>
+                  <div className="mb-3">
+                    <span className="badge bg-dark">{capitalize(article?.metadata.categories?.[0])}</span>
+                  </div>
+                  <h2>{article?.metadata.title}</h2>
+                  <p className="mt-2 fw-lighter fst-italic">{article?.metadata.summary}</p>
+                  <p className="fw-lighter lh-1" style={{ fontSize: "0.8rem" }}>
+                    <time dateTime={article?.date}>{article?.date}</time>
+                    {" | "}
+                    <span>Language: {article?.language}</span>
+                  </p>
                 </div>
-                <h2>{article?.metadata.title}</h2>
-                <p className="mt-2 fw-lighter fst-italic">{article?.metadata.summary}</p>
-                <p className="fw-lighter lh-1" style={{ fontSize: "0.8rem" }}>{article?.date} | Language: {article?.language}</p>
-              </div>
-            </Col>
-          </Row>
-          <Row className="mt-5">
-            <Col lg={{ span: 8, offset: 2 }}>
-              <HtmlContent content={article?.content} />
-            </Col>
-          </Row>
+              </Col>
+            </Row>
+            <Row className="mt-5">
+              <Col lg={{ span: 8, offset: 2 }}>
+                <HtmlContent content={article?.content} />
+              </Col>
+            </Row>
+          </article>
+          <section className="mt-5">
+            <Row>
+              <Col lg={{ span: 8, offset: 2 }}>
+                <Discussion language={article?.language} />
+              </Col>
+            </Row>
+          </section>
         </Container>
       </main>
     </BaseLayout>

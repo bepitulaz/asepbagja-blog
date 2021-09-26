@@ -15,6 +15,17 @@ export type Article = {
   content: string |null
 }
 
+export type Lang = {
+  en: {
+    code: "en",
+    name: "English",
+  },
+  id: {
+    code: "id",
+    name: "Bahasa Indonesia",
+  },
+}
+
 export enum Content {
   FEATURED = "featured",
   EN = "en",
