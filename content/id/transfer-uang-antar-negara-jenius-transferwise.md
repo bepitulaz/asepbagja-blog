@@ -16,7 +16,7 @@ summary: "TransferWise memiliki kemampuan untuk mengirim uang dengan biaya murah
 
 ### Pembaruan artikel
 
-*Per tanggal 24 November 2020, TransferWise sudah bisa kirim IDR ke luar negeri secara langsung. Jadi trik pada artikel ini tidak diperlukan lagi. Berikut ini caranya, diambil dari newsletter TransferWise yang saya dapat. Saat saya coba, sepertinya ini baru bisa dilakukan via aplikasi mobile TransferWise, karena saya tes di versi website belum ada pilihan rekeningnya. Jangan lupa, untuk melakukannya tetap harus membuat akun [Wise](https://wise.com/u/asepp1) terlebih dahulu.*
+*Per tanggal 24 November 2020, TransferWise sudah bisa kirim IDR ke luar negeri secara langsung. Jadi trik pada artikel ini tidak diperlukan lagi. Berikut ini caranya, diambil dari newsletter TransferWise yang saya dapat. Saat saya coba, sepertinya ini baru bisa dilakukan via aplikasi mobile TransferWise, karena saya tes di versi website belum ada pilihan rekeningnya. Jangan lupa, untuk melakukannya tetap harus membuat akun [Wise](https://wise.com/invite/u/asepp1) terlebih dahulu.*
 
 *TransferWise telah berganti nama menjadi Wise. Walaupun begitu, layanannya tetap sama.*
 
@@ -83,7 +83,7 @@ Oh, iya, karena kartu debit Jenius ini menggunakan mata uang Rupiah, jadi Transf
 
 TransferWise memiliki kemampuan untuk mengirim uang dengan biaya murah ke 59 negara termasuk Indonesia dan cepat hanya dalam hitungan menit (selama dilakukan saat hari kerja.) Sedangkan Jenius memberi kemudahan untuk membayar transaksi di *merchant* luar negeri. Catatan penting:
 
-1. Pastikan setelah membuat akun di [Wise](https://wise.com/u/asepp1), kamu membuka *balance* untuk mata uang Euro. Karena saat ini hanya *balance* Euro yang bisa di-*top up* dengan menggunakan debit Visa/Mastercard. Semisal tujuan transfermu adalah bank di Amerika Serikat, kamu bisa kirim USD dari *balance* Euro dengan biaya yang masih tetap rendah.
+1. Pastikan setelah membuat akun di [Wise](https://wise.com/invite/u/asepp1), kamu membuka *balance* untuk mata uang Euro. Karena saat ini hanya *balance* Euro yang bisa di-*top up* dengan menggunakan debit Visa/Mastercard. Semisal tujuan transfermu adalah bank di Amerika Serikat, kamu bisa kirim USD dari *balance* Euro dengan biaya yang masih tetap rendah.
 2. Kartu Jenius yang dapat digunakan di TransferWise adalah m-Card (kartu utama) karena saya sudah coba menggunakan e-Card (kartu virtual) dan selalu ditolak oleh sistem.
 
 Semoga artikel ini bermanfaat untuk teman-teman yang memiliki urusan bisnis di luar negeri atau mengirimkan uang ke kerabat di luar negeri.
