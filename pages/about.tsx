@@ -71,7 +71,10 @@ export default function AboutPage(): JSX.Element {
                 Asep began seriously to take entrepreneurship as his career path in 2012, by establishing Froyo, a digital marketing agency with his friend. Then he exited from Froyo in 2017. After that, he founded <a href="https://www.tanibox.com" target="_blank" rel="noreferrer">Tanibox</a>, an agriculture technology company in Estonia, together with his wife.
               </p>
               <p>
-                In early 2021, he changed his career path. He went back to the professional world, and take the challenge as a full-time software engineer in Jobbatical. An Estonia company that make an immigration and relocation process easy.
+                In early 2021, he changed his career path. He went back to the professional world, and take the challenge as a full-time software engineer in <a href="https://jobbatical.com" title="Jobbatical website" target="_blank" rel="noreferrer">Jobbatical</a>. An Estonia company that make an immigration and relocation process easy.
+              </p>
+              <p>
+                Asep also really love synthesizer art and technology. In his spare time, he is playing with synthesizer, doing music production, and creative coding for music.
               </p>
             </Col>
           </Row>

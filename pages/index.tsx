@@ -1,20 +1,20 @@
-import { GetStaticProps } from "next"
-import Head from "next/head"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import Container from "react-bootstrap/Container"
-import SectionTitle from "../components/SectionTitle"
-import { OneGrid, FeaturedArticle, TwoGrids } from "../components/PostCard"
-import BaseLayout from "../components/BaseLayout"
-import Hero from "../components/Hero"
-import PodcastCard from "../components/PodcastCard"
-import { Content } from "../libs/data-type"
-import { readFromFileSystem } from "../libs/file-fetch"
+import { GetStaticProps } from "next";
+import Head from "next/head";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import SectionTitle from "../components/SectionTitle";
+import { OneGrid, FeaturedArticle, TwoGrids } from "../components/PostCard";
+import BaseLayout from "../components/BaseLayout";
+import Hero from "../components/Hero";
+import PodcastCard from "../components/PodcastCard";
+import { Content } from "../libs/data-type";
+import { readFromFileSystem } from "../libs/file-fetch";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const idPosts = await readFromFileSystem(Content.ID)
-  const enPosts = await readFromFileSystem(Content.EN)
-  const featuredPosts = await readFromFileSystem(Content.FEATURED)
+  const idPosts = await readFromFileSystem(Content.ID);
+  const enPosts = await readFromFileSystem(Content.EN);
+  const featuredPosts = await readFromFileSystem(Content.FEATURED);
 
   return {
     props: {
@@ -24,11 +24,11 @@ export const getStaticProps: GetStaticProps = async () => {
         featured: featuredPosts[0],
       },
     },
-  }
-}
+  };
+};
 
 export default function Home(props: any): JSX.Element {
-  const { data } = props
+  const { data } = props;
 
   return (
     <BaseLayout>
@@ -36,36 +36,68 @@ export default function Home(props: any): JSX.Element {
         <title>Home | Asep Bagja</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="My personal blog where I share my opinion and topic that I'm interested." />
+        <meta
+          name="description"
+          content="My personal blog where I share my opinion and topic that I'm interested."
+        />
         <meta property="og:type" content="website" />
         <meta name="og:title" property="og:title" content="Home | Asep Bagja" />
-        <meta name="og:description" property="og:description" content="My personal blog where I share my opinion and topic that I'm interested." />
+        <meta
+          name="og:description"
+          property="og:description"
+          content="My personal blog where I share my opinion and topic that I'm interested."
+        />
         <meta property="og:site_name" content="The Blog of Asep Bagja" />
-        <meta property="og:url" content="https://www.asepbagja.com" />  
-        <meta name="twitter:card" content="summary" /> 
+        <meta property="og:url" content="https://www.asepbagja.com" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="The Blog of Asep Bagja" />
-        <meta name="twitter:description" content="My personal blog where I share my opinion and topic that I'm interested." />
+        <meta
+          name="twitter:description"
+          content="My personal blog where I share my opinion and topic that I'm interested."
+        />
         <meta name="twitter:site" content="@bepitulaz" />
-        <meta name="twitter:creator" content="@bepitulaz" />        
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <meta name="twitter:creator" content="@bepitulaz" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <meta property="og:image" content={`https://www.asepbagja.com${data.featured.metadata.images[0]}`} />  
-        <meta name="twitter:image" content={`https://www.asepbagja.com${data.featured.metadata.images[0]}`} />   
+        <meta
+          property="og:image"
+          content={`https://www.asepbagja.com${data.featured.metadata.images[0]}`}
+        />
+        <meta
+          name="twitter:image"
+          content={`https://www.asepbagja.com${data.featured.metadata.images[0]}`}
+        />
         <link rel="canonical" href="https://www.asepbagja.com" />
       </Head>
-      
+
       <Hero />
 
       {/* Newest article */}
       <FeaturedArticle
         title={data.featured.metadata.title}
         excerpt={data.featured.metadata.summary}
-        href={`/${data.featured.metadata.categories[0].toLowerCase()}/${data.featured.slug}`}
+        href={`/${data.featured.metadata.categories[0].toLowerCase()}/${
+          data.featured.slug
+        }`}
         categoryTitle={data.featured.metadata.categories[0]}
         publishedDate={data.featured.date}
         language={data.featured.language}
@@ -78,7 +110,11 @@ export default function Home(props: any): JSX.Element {
         <Container>
           <Row>
             <Col>
-              <SectionTitle sectionTitle="Podcasts" bsTextColourClass="text-white" showButton={false} />
+              <SectionTitle
+                sectionTitle="Podcasts"
+                bsTextColourClass="text-white"
+                showButton={false}
+              />
             </Col>
           </Row>
           <Row className="mt-md-3">
@@ -86,21 +122,31 @@ export default function Home(props: any): JSX.Element {
               imageSrc={"/images/asep-talks.png"}
               imageAlt={"Podcast Catatan Asep Bagja cover art"}
               title={"Catatan Asep Bagja"}
-              summary={"My solo podcast in Bahasa Indonesia. I talk various topics such as programming, finance, and hobby."}
-              href={"https://open.spotify.com/show/0e3qAxJ8c7j4noDX9birAp?si=gabJYhhcSKGM_BZ4D040zA&dl_branch=1"}
+              summary={
+                "My solo podcast in Bahasa Indonesia. I talk various topics such as programming, finance, and hobby."
+              }
+              href={
+                "https://open.spotify.com/show/0e3qAxJ8c7j4noDX9birAp?si=gabJYhhcSKGM_BZ4D040zA&dl_branch=1"
+              }
             />
             <PodcastCard
               imageSrc={"/images/ngopini-sejenak.png"}
               imageAlt={"Ngopini sejenak cover art"}
               title={"Ngopini Sejenak"}
-              summary={"We talk about various topics in the adult life. I co-host it with my wife, Retno, in Bahasa Indonesia."}
-              href={"https://open.spotify.com/show/12NnDN0zkmAFM6NNYmt8dh?si=iwW08XDOSqaYcWjGjii_eQ&dl_branch=1"}
+              summary={
+                "We talk about various topics in the adult life. I co-host it with my wife, Retno, in Bahasa Indonesia."
+              }
+              href={
+                "https://open.spotify.com/show/12NnDN0zkmAFM6NNYmt8dh?si=iwW08XDOSqaYcWjGjii_eQ&dl_branch=1"
+              }
             />
             <PodcastCard
               imageSrc={"/images/Ujung_CoverArt.png"}
               imageAlt={"Podcast Ujung Ke Ujung cover art"}
               title={"Ujung Ke Ujung"}
-              summary={"We talk about career in IT industry in Bahasa Indonesia. Co-host: Radita Liem and I."}
+              summary={
+                "We talk about career in IT industry in Bahasa Indonesia. Co-host: Radita Liem and I."
+              }
               href={"https://ujung.ee"}
             />
           </Row>
@@ -112,7 +158,11 @@ export default function Home(props: any): JSX.Element {
         <Container>
           <Row>
             <Col>
-              <SectionTitle sectionTitle="English" buttonTitle="See all" linkHref="/en" />
+              <SectionTitle
+                sectionTitle="English"
+                buttonTitle="See all"
+                linkHref="/en"
+              />
             </Col>
           </Row>
           <Row className="mt-md-3">
@@ -121,21 +171,27 @@ export default function Home(props: any): JSX.Element {
               excerpt={data.en[0].metadata.summary}
               imageSrc={data.en[0].metadata.images[0]}
               imageAlt={`the thumbnail of ${data.en[0].metadata.title}`}
-              href={`/${data.en[0].metadata.categories[0].toLowerCase()}/${data.en[0].slug}`}
+              href={`/${data.en[0].metadata.categories[0].toLowerCase()}/${
+                data.en[0].slug
+              }`}
             />
             <OneGrid
               title={data.en[1].metadata.title}
               excerpt={data.en[1].metadata.summary}
               imageSrc={data.en[1].metadata.images[0]}
               imageAlt={`the thumbnail of ${data.en[0].metadata.title}`}
-              href={`/${data.en[1].metadata.categories[0].toLowerCase()}/${data.en[1].slug}`}
+              href={`/${data.en[1].metadata.categories[0].toLowerCase()}/${
+                data.en[1].slug
+              }`}
             />
             <TwoGrids
               title={data.en[2].metadata.title}
               excerpt={data.en[2].metadata.summary}
               imageSrc={data.en[2].metadata.images[0]}
               imageAlt={`the thumbnail of ${data.en[0].metadata.title}`}
-              href={`/${data.en[2].metadata.categories[0].toLowerCase()}/${data.en[2].slug}`}
+              href={`/${data.en[2].metadata.categories[0].toLowerCase()}/${
+                data.en[2].slug
+              }`}
             />
           </Row>
         </Container>
@@ -146,7 +202,11 @@ export default function Home(props: any): JSX.Element {
         <Container>
           <Row>
             <Col>
-              <SectionTitle sectionTitle="Bahasa Indonesia" buttonTitle="Lihat" linkHref="/id" />
+              <SectionTitle
+                sectionTitle="Bahasa Indonesia"
+                buttonTitle="Lihat"
+                linkHref="/id"
+              />
             </Col>
           </Row>
           <Row className="mt-md-3">
@@ -155,25 +215,31 @@ export default function Home(props: any): JSX.Element {
               excerpt={data.id[0].metadata.summary}
               imageSrc={data.id[0].metadata.images[0]}
               imageAlt={`the thumbnail of ${data.id[0].metadata.title}`}
-              href={`/${data.id[0].metadata.categories[0].toLowerCase()}/${data.id[0].slug}`}
+              href={`/${data.id[0].metadata.categories[0].toLowerCase()}/${
+                data.id[0].slug
+              }`}
             />
             <OneGrid
               title={data.id[1].metadata.title}
               excerpt={data.id[1].metadata.summary}
               imageSrc={data.id[1].metadata.images[0]}
               imageAlt={`the thumbnail of ${data.id[0].metadata.title}`}
-              href={`/${data.id[1].metadata.categories[0].toLowerCase()}/${data.id[1].slug}`}
+              href={`/${data.id[1].metadata.categories[0].toLowerCase()}/${
+                data.id[1].slug
+              }`}
             />
             <OneGrid
               title={data.id[2].metadata.title}
               excerpt={data.id[2].metadata.summary}
               imageSrc={data.id[2].metadata.images[0]}
               imageAlt={`the thumbnail of ${data.id[0].metadata.title}`}
-              href={`/${data.id[2].metadata.categories[0].toLowerCase()}/${data.id[2].slug}`}
+              href={`/${data.id[2].metadata.categories[0].toLowerCase()}/${
+                data.id[2].slug
+              }`}
             />
           </Row>
         </Container>
       </section>
     </BaseLayout>
-  )
+  );
 }

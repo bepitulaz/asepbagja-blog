@@ -1,6 +1,7 @@
 const { readFromFileSystem } = require("./aliases")
 
 module.exports = {
+  swcMinify: true,
   reactStrictMode: true,
   i18n: {
     locales: ["en-GB"],
