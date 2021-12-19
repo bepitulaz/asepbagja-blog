@@ -58,7 +58,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };
 
@@ -157,7 +157,7 @@ const ReadingPage: NextPage<PageProps> = (props) => {
                     {article?.metadata.summary}
                   </p>
                   <p className="fw-lighter lh-1" style={{ fontSize: "0.8rem" }}>
-                    <time dateTime={article?.date}>{article?.date}</time>
+                    <time dateTime={article?.date as string}>{article?.date}</time>
                     {" | "}
                     <span>Language: {article?.language}</span>
                   </p>

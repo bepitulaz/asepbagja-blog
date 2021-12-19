@@ -8,11 +8,11 @@ export type Metadata = {
 
 export type Article = {
   filename: string;
-  language?: Language;
-  slug?: string;
-  date?: string;
+  language: Language | null;
+  slug: string | null;
+  date: string | null;
   metadata: Metadata;
-  content?: string;
+  content: string | null;
 };
 
 export enum Content {
