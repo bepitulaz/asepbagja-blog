@@ -1,26 +1,26 @@
+import { FunctionComponent } from "react";
+import { DiscussionEmbed } from "disqus-react";
+import { Language, Content, Article } from "@/libs/data-type";
+
 interface DiscussionProps {
-  language: string
+  article: Article;
 }
 
-const lang = {
-  en: {
-    title: "Discussion",
-    description: "You can login to start discussing about this article. All discussion contents are moderated by the author.",
-  },
-  id: {
-    title: "Diskusi",
-    description: "Anda dapat login untu memulai diskusi tentang artikel ini. Semua konten diskusi dimoderasi olhe penulis."
-  },
-}
+const Discussion: FunctionComponent<DiscussionProps> = ({ article }) => {
+  const lang = article.language === Language.EN ? Content.EN : Content.ID;
+  const disqusConfig = {
+    url: `https://www.asepbagja.com/${article.metadata.categories?.[0].toLowerCase()}/${article.slug}`,
+    identifier: article.slug,
+    title: article.metadata.title as string,
+    language: lang,
+  }
 
-const Discussion = ({ language }: DiscussionProps): JSX.Element => {
-  console.log(language);
   return (
-    <div className="text-center">
-      <h2>Discussion</h2>
-      <p>You can login to start discussing about </p>
-    </div>
-  )
-}
+    <DiscussionEmbed
+      shortname="asepnew"
+      config={disqusConfig}
+    />
+  );
+};
 
 export default Discussion;
