@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import { Content, Article, Language } from "@/libs/data-type";
+import { Content, Article } from "@/libs/data-type";
 import { readFromFileSystem } from "@/libs/file-fetch";
 import BaseLayout from "@/components/BaseLayout";
 import HtmlContent from "@/components/HtmlContent";
