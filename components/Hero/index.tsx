@@ -11,7 +11,7 @@ const Hero = (): ReactElement => {
       <Row>
         <Col xs={12} className="text-center">
           <Image
-            src="/img/asep.jpg"
+            src="/img/new_avatar_small.jpg"
             roundedCircle
             width={200}
             alt="Asep Bagja Priandana's photograph"
