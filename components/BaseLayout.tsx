@@ -1,17 +1,13 @@
-import Col from "react-bootstrap/Col"
-import Container from "react-bootstrap/Container"
-import Navbar from "react-bootstrap/Navbar"
-import Nav from "react-bootstrap/Nav"
-import Row from "react-bootstrap/Row"
-import Link from "next/link"
-import {
-  Github,
-  Linkedin,
-  Twitter
-} from "react-bootstrap-icons"
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import { Navbar, Nav, Row, NavDropdown } from "react-bootstrap";
+import Link from "next/link";
+import { Github, Linkedin, Twitter } from "react-bootstrap-icons";
 
-const BaseLayout = (props: any) : JSX.Element => {
-  const { children } = props
+const BaseLayout = (props: any): JSX.Element => {
+  const { children } = props;
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
 
   return (
     <>
@@ -19,16 +15,24 @@ const BaseLayout = (props: any) : JSX.Element => {
         <Container>
           <Navbar.Brand href="/">Asep Bagja</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Navbar.Collapse
+            id="basic-navbar-nav"
+            className="justify-content-end"
+          >
             <Nav className="mr-auto">
-              <Link href="/business" passHref>
-                <Nav.Link>Business</Nav.Link>
-              </Link>
-              <Link href="/personal" passHref>
-                <Nav.Link>Personal</Nav.Link>
-              </Link>
-              <Link href="/programming" passHref>
-                <Nav.Link>Programming</Nav.Link>
+              <NavDropdown title="Articles" id="collapsible-nav-dropdown">
+                <Link href="/business" passHref>
+                  <NavDropdown.Item>Business</NavDropdown.Item>
+                </Link>
+                <Link href="/personal" passHref>
+                  <NavDropdown.Item>Personal</NavDropdown.Item>
+                </Link>
+                <Link href="/programming" passHref>
+                  <NavDropdown.Item>Programming</NavDropdown.Item>
+                </Link>
+              </NavDropdown>
+              <Link href="/photos" passHref>
+                <Nav.Link>Photos</Nav.Link>
               </Link>
             </Nav>
           </Navbar.Collapse>
@@ -52,17 +56,29 @@ const BaseLayout = (props: any) : JSX.Element => {
             <Col xs={12} md={6}>
               <Nav className="justify-content-start justify-content-lg-end">
                 <Nav.Item>
-                  <Nav.Link className="text-white" href="https://github.com/bepitulaz" target="_blank">
+                  <Nav.Link
+                    className="text-white"
+                    href="https://github.com/bepitulaz"
+                    target="_blank"
+                  >
                     <Github />
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link className="text-white" href="https://twitter.com/bepitulaz" target="_blank">
+                  <Nav.Link
+                    className="text-white"
+                    href="https://twitter.com/bepitulaz"
+                    target="_blank"
+                  >
                     <Twitter />
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link className="text-white" href="https://linkedin.com/in/asepbagja" target="_blank">
+                  <Nav.Link
+                    className="text-white"
+                    href="https://linkedin.com/in/asepbagja"
+                    target="_blank"
+                  >
                     <Linkedin />
                   </Nav.Link>
                 </Nav.Item>
@@ -72,14 +88,16 @@ const BaseLayout = (props: any) : JSX.Element => {
           <Row>
             <Col>
               <div className="pt-3 mt-3 copyright-section">
-                <p className="text-center text-white fw-light">&copy; 2021 Asep Bagja Priandana</p>
+                <p className="text-center text-white fw-light">
+                  &copy; {year} Asep Bagja Priandana
+                </p>
               </div>
             </Col>
           </Row>
         </Container>
       </footer>
     </>
-  )
-}
+  );
+};
 
-export default BaseLayout
+export default BaseLayout;
