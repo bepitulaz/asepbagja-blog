@@ -47,7 +47,7 @@ export default function AboutPage(): JSX.Element {
             </Col>
             <Col xs={12} className="pt-3 text-center text-white">
               <h1>Asep Bagja Priandana</h1>
-              <p className="lead">A full-stack programmer and generalist.</p>
+              <p className="lead">I do software development for fun 🎉 and profit 💶</p>
             </Col>
           </Row>
         </Container>

@@ -20,7 +20,7 @@ const Hero = (): ReactElement => {
         <Col xs={12} className="pt-3 text-center">
           <p className="h4">Hi! I&apos;m</p>
           <h1>Asep Bagja Priandana</h1>
-          <p className="lead">A software engineer and electronic musician.</p>
+          <p className="lead">I do software development for fun 🎉 and profit 💶</p>
           <Link href="/about" passHref>
             <a className="btn btn-outline-dark btn-lg">About me</a>
           </Link>
