@@ -22,7 +22,7 @@ Gaji Eropa biaya hidup Bali. Auto sultan! Tapi, hidup tidak melulu soal uang kan
 > We can't choose where we come from, but we can choose where we go from there.<br />
 > &mdash; <cite>Stephen Chbosky, The Perks of Being a Wallflower</cite>
 
-Ada yang pernah mendengar kutipan tersebut atau kutipan serupa lainnya? Intinya adalah kita tidak pernah bisa memilih mau dilahirkan di mana atau dari rahim siapa, tapi kita selalu bisa memilih mau tumbuh dan menua di mana. Beruntung saya lahir di keluarga PNS yang selalu dipindahtugaskan setiap 3-4 tahun sekali, jadi saya tahu rasanya hidup di kota-kota yang berbeda sedari lahir. Mulai dari pulau Sumatera, Jawa, hingga Papua. Saya jadi tau setiap daerah punya keunikan dan budayanya masing-masing.
+Ada yang pernah mendengar kutipan tersebut atau kutipan serupa lainnya? Intinya adalah kita tidak pernah bisa memilih mau dilahirkan di mana atau dari rahim siapa, tapi kita selalu bisa memilih mau tumbuh dan menua di mana. Beruntung saya lahir di keluarga PNS yang selalu dipindahtugaskan setiap 3-4 tahun sekali, jadi saya tahu rasanya hidup di kota-kota yang berbeda sedari lahir. Mulai dari pulau Sumatera, Jawa, hingga Papua. Saya jadi tahu setiap daerah punya keunikan dan budayanya masing-masing.
 
 ![Luggage in the airport](/blog-img/luggage-relocation.jpg)
 
