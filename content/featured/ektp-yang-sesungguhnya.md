@@ -45,8 +45,10 @@ Inti utama dari eID ini adalah data yang terintegrasi. Jadi bukan sekadar mengub
 
 - Login dan akses seluruh layanan pemerintah seperti: mendaftarkan alamat rumah ke *population register* (semacam Disdukcapil), deklarasi pajak yang tidak sampai 5 menit, akses rekam medis, mendirikan perusahaan dalam waktu kurang dari 24 jam, membeli dan mendaftarkan kepemilikan apartemen/rumah/tanah/hutan, dan banyak lagi. Lengkapnya bisa dicek di [Eesti.ee](https://eesti.ee).
 - Login dan akses layanan perbankan. Membuka rekening bank di Estonia bisa dilakukan dari rumah (pengalaman dari bank LHV yang saya gunakan, tidak tahu kalau bank lain). Tinggal colok kartu maka semua data otomatis terisi dan kurang dari 5 menit rekening sudah bisa dipakai.
+- Sebagai kartu asuransi kesehatan milik pemerintah, seperti BPJS kalau di Indonesia.
 - Khusus untuk kota dan warga Tallinn, eID juga bisa disambungkan ke kartu transportasi umum sehingga kita bisa menikmati transportasi publik secara gratis di dalam kota Tallinn. Darimana sistem bisa tahu kalau kita warga Tallinn atau warga kota lain yang sedang jalan-jalan di Tallinn? Tentu saja dari data di *population register*. Ini lah gunanya data yang terintegrasi.
 - Beberapa supermarket juga sudah ada yang terintegrasi dengan eID, jadi untuk membuat *loyalty card* bisa hanya dengan menggunakan eID.
+- *Voting* untuk pilkada dan pemilu. Tapi ini hanya bisa dilakukan oleh warga negara Estonia, kalau sekadar ekspatriat jelas tidak bisa. 
 
 Contoh tampilan saat mau *login* ke akun bank. Tidak perlu bikin akun khusus, cukup pakai kartu ID, Mobile ID, atau Smart ID.
 
