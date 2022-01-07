@@ -62,4 +62,4 @@ Saking terintegrasinya, kalau misal baru punya anak dan bingung mau memberi nama
 
 **Kesimpulan**
 
-Jadi sebenarnya dibandingkan mengubah bentuk KTP, menurut saya akan lebih baik kalau perlu dilakukan adalah merapikan dan mengintegrasikan data terlebih dahulu. Pasti teman-teman ada yang bertanya, bagaimana kalau misalnya ada orang yang *gaptek* dan tidak mengerti cara pakai komputer atau ponsel? Itu lah gunanya kartu fisik yang memiliki *chip*, di kantor pemerintahan, bank, atau bahkan supermarket biasanya tetap ada *card reader*-nya dan pasti ada petugas yang akan membantu.
+Jadi sebenarnya dibandingkan mengubah bentuk KTP, menurut saya akan lebih baik yang pertama kali perlu dilakukan adalah merapikan dan mengintegrasikan data terlebih dahulu. Pasti teman-teman ada yang bertanya, bagaimana kalau misalnya ada orang yang *gaptek* dan tidak mengerti cara pakai komputer atau ponsel? Itu lah gunanya kartu fisik yang memiliki *chip*. Di kantor pemerintahan, bank, atau bahkan supermarket biasanya tetap ada *card reader*-nya dan pasti ada petugas yang akan membantu.
