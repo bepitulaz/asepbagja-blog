@@ -9,6 +9,7 @@ import { readFromFileSystem } from "@/libs/file-fetch";
 import BaseLayout from "@/components/BaseLayout";
 import HtmlContent from "@/components/HtmlContent";
 import Discussion from "@/components/Discussion";
+import FinancialSupport from "@/components/FinancialSupport";
 import { capitalize, markdownToHtml } from "@/libs/utilities";
 
 interface PageProps {
@@ -170,7 +171,14 @@ const ReadingPage: NextPage<PageProps> = (props) => {
               </Col>
             </Row>
           </article>
-          <section className="mt-5">
+          <section className="mt-3">
+            <Row>
+              <Col lg={{ span: 8, offset: 2 }}>
+                <FinancialSupport article={article} />
+              </Col>
+            </Row>
+          </section>
+          <section className="mt-3">
             <Row>
               <Col lg={{ span: 8, offset: 2 }}>
                 <Discussion article={article} />
