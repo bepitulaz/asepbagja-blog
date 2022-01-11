@@ -39,7 +39,11 @@ const FinancialSupport: FunctionComponent<FinancialSupportProps> = ({
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          plausible(TrackingEvent.FINANCIAL_BOX_APPEARED);
+          plausible(TrackingEvent.FINANCIAL_BOX_APPEARED, {
+            props: {
+              article: article.slug,
+            },
+          });
         }
       });
     }, {
@@ -48,7 +52,6 @@ const FinancialSupport: FunctionComponent<FinancialSupportProps> = ({
     
     if (typeof window !== undefined) {
       const observedTag = window.document.querySelector("#financialbox");
-      console.log(observedTag);
       if (observedTag) {
         observer.observe(observedTag);
       }
