@@ -31,3 +31,8 @@ export enum Category {
   PERSONAL = "personal",
   PROGRAMMING = "programming",
 }
+
+export enum TrackingEvent {
+  READ_UNTIL_END = "Read until end",
+  FINANCIAL_BOX_APPEARED = "Financial box appeared",
+}
