@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.events]);
 
   return (
-    <PlausibleProvider domain="asepbagja.com">
+    <PlausibleProvider domain="asepbagja.com" trackOutboundLinks={true}>
       <Component {...pageProps} />
     </PlausibleProvider>
   );
