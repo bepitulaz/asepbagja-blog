@@ -30,6 +30,7 @@ export enum Category {
   BUSINESS = "business",
   PERSONAL = "personal",
   PROGRAMMING = "programming",
+  MUSIC = "music",
 }
 
 export enum TrackingEvent {
