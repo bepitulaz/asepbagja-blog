@@ -27,3 +27,5 @@ Welcome to the winter wonderland.
 - [Spotify](https://open.spotify.com/album/1f5KJowOd4hOtrEN7Tp8ET?si=fMQcS8BMQ3iJEX2hAEFfmA)
 - [Apple Music](https://music.apple.com/ee/album/a-new-life-single/1604685896)
 - [YouTube Music](https://music.youtube.com/playlist?list=OLAK5uy_nWXjf6QmZYjtgZQn9vggBhEObtQ3HUvDk&feature=share)
+
+If you are interested to see the source code of A New Life. You can visit it on [my GitHub](https://github.com/bepitulaz/music-a-new-life).
