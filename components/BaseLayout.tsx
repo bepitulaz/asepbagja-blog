@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
 import Link from "next/link";
-import { Github, Linkedin, Twitter } from "react-bootstrap-icons";
+import { Github, Linkedin, Twitter, Spotify } from "react-bootstrap-icons";
 import { Category } from "@/libs/data-type";
 import { capitalize } from "@/libs/utilities";
 
@@ -55,6 +55,15 @@ const BaseLayout = (props: any): JSX.Element => {
             </Col>
             <Col xs={12} md={6}>
               <Nav className="justify-content-start justify-content-lg-end">
+                <Nav.Item>
+                  <Nav.Link
+                    className="text-white"
+                    href="https://open.spotify.com/artist/6v8f8XuEE8LPI8CHmbB0HM?si=YwcoObFyRq-eeSyEegsEDw"
+                    target="_blank"
+                  >
+                    <Spotify />
+                  </Nav.Link>
+                </Nav.Item>
                 <Nav.Item>
                   <Nav.Link
                     className="text-white"
