@@ -1,21 +1,22 @@
-import { promises as fs } from "fs"
-import path from "path"
-import matter from "gray-matter"
-import { Article, Content } from "./data-type"
+import { promises as fs } from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { Feed } from "feed";
+import { Article, Content } from "./data-type";
 
 // Get all contents from the file system
 export async function readFromFileSystem(langCode: Content) {
-  const contentDir = path.join(process.cwd(), "content", langCode)
-  const filenames = await fs.readdir(contentDir)
+  const contentDir = path.join(process.cwd(), "content", langCode);
+  const filenames = await fs.readdir(contentDir);
 
   const posts = filenames.map(async (filename) => {
-    const filePath = path.join(contentDir, filename)
-    const fileContents = await fs.readFile(filePath, "utf8")
-    const content = matter(fileContents)
+    const filePath = path.join(contentDir, filename);
+    const fileContents = await fs.readFile(filePath, "utf8");
+    const content = matter(fileContents);
 
-    let longNameLang = "English"
+    let longNameLang = "English";
     if (langCode == Content.ID) {
-      longNameLang = "Bahasa Indonesia"
+      longNameLang = "Bahasa Indonesia";
     }
 
     const post: Article = {
@@ -31,21 +32,66 @@ export async function readFromFileSystem(langCode: Content) {
         summary: content?.data?.summary ?? "",
       },
       content: content?.content,
-    }
+    };
 
-    return post
-  })
+    return post;
+  });
 
-  const articles = await Promise.all(posts)
-  const sortedArticle = articles.sort((a, b) => {
-    const bDate = b.date as any
-    const aDate = a.date as any
-    return bDate - aDate
-  }).map((post) => {
-    const postDate = post?.date as any
-    post.date = postDate?.toLocaleDateString("en-GB")
-    return post
-  })
+  const articles = await Promise.all(posts);
+  const sortedArticle = articles
+    .sort((a, b) => {
+      const bDate = b.date as any;
+      const aDate = a.date as any;
+      return bDate - aDate;
+    })
+    .map((post) => {
+      const postDate = post?.date as any;
+      post.date = postDate?.toLocaleDateString("en-GB");
+      return post;
+    });
 
-  return sortedArticle
+  return sortedArticle;
+}
+
+export function generateRSSFeed(articles: Array<Article>) {
+  const baseUrl = "https://www.asepbagja.com";
+  const author = {
+    name: "Asep Bagja Priandana",
+    email: "asep.bagja.p@gmail.com",
+    link: "https://twitter.com/bepitulaz",
+  };
+  const date = new Date();
+
+  const feed = new Feed({
+    title: "The blog of Asep Bagja",
+    description:
+      "The personal blog where Asep shares his opinion and topic that he is interested.",
+    id: baseUrl,
+    link: baseUrl,
+    language: "en", // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
+    favicon: `${baseUrl}/favicon.ico`,
+    copyright: `All rights reserved 2014-${date.getFullYear()}, ${author.name}`,
+    updated: date, // optional, default = today
+    generator: "The blog of Asep Bagja", // optional, default = 'Feed for Node.js'
+    feedLinks: {
+      rss2: `${baseUrl}/rss.xml`,
+    },
+    author,
+  });
+
+  articles.forEach((article) => {
+    const category = article.metadata?.categories?.[0] || "";
+    feed.addItem({
+      title: article.metadata?.title || "",
+      id: `${baseUrl}/${category.toLowerCase()}/${article.slug}`,
+      link: `${baseUrl}/${category.toLowerCase()}/${article.slug}`,
+      description: article.metadata?.summary || "",
+      content: article?.content || "",
+      author: [author],
+      date: article?.date ? new Date(article.date) : date,
+    });
+  });
+
+  // Write the RSS output to a public file
+  fs.writeFile("public/rss.xml", feed.rss2());
 }

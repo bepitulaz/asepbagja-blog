@@ -10,6 +10,7 @@ import { capitalize } from "@/libs/utilities";
 
 const BaseLayout = (props: any): JSX.Element => {
   const { children } = props;
+  const date = new Date();
 
   return (
     <div className="flex-wrapper">
@@ -98,7 +99,7 @@ const BaseLayout = (props: any): JSX.Element => {
             <Col>
               <div className="pt-3 mt-3 copyright-section">
                 <p className="text-center text-white fw-light">
-                  &copy; 2021 Asep Bagja Priandana
+                  &copy; 2014-{date.getFullYear()} Asep Bagja Priandana
                 </p>
               </div>
             </Col>

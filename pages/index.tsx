@@ -9,12 +9,15 @@ import BaseLayout from "../components/BaseLayout";
 import Hero from "../components/Hero";
 import PodcastCard from "../components/PodcastCard";
 import { Content } from "../libs/data-type";
-import { readFromFileSystem } from "../libs/file-fetch";
+import { readFromFileSystem, generateRSSFeed } from "../libs/file-fetch";
 
 export const getStaticProps: GetStaticProps = async () => {
   const idPosts = await readFromFileSystem(Content.ID);
   const enPosts = await readFromFileSystem(Content.EN);
   const featuredPosts = await readFromFileSystem(Content.FEATURED);
+
+  const articlesForRSS = featuredPosts.concat(enPosts).concat(idPosts);
+  generateRSSFeed(articlesForRSS);
 
   return {
     props: {
