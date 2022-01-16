@@ -81,6 +81,16 @@ export function generateRSSFeed(articles: Array<Article>) {
 
   articles.forEach((article) => {
     const category = article.metadata?.categories?.[0] || "";
+    
+    let theDate;
+    if(article.date) {
+      const dateSplit = article.date.split("/");
+      const year = parseInt(dateSplit[2]);
+      const month = parseInt(dateSplit[1]);
+      const day = parseInt(dateSplit[0]);
+      theDate = new Date(year, month, day);
+    }
+    
     feed.addItem({
       title: article.metadata?.title || "",
       id: `${baseUrl}/${category.toLowerCase()}/${article.slug}`,
