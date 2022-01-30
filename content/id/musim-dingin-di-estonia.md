@@ -65,6 +65,7 @@ Kini saya sudah punya aturan sendiri untuk lapisan berpakaian saat musim dingin,
 2. Suhu antara -10°C sampai sekitar -6°C. Biasanya celana panjang saya lapis dengan celana dalam yang panjang juga tentu saja bukan bahan katun. Kepala menggunakan topi dari wool. Untuk pakaian atas biasanya saya tambah satu lapis sweater berbahan merino wool atau regular wool. Sarung tangan dari wool sudah wajib dipakai karena terekspos udara dingin beberapa menit saja, ujung jari bisa terasa sakit seperti ditusuk-tusuk jarum.
 3. Suhu di bawah -10°C tetap sama seperti di atas, karena tidak terasa juga bedanya. Badan sudah terasa hangat selama kulit selain muka tidak terekspos udara dingin.
 4. Di bawah -20°C saya belum pernah merasakan. Sepertinya harus keluar dari Tallinn untuk bisa merasakan suhu segitu. Setahu saya, wilayah Estonia bagian timur sempat mencatat suhu -30°C di bulan November 2021 kemarin.
+5. Untuk alas kaki, berapapun suhunya di musim dingin saya selalu pakai sepatu boot yang tahan air dan memiliki insulasi yang baik. Jangan lupa menggunakan kaos kaki dengan bahan selain katun.
 
 Bagaimana? Apakah kamu ingin mencoba pindah ke negara dingin? Jika ya, mungkin artikel saya sebelumnya bisa membantu kamu untuk [mendapatkan pekerjaan di negara-negara wilayah utara](/personal/mencari-kerja-di-luar-negeri).
 
