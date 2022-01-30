@@ -5,7 +5,7 @@ images:
 - "/blog-img/kadriorg-winter.jpg"
 categories:
 - Personal
-summary: "Hal-hal yang saya pelajari dari musim dingin pertama saya di Estonia."
+summary: "Hal penting yang saya pelajari dari musim dingin pertama saya di Estonia."
 ---
 
 Untuk orang seperti saya yang menghabiskan 30 tahun lebih tinggal di negara tropis dengan suhu di antara 28°C-35°C, pindah ke Estonia itu benar-benar mengubah cara hidup. Saya harus belajar dari awal cara menghadapi iklim 4 musim yang ekstrim. Apalagi Estonia terletak cukup jauh di utara. Walaupun tidak sejauh Finlandia, Swedia, atau Norwegia, musim dingin di Estonia termasuk sangat dingin.
