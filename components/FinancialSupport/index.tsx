@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect } from "react";
 import { Language, Content, Article, TrackingEvent } from "@/libs/data-type";
 import Button from "react-bootstrap/Button";
-import { CashStack } from "react-bootstrap-icons";
+import { EnvelopeCheck } from "react-bootstrap-icons";
 import { usePlausible } from "next-plausible";
 import styles from "./FinancialSupport.module.css";
 
@@ -11,20 +11,20 @@ interface FinancialSupportProps {
 
 const LANGUAGE = {
   [Content.EN]: {
-    title: "Give a tip for Asep",
+    title: "The newsletter from 59°",
     description:
-      "If you like my content, you can give a little tip for me and support my writing.",
-    paymentLink: "https://buy.stripe.com/7sI5nugP63C53WUbII",
-    buttonDescription: "Tip him now",
-    paymentDescription: "Your payment will be processed by Stripe",
+      "If you like my content, you can subscribe to my newsletter to get updates regularly. It's free!",
+    paymentLink: "https://www.getrevue.co/profile/bepitulaz",
+    buttonDescription: "Subscribe now!",
+    paymentDescription: "You'll be redirected to Asep's revue profile.",
   },
   [Content.ID]: {
-    title: "Tip untuk Asep",
+    title: "The newsletter from 59°",
     description:
-      "Jika kamu senang dengan konten saya, kamu bisa beri sedikit tip untuk mendukung tulisan saya.",
-    paymentLink: "https://buy.stripe.com/14kg288iA8Wp6527st",
-    buttonDescription: "Beri dia tip sekarang",
-    paymentDescription: "Pembayaranmu akan diproses oleh Stripe",
+      "Jika kamu senang dengan tulisan saya, kamu bisa berlangganan newsletter saya untuk mendapatkan konten secara reguler. Gratis!",
+    paymentLink: "https://www.getrevue.co/profile/bepitulaz",
+    buttonDescription: "Berlangganan sekarang!",
+    paymentDescription: "Kamu akan dialihkan ke profil revue Asep.",
   },
 };
 
@@ -61,10 +61,10 @@ const FinancialSupport: FunctionComponent<FinancialSupportProps> = ({
   return (
     <div id="financialbox" className={styles.financialSupportBox}>
       <h5>{LANGUAGE[lang].title}</h5>
-      <p>{LANGUAGE[lang].description}</p>
+      <p className="px-5">{LANGUAGE[lang].description}</p>
       <div className="mt-2">
         <Button href={LANGUAGE[lang].paymentLink} variant="primary" size="lg">
-          <CashStack size={25} className="pb-1" />{" "}
+          <EnvelopeCheck size={25} className="pb-1" />{" "}
           <span>{LANGUAGE[lang].buttonDescription}</span>
         </Button>
         <p className={styles.paymentText}>
