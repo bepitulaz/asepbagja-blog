@@ -4,40 +4,24 @@
         <title>The blog of Asep Bagja</title>
         <link>https://www.asepbagja.com</link>
         <description>The personal blog where Asep shares his opinion and topic that he is interested.</description>
-        <lastBuildDate>Sun, 06 Feb 2022 17:16:54 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 06 Feb 2022 18:44:33 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The blog of Asep Bagja</generator>
         <language>en</language>
         <copyright>All rights reserved 2014-2022, Asep Bagja Priandana</copyright>
         <item>
-            <title><![CDATA[Single: A New Life]]></title>
-            <link>https://www.asepbagja.com/music/a-new-life-singles</link>
-            <guid>https://www.asepbagja.com/music/a-new-life-singles</guid>
-            <pubDate>Fri, 30 Sep 2022 21:00:00 GMT</pubDate>
-            <description><![CDATA[My first music single is out. Listen it on your favourite streaming service.]]></description>
+            <title><![CDATA[Kehidupan yang Sangat Efisien di Estonia]]></title>
+            <link>https://www.asepbagja.com/estonia/kehidupan-yang-efisien-estonia</link>
+            <guid>https://www.asepbagja.com/estonia/kehidupan-yang-efisien-estonia</guid>
+            <pubDate>Wed, 01 Jun 2022 21:00:00 GMT</pubDate>
+            <description><![CDATA[Gegar budaya melihat kehidupan yang sangat efektif dan efisien di Estonia.]]></description>
             <content:encoded><![CDATA[
-<iframe src="https://open.spotify.com/embed/album/1f5KJowOd4hOtrEN7Tp8ET?utm_source=generator" width="100%" height="160" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+Estonia sebuah negara dengan jumlah populasi yang sangat kecil, hanya sekitar 1,3 juta orang menurut survey tahun 2020. Di Tallinn sendiri menurut survey tahun 2021, populasi penduduk hanya 444.532, artinya 33% penduduk Estonia terpusat di ibukota sisanya tersebar di kota-kota lain. Menurut statistik hanya ada 2 kota lain selain Tallinn yang memiliki populasi penduduk di atas 50 ribu orang, yaitu Tartu (93 ribu) dan Narva (57 ribu). Sedangkan jumlah kota di Estonia sendiri ada 47. Terbayang kan betapa sepinya suasana kota-kota di Estonia jika dibandingkan dengan kota-kota di Indonesia.
 
-Inspired by the life-changing experience of moving abroad, I wrote and released my first electronic ambient music single: A New Life. I can say that A New Life is a programmable and generative music single because the music is programmed by using JavaScript, a computer programming language. All melodies that you hear are coming from real-life data. A New Life consists of 2 tracks.
-
-**1. Human Migration**
-
-This almost 6 minutes song tells the story of my family's flight from Denpasar to Tallinn. I did field recording during the flight from Denpasar to Jakarta. That's why you will hear the pilot and the ambient of the cabin sound of Garuda Indonesia GA407 in this track. The melody comes from the aircraft speed and altitude data of Turkish Airlines TK1423 from Istanbul to Tallinn.
-
-**2. Tallinn In December**
-
-I can say that this song is unique. Absolutely. Because the melody comes from the real-time hourly weather forecast of Tallinn in December. If I need to perform this song later, the musical notes will not be the same. The magical winter atmosphere of Tallinn inspires me to write this song. 
-
-Welcome to the winter wonderland.
-
-**Listen to "A New Life" at**
-
-- [Spotify](https://open.spotify.com/album/1f5KJowOd4hOtrEN7Tp8ET?si=fMQcS8BMQ3iJEX2hAEFfmA)
-- [Apple Music](https://music.apple.com/ee/album/a-new-life-single/1604685896)
-- [YouTube Music](https://music.youtube.com/playlist?list=OLAK5uy_nWXjf6QmZYjtgZQn9vggBhEObtQ3HUvDk&feature=share)
-
-If you are interested to see the source code of A New Life. You can visit it on [my GitHub](https://github.com/bepitulaz/music-a-new-life).
-]]></content:encoded>
+<figure class="figure">
+<img src="/blog-img/shopping-in-estonia.jpg" class="figure-img img-fluid" alt="Women with groceries." />
+<figcaption class="figure-caption text-center">Seorang wanita yang sedang berjalan di bawah hujan salju</figcaption>
+</figure>]]></content:encoded>
             <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
         </item>
         <item>
@@ -140,6 +124,37 @@ virtualInput.on("clock", () => {
 The code above is the skeleton to compose the music and sync Node.js scripts with the sequencer in DAW. Now, you can read and play with the complete source code in [A New Life's Github repository](https://github.com/bepitulaz/music-a-new-life).
 
 Please, check the [MIDI specification](https://midi.org/specifications) for the additional resource.]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Single: A New Life]]></title>
+            <link>https://www.asepbagja.com/music/a-new-life-singles</link>
+            <guid>https://www.asepbagja.com/music/a-new-life-singles</guid>
+            <pubDate>Fri, 30 Sep 2022 21:00:00 GMT</pubDate>
+            <description><![CDATA[My first music single is out. Listen it on your favourite streaming service.]]></description>
+            <content:encoded><![CDATA[
+<iframe src="https://open.spotify.com/embed/album/1f5KJowOd4hOtrEN7Tp8ET?utm_source=generator" width="100%" height="160" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+Inspired by the life-changing experience of moving abroad, I wrote and released my first electronic ambient music single: A New Life. I can say that A New Life is a programmable and generative music single because the music is programmed by using JavaScript, a computer programming language. All melodies that you hear are coming from real-life data. A New Life consists of 2 tracks.
+
+**1. Human Migration**
+
+This almost 6 minutes song tells the story of my family's flight from Denpasar to Tallinn. I did field recording during the flight from Denpasar to Jakarta. That's why you will hear the pilot and the ambient of the cabin sound of Garuda Indonesia GA407 in this track. The melody comes from the aircraft speed and altitude data of Turkish Airlines TK1423 from Istanbul to Tallinn.
+
+**2. Tallinn In December**
+
+I can say that this song is unique. Absolutely. Because the melody comes from the real-time hourly weather forecast of Tallinn in December. If I need to perform this song later, the musical notes will not be the same. The magical winter atmosphere of Tallinn inspires me to write this song. 
+
+Welcome to the winter wonderland.
+
+**Listen to "A New Life" at**
+
+- [Spotify](https://open.spotify.com/album/1f5KJowOd4hOtrEN7Tp8ET?si=fMQcS8BMQ3iJEX2hAEFfmA)
+- [Apple Music](https://music.apple.com/ee/album/a-new-life-single/1604685896)
+- [YouTube Music](https://music.youtube.com/playlist?list=OLAK5uy_nWXjf6QmZYjtgZQn9vggBhEObtQ3HUvDk&feature=share)
+
+If you are interested to see the source code of A New Life. You can visit it on [my GitHub](https://github.com/bepitulaz/music-a-new-life).
+]]></content:encoded>
             <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
         </item>
         <item>
@@ -1631,15 +1646,24 @@ Setelah membaca utas tersebut, saya jadi ingin berbagi pengalaman soal bagaimana
 
 Bentuk utama dari eID itu ya kartu fisik yang ada *chip*-nya di bagian belakang. Persis seperti kartu ATM.
 
-![ID card bagian depan](/blog-img/eid-estonia.jpg)
+<figure class="figure">
+<img src="/blog-img/eid-estonia.jpg" class="figure-img img-fluid" alt="eID bagian depan" />
+<figcaption class="figure-caption text-center">Kartu ID Estonia bagian depan</figcaption>
+</figure>
 
 Lalu fungsi *chip*-nya apa? Apakah sekadar buat gaya-gayaan? Tentu saja tidak. Jadi kartu ID Estonia itu bisa dibaca dengan menggunakan *card reader* USB yang disambungkan ke komputer. Seperti ini penampakannya ketika sedang digunakan.
 
-![ID card saat digunakan](/blog-img/eid-estonia-back.jpg)
+<figure class="figure">
+<img src="/blog-img/eid-estonia-back.jpg" class="figure-img img-fluid" alt="eID bagian belakang" />
+<figcaption class="figure-caption text-center">Kartu ID Estonia saat digunakan</figcaption>
+</figure>
 
 Nama program untuk membaca kartunya adalah DigiDoc4 Client, ini aplikasi resmi dari pemerintah yang bisa diunduh dari situs [id.ee](https://id.ee). Penampakannya seperti ini.
 
-![DigiDoc4 Client](/blog-img/digidoc-1.jpg)
+<figure class="figure">
+<img src="/blog-img/digidoc-1.jpg" class="figure-img img-fluid" alt="DigiDoc4 Client" />
+<figcaption class="figure-caption text-center">Aplikasi DigiDoc4 untuk membaca kartu ID Estonia</figcaption>
+</figure>
 
 Di program ini, kita bisa mengganti PIN 1 yang biasanya digunakan untuk *login* ke berbagai layanan online milik pemerintah atau pun milik swasta yang sudah terintegrasi dengan eID. Lalu kita juga bisa mengganti PIN 2 yang biasanya digunakan untuk menandatangani dokumen-dokumen resmi baik untuk keperluan dengan kantor pemerintahan atau pun untuk keperluan bisnis dan personal. Jadi di Estonia, tandatangan secara digital jauh lebih kuat dibanding tandatangan menggunakan pena. Karena tandatangan digital sulit dipalsukan. Sedangkan PUK adalah semacam *master password* kalau perlu melakukan *reset* PIN 1 dan PIN 2. Kalau PUK ini sampai hilang, dengan terpaksa harus diurus lagi ke kantor pemerintah untuk minta PUK yang baru. 
 
@@ -1660,15 +1684,24 @@ Inti utama dari eID ini adalah data yang terintegrasi. Jadi bukan sekadar mengub
 
 Contoh tampilan saat mau *login* ke akun bank. Tidak perlu bikin akun khusus, cukup pakai kartu ID, Mobile ID, atau Smart ID.
 
-![LHV Login](/blog-img/lhv-login.jpg)
+<figure class="figure">
+<img src="/blog-img/lhv-login.jpg" class="figure-img img-fluid" alt="LHV login screen" />
+<figcaption class="figure-caption text-center">eID bisa digunakan untuk masuk ke aplikasi perbankan</figcaption>
+</figure>
 
 Selain untuk mengakses layanan, eID juga digunakan untuk menandatangani aneka macam dokumen resmi. Aplikasinya menggunakan DigiDoc4 Client juga. Seperti ini penampakannya, kita bisa memilih untuk menandatangani dokumen dengan menggunakan kartu, Mobile ID, atau Smart ID. Jadi berkas dokumen yang mau ditandatangani, kita masukkan ke DigiDoc4 Client, tandatangani dengan eID, lalu aplikasi akan menghasilkan berkas dengan format ".asice". Berkas berformat ".asice" ini lah yang kita kirimkan ke orang-orang. Jika ada lebih dari satu orang yang harus menandatangani, ya berkas ".asice" ini tinggal dibuka pakai DigiDoc4 Client lalu orang kedua, ketiga, dan seterusnya menggunakan eID masing-masing untuk membubuhkan tandatangannya (sertifikat digital).
 
-![Digidoc4 Signature](/blog-img/digidoc-2.jpg)
+<figure class="figure">
+<img src="/blog-img/digidoc-2.jpg" class="figure-img img-fluid" alt="DigiDoc4 signature" />
+<figcaption class="figure-caption text-center">Menandatangani dokumen dengan menggunakan eID</figcaption>
+</figure>
 
 Saking terintegrasinya, kalau misal baru punya anak dan bingung mau memberi nama anak yang tidak pasaran, kita bisa cek di *population register* ada berapa orang di Estonia yang memiliki nama yang sama 😅 
 
-![Population name](/blog-img/population-names.jpg)
+<figure class="figure">
+<img src="/blog-img/population-names.jpg" class="figure-img img-fluid" alt="Population registry" />
+<figcaption class="figure-caption text-center">Mencari seberapa banyak nama tertentu di basis data populasi</figcaption>
+</figure>
 
 **Kesimpulan**
 
