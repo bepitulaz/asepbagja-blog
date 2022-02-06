@@ -2,9 +2,12 @@
 title: "E-KTP Yang Sesungguhnya Itu Seperti Apa?" 
 date: 2022-01-07
 categories:
-- Personal
+- Estonia
 images:
 - "/blog-img/eid-estonia.jpg"
+aliases:
+- /personal/ektp-yang-sesungguhnya
+- /personal/ektp-yang-sesungguhnya/
 summary: "Penerapan E-KTP atau eID di Estonia, seperti apa bentuknya?"
 lang: "Bahasa Indonesia"
 ---
@@ -23,15 +26,24 @@ Setelah membaca utas tersebut, saya jadi ingin berbagi pengalaman soal bagaimana
 
 Bentuk utama dari eID itu ya kartu fisik yang ada *chip*-nya di bagian belakang. Persis seperti kartu ATM.
 
-![ID card bagian depan](/blog-img/eid-estonia.jpg)
+<figure class="figure">
+<img src="/blog-img/eid-estonia.jpg" class="figure-img img-fluid" alt="eID bagian depan" />
+<figcaption class="figure-caption text-center">Kartu ID Estonia bagian depan</figcaption>
+</figure>
 
 Lalu fungsi *chip*-nya apa? Apakah sekadar buat gaya-gayaan? Tentu saja tidak. Jadi kartu ID Estonia itu bisa dibaca dengan menggunakan *card reader* USB yang disambungkan ke komputer. Seperti ini penampakannya ketika sedang digunakan.
 
-![ID card saat digunakan](/blog-img/eid-estonia-back.jpg)
+<figure class="figure">
+<img src="/blog-img/eid-estonia-back.jpg" class="figure-img img-fluid" alt="eID bagian belakang" />
+<figcaption class="figure-caption text-center">Kartu ID Estonia saat digunakan</figcaption>
+</figure>
 
 Nama program untuk membaca kartunya adalah DigiDoc4 Client, ini aplikasi resmi dari pemerintah yang bisa diunduh dari situs [id.ee](https://id.ee). Penampakannya seperti ini.
 
-![DigiDoc4 Client](/blog-img/digidoc-1.jpg)
+<figure class="figure">
+<img src="/blog-img/digidoc-1.jpg" class="figure-img img-fluid" alt="DigiDoc4 Client" />
+<figcaption class="figure-caption text-center">Aplikasi DigiDoc4 untuk membaca kartu ID Estonia</figcaption>
+</figure>
 
 Di program ini, kita bisa mengganti PIN 1 yang biasanya digunakan untuk *login* ke berbagai layanan online milik pemerintah atau pun milik swasta yang sudah terintegrasi dengan eID. Lalu kita juga bisa mengganti PIN 2 yang biasanya digunakan untuk menandatangani dokumen-dokumen resmi baik untuk keperluan dengan kantor pemerintahan atau pun untuk keperluan bisnis dan personal. Jadi di Estonia, tandatangan secara digital jauh lebih kuat dibanding tandatangan menggunakan pena. Karena tandatangan digital sulit dipalsukan. Sedangkan PUK adalah semacam *master password* kalau perlu melakukan *reset* PIN 1 dan PIN 2. Kalau PUK ini sampai hilang, dengan terpaksa harus diurus lagi ke kantor pemerintah untuk minta PUK yang baru. 
 
@@ -52,15 +64,24 @@ Inti utama dari eID ini adalah data yang terintegrasi. Jadi bukan sekadar mengub
 
 Contoh tampilan saat mau *login* ke akun bank. Tidak perlu bikin akun khusus, cukup pakai kartu ID, Mobile ID, atau Smart ID.
 
-![LHV Login](/blog-img/lhv-login.jpg)
+<figure class="figure">
+<img src="/blog-img/lhv-login.jpg" class="figure-img img-fluid" alt="LHV login screen" />
+<figcaption class="figure-caption text-center">eID bisa digunakan untuk masuk ke aplikasi perbankan</figcaption>
+</figure>
 
 Selain untuk mengakses layanan, eID juga digunakan untuk menandatangani aneka macam dokumen resmi. Aplikasinya menggunakan DigiDoc4 Client juga. Seperti ini penampakannya, kita bisa memilih untuk menandatangani dokumen dengan menggunakan kartu, Mobile ID, atau Smart ID. Jadi berkas dokumen yang mau ditandatangani, kita masukkan ke DigiDoc4 Client, tandatangani dengan eID, lalu aplikasi akan menghasilkan berkas dengan format ".asice". Berkas berformat ".asice" ini lah yang kita kirimkan ke orang-orang. Jika ada lebih dari satu orang yang harus menandatangani, ya berkas ".asice" ini tinggal dibuka pakai DigiDoc4 Client lalu orang kedua, ketiga, dan seterusnya menggunakan eID masing-masing untuk membubuhkan tandatangannya (sertifikat digital).
 
-![Digidoc4 Signature](/blog-img/digidoc-2.jpg)
+<figure class="figure">
+<img src="/blog-img/digidoc-2.jpg" class="figure-img img-fluid" alt="DigiDoc4 signature" />
+<figcaption class="figure-caption text-center">Menandatangani dokumen dengan menggunakan eID</figcaption>
+</figure>
 
 Saking terintegrasinya, kalau misal baru punya anak dan bingung mau memberi nama anak yang tidak pasaran, kita bisa cek di *population register* ada berapa orang di Estonia yang memiliki nama yang sama 😅 
 
-![Population name](/blog-img/population-names.jpg)
+<figure class="figure">
+<img src="/blog-img/population-names.jpg" class="figure-img img-fluid" alt="Population registry" />
+<figcaption class="figure-caption text-center">Mencari seberapa banyak nama tertentu di basis data populasi</figcaption>
+</figure>
 
 **Kesimpulan**
 

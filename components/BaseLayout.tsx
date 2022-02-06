@@ -1,8 +1,4 @@
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Row from "react-bootstrap/Row";
+import { Col, Container, NavDropdown, Navbar, Nav, Row } from "react-bootstrap";
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Spotify } from "react-bootstrap-icons";
 import { Category } from "@/libs/data-type";
@@ -29,12 +25,17 @@ const BaseLayout = (props: any): JSX.Element => {
               <Link href={`/${Category.MUSIC}`} passHref>
                 <Nav.Link>{capitalize(Category.MUSIC)}</Nav.Link>
               </Link>
-              <Link href={`/${Category.PERSONAL}`} passHref>
-                <Nav.Link>{capitalize(Category.PERSONAL)}</Nav.Link>
-              </Link>
               <Link href={`/${Category.PROGRAMMING}`} passHref>
                 <Nav.Link>{capitalize(Category.PROGRAMMING)}</Nav.Link>
               </Link>
+              <NavDropdown title="Life" id="basic-nav-dropdown">
+                <Link href={`/${Category.ESTONIA}`} passHref>
+                  <NavDropdown.Item>Estonia</NavDropdown.Item>
+                </Link>
+                <Link href={`/${Category.PERSONAL}`} passHref>
+                  <NavDropdown.Item>Personal</NavDropdown.Item>
+                </Link>
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -4,7 +4,10 @@ date: 2022-01-23
 images:
 - "/blog-img/kadriorg-winter.jpg"
 categories:
-- Personal
+- Estonia
+aliases:
+- /personal/musim-dingin-di-estonia
+- /personal/musim-dingin-di-estonia/
 summary: "Hal penting yang saya pelajari dari musim dingin pertama saya di Estonia."
 ---
 

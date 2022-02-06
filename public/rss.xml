@@ -4,7 +4,7 @@
         <title>The blog of Asep Bagja</title>
         <link>https://www.asepbagja.com</link>
         <description>The personal blog where Asep shares his opinion and topic that he is interested.</description>
-        <lastBuildDate>Mon, 31 Jan 2022 16:35:05 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 06 Feb 2022 17:16:54 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The blog of Asep Bagja</generator>
         <language>en</language>
@@ -1537,8 +1537,8 @@ P.S. because of Clojure, now I can adapt the functional programming paradigm als
         </item>
         <item>
             <title><![CDATA[Beradaptasi dengan Cuaca Dingin di Estonia]]></title>
-            <link>https://www.asepbagja.com/personal/musim-dingin-di-estonia</link>
-            <guid>https://www.asepbagja.com/personal/musim-dingin-di-estonia</guid>
+            <link>https://www.asepbagja.com/estonia/musim-dingin-di-estonia</link>
+            <guid>https://www.asepbagja.com/estonia/musim-dingin-di-estonia</guid>
             <pubDate>Invalid Date</pubDate>
             <description><![CDATA[Hal penting yang saya pelajari dari musim dingin pertama saya di Estonia.]]></description>
             <content:encoded><![CDATA[
@@ -1612,8 +1612,8 @@ Bagaimana? Apakah kamu ingin mencoba pindah ke negara dingin? Jika ya, mungkin a
         </item>
         <item>
             <title><![CDATA[E-KTP Yang Sesungguhnya Itu Seperti Apa?]]></title>
-            <link>https://www.asepbagja.com/personal/ektp-yang-sesungguhnya</link>
-            <guid>https://www.asepbagja.com/personal/ektp-yang-sesungguhnya</guid>
+            <link>https://www.asepbagja.com/estonia/ektp-yang-sesungguhnya</link>
+            <guid>https://www.asepbagja.com/estonia/ektp-yang-sesungguhnya</guid>
             <pubDate>Thu, 30 Jun 2022 21:00:00 GMT</pubDate>
             <description><![CDATA[Penerapan E-KTP atau eID di Estonia, seperti apa bentuknya?]]></description>
             <content:encoded><![CDATA[

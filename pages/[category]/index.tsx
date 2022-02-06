@@ -30,6 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       { params: { category: Category.PERSONAL } },
       { params: { category: Category.PROGRAMMING } },
       { params: { category: Category.MUSIC } },
+      { params: { category: Category.ESTONIA } },
     ],
     fallback: true,
   };

@@ -16,7 +16,7 @@ const LANGUAGE = {
       "If you like my content, you can subscribe to my newsletter to get updates regularly. It's free!",
     paymentLink: "https://www.getrevue.co/profile/bepitulaz",
     buttonDescription: "Subscribe now!",
-    paymentDescription: "You'll be redirected to Asep's revue profile.",
+    paymentDescription: "You'll be redirected to Asep's Revue profile.",
   },
   [Content.ID]: {
     title: "The newsletter from 59°",
@@ -24,7 +24,7 @@ const LANGUAGE = {
       "Jika kamu senang dengan tulisan saya, kamu bisa berlangganan newsletter saya untuk mendapatkan konten secara reguler. Gratis!",
     paymentLink: "https://www.getrevue.co/profile/bepitulaz",
     buttonDescription: "Berlangganan sekarang!",
-    paymentDescription: "Kamu akan dialihkan ke profil revue Asep.",
+    paymentDescription: "Kamu akan dialihkan ke profil Revue Asep.",
   },
 };
 
