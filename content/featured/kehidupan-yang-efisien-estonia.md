@@ -37,7 +37,7 @@ Berbelanja di supermarket di Estonia, jangan harap akan mendapat sambutan hangat
 2. Ambil keranjang
 3. Pindai barcode, bayar, dan mengepak barang sendiri di area *iseteeninduskassa* (mesin kasir otomatis).
 
-Kalau di supermarket besar seperti Rimi Hyper atau Prisma malah biasanya ada 3 jenis kasir *puldikassa* (kasir remote), *iseteeninduskassa* (kasir mesin swayalan), dan kasir manusia. Tapi biasanya jalur kasir manusia ini hanya sedikit, paling satu atau dua lajur. Kasir manuasia biasanya digunakan kalau kasir-kasir otomatis sedang ramai pengunjung atau ada gangguan sistem.
+Kalau di supermarket besar seperti Rimi Hyper atau Prisma malah biasanya ada 3 jenis kasir *puldikassa* (kasir remote), *iseteeninduskassa* (kasir mesin swayalan), dan kasir manusia. Tapi biasanya jalur kasir manusia ini hanya sedikit, paling satu atau dua lajur. Kasir manusia biasanya digunakan kalau kasir-kasir otomatis sedang ramai pengunjung atau ada gangguan sistem.
 
 Berbelanja dengan menggunakan jalur *puldikassa* jauh lebih efisien lagi dibandingkan *iseteeninduskassa*, sayangnya sistem ini hanya bisa digunakan jika kita sudah menjadi penduduk resmi dan punya eID (KTP). [KTP di Estonia sudah terintegrasi ke mana-mana](/estonia/ektp-yang-sesungguhnya) seperti yang pernah saya tulis di artikel sebelumnya.
 
@@ -62,7 +62,7 @@ Terakhir jika sudah selesai, tinggal datang ke mesin pembayaran dan transfer daf
 <figcaption class="figure-caption text-center">Bayar dan kemasi barang belanjaan di sini.</figcaption>
 </figure>
 
-Tidak ada yang mengawasi. Jadi kalau kamu mau mencuri, misalnya ambil 5 barang tapi hanya bayar 2 barang tidak akan ada yang tahu. Sayangnya orang-orang di sini sangat jujur, jadi tidak ada yang melakukan itu.
+Tidak ada yang mengawasi. Jadi kalau kamu mau mencuri, misalnya ambil 5 barang tapi hanya bayar 2 barang tidak akan ada yang tahu. Sayangnya orang-orang di sini sangat jujur, jadi tidak ada yang melakukan itu. Kenapa saya bisa bilang begitu? Karena jika banyak yang tidak jujur, saya yakin sistem serba otomatis tanpa pengawasan ini tidak akan bisa bertahan lama.
 
 ### Menonton film di bioskop
 
