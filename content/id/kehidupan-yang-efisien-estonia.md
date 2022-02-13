@@ -74,6 +74,19 @@ Tidak ada yang mengawasi. Jadi kalau kamu mau mencuri, misalnya ambil 5 barang t
 
 Tak cuma di supermarket, menonton film di bioskop pun juga semua dilakukan secara mandiri. Untuk membeli tiket, caranya bisa dengan membeli lewat website bioskop atau dengan datang langsung dan membelinya di mesin tiket. Lalu sebelum masuk ke ruangan, kita hanya perlu pindai kode QR di tiket ke mesin agar bisa masuk. Satu-satunya kesempatan bertemu petugas bioskop hanya ketika membeli makanan atau minuman, karena kasirnya tetap manusia.
 
+### Menerima dan mengirim surat/paket
+
+<figure class="figure">
+<img src="/blog-img/smartpost-itella.jpg" class="figure-img img-fluid" alt="Pakkiautomat" />
+<figcaption class="figure-caption text-center">Terima kode untuk membuka paket via SMS, lalu ambil paket di mesin.</figcaption>
+</figure>
+
+Di Estonia terutama di Tallinn, kita bisa menemukan banyak sekali mesin pengirim dan penerima paket atau surat di mana-mana. Mesin-mesin ini dimiliki oleh beberapa perusahaan seperti Omniva (kantor pos milik Estonia), Smartpost Itella (Finlandia), DPD, dan DHL. Jadi untuk menerima paket di Estonia biasanya ada dua cara. Jika ukurannya besar, maka paket akan dikirim langsung ke alamat rumah. Repotnya adalah kita harus siap siaga berada di rumah untuk menerima. Tentu saja sebelum kurir menuju rumah biasanya sistem pengiriman akan memberi tahu via SMS atau kurir akan menelepon terlebih dahulu. Masalahnya para kurir ini biasanya tidak fasih bahasa Inggris, jadi mereka akan menghubungi dengan menggunakan bahasa Estonia atau Rusia.
+
+Cara paling nyaman untuk menerima paket atau surat yang berukuran kecil adalah dengan meminta mereka mengantarkan ke mesin penerima. Jadi kita tidak perlu harus bersiaga di rumah. Biasanya kalau kita memesan barang berukuran kecil, sehari sebelum barang tersebut sampai maka sistem akan bertanya via SMS untuk memastikan barang mau dikirim ke alamat atau ke mesin. Jika kita pilih mesin, maka setelah barang diletakkan oleh kurir kita otomatis akan mendapat nomor kode untuk membuka loker
+
+Tidak cuma untuk menerima, mesin-mesin ini pun bisa dipakai untuk mengirim paket atau surat, agar kita tidak perlu datang ke kantor perusahaan pengiriman. Caranya dengan mengakses situs milik perusahaan lalu pilih mau memasukkan di mesin di area mana, lalu kita membayar biayanya secara *online*, setelah itu kita akan mendapat nomor akses untuk membuka loker di mesin yang sudah kita pilih.
+
 ### Penutup
 
 Sepertinya jumlah penduduk yang sangat sedikit membuat pemerintah, pengusaha, dan warga Estonia jadi sangat berpikir bagaimana caranya memanfaatkan teknologi untuk menunjang kehidupan sehari-hari dan meningkatkan ekonomi negara. Ditambah budaya warga yang sangat menjunjung tinggi kejujuran membuat sistem ini menjadi sangat berjalan.
