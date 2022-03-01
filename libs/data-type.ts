@@ -26,11 +26,19 @@ export enum Language {
   ID = "Bahasa Indonesia",
 }
 
-export enum Category {
+export enum CategoryEN {
   BUSINESS = "business",
   PERSONAL = "personal",
   PROGRAMMING = "programming",
   MUSIC = "music",
+  ESTONIA = "estonia",
+}
+
+export enum CategoryID {
+  BUSINESS = "bisnis",
+  PERSONAL = "pribadi",
+  PROGRAMMING = "pemrograman",
+  MUSIC = "musik",
   ESTONIA = "estonia",
 }
 

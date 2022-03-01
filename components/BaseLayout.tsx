@@ -1,12 +1,26 @@
 import { Col, Container, NavDropdown, Navbar, Nav, Row } from "react-bootstrap";
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Spotify } from "react-bootstrap-icons";
-import { Category } from "@/libs/data-type";
-import { capitalize } from "@/libs/utilities";
+import useTranslation from "next-translate/useTranslation";
+import { CategoryEN, CategoryID } from "@/libs/data-type";
 
 const BaseLayout = (props: any): JSX.Element => {
   const { children } = props;
   const date = new Date();
+  const { t, lang } = useTranslation();
+
+  const businessText = t("common:business");
+  const musicText = t("common:music");
+  const programmingText = t("common:programming");
+  const lifeText = t("common:life");
+  const estoniaText = t("common:estonia");
+  const personalText = t("common:personal");
+
+  const businessRoute = lang === "id" ? `/${CategoryID.BUSINESS}` : `/${CategoryEN.BUSINESS}`;
+  const musicRoute = lang === "id" ? `/${CategoryID.MUSIC}` : `/${CategoryEN.MUSIC}`;
+  const programmingRoute = lang === "id" ? `/${CategoryID.PROGRAMMING}` : `/${CategoryEN.PROGRAMMING}`;
+  const estoniaRoute = lang === "id" ? `/${CategoryID.ESTONIA}` : `/${CategoryEN.ESTONIA}`;
+  const personalRoute = lang === "id" ? `/${CategoryID.PERSONAL}` : `/${CategoryEN.PERSONAL}`;
 
   return (
     <div className="flex-wrapper">
@@ -19,21 +33,21 @@ const BaseLayout = (props: any): JSX.Element => {
             className="justify-content-end"
           >
             <Nav className="mr-auto">
-              <Link href={`/${Category.BUSINESS}`} passHref>
-                <Nav.Link>{capitalize(Category.BUSINESS)}</Nav.Link>
+              <Link href={businessRoute} passHref locale={lang}>
+                <Nav.Link>{businessText}</Nav.Link>
               </Link>
-              <Link href={`/${Category.MUSIC}`} passHref>
-                <Nav.Link>{capitalize(Category.MUSIC)}</Nav.Link>
+              <Link href={musicRoute} passHref locale={lang}>
+                <Nav.Link>{musicText}</Nav.Link>
               </Link>
-              <Link href={`/${Category.PROGRAMMING}`} passHref>
-                <Nav.Link>{capitalize(Category.PROGRAMMING)}</Nav.Link>
+              <Link href={programmingRoute} passHref locale={lang}>
+                <Nav.Link>{programmingText}</Nav.Link>
               </Link>
-              <NavDropdown title="Life" id="basic-nav-dropdown">
-                <Link href={`/${Category.ESTONIA}`} passHref>
-                  <NavDropdown.Item>Estonia</NavDropdown.Item>
+              <NavDropdown title={lifeText} id="basic-nav-dropdown">
+                <Link href={estoniaRoute} passHref locale={lang}>
+                  <NavDropdown.Item>{estoniaText}</NavDropdown.Item>
                 </Link>
-                <Link href={`/${Category.PERSONAL}`} passHref>
-                  <NavDropdown.Item>Personal</NavDropdown.Item>
+                <Link href={personalRoute} passHref locale={lang}>
+                  <NavDropdown.Item>{personalText}</NavDropdown.Item>
                 </Link>
               </NavDropdown>
             </Nav>

@@ -4,8 +4,16 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import { ReactElement } from "react";
+import useTranslation from "next-translate/useTranslation";
+import TransText from "next-translate/TransText";
 
 const Hero = (): ReactElement => {
+  const { t, lang } = useTranslation();
+  const taglineText = t("home:tagline");
+  const greetingText = t("home:greeting");
+  const aboutText = t("about:title");
+  const aboutRoute = lang === "id" ? "/tentang" : "/about";
+
   return (
     <Container className="py-5">
       <Row>
@@ -18,11 +26,15 @@ const Hero = (): ReactElement => {
           />
         </Col>
         <Col xs={12} className="pt-3 text-center">
-          <p className="h4">Hi! I&apos;m</p>
+          <p className="h4">{greetingText}</p>
           <h1>Asep Bagja Priandana</h1>
-          <p className="lead">I do software development for fun 🎉 and profit 💶</p>
-          <Link href="/about" passHref>
-            <a className="btn btn-outline-dark btn-lg">About me</a>
+          <p className="lead">
+            <TransText text={taglineText} components={{
+              br: <br />
+            }}/>
+          </p>
+          <Link href={aboutRoute} passHref locale={lang}>
+            <a className="btn btn-outline-dark btn-lg">{aboutText}</a>
           </Link>
         </Col>
       </Row>
