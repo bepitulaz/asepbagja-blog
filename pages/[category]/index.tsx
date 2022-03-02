@@ -8,17 +8,15 @@ import SectionTitle from "../../components/SectionTitle";
 import { OneGrid, TwoGrids } from "../../components/PostCard";
 import BaseLayout from "../../components/BaseLayout";
 import { capitalize } from "../../libs/utilities";
-import { Article, Content, Category } from "../../libs/data-type";
+import { Article, CategoryEN, CategoryID } from "../../libs/data-type";
 import { readFromFileSystem } from "../../libs/file-fetch";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const idPosts = await readFromFileSystem(Content.ID);
-  const enPosts = await readFromFileSystem(Content.EN);
-  const featuredPosts = await readFromFileSystem(Content.FEATURED);
+export const getStaticProps: GetStaticProps = async (context) => {
+  const posts = await readFromFileSystem(context.locale);
 
   return {
     props: {
-      data: idPosts.concat(enPosts).concat(featuredPosts),
+      data: posts,
     },
   };
 };
@@ -26,11 +24,16 @@ export const getStaticProps: GetStaticProps = async () => {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [
-      { params: { category: Category.BUSINESS } },
-      { params: { category: Category.PERSONAL } },
-      { params: { category: Category.PROGRAMMING } },
-      { params: { category: Category.MUSIC } },
-      { params: { category: Category.ESTONIA } },
+      { params: { category: CategoryEN.BUSINESS }, locale: "en" },
+      { params: { category: CategoryEN.PERSONAL }, locale: "en" },
+      { params: { category: CategoryEN.PROGRAMMING }, locale: "en" },
+      { params: { category: CategoryEN.MUSIC }, locale: "en" },
+      { params: { category: CategoryEN.ESTONIA }, locale: "en" },
+      { params: { category: CategoryID.BUSINESS }, locale: "id" },
+      { params: { category: CategoryID.PERSONAL }, locale: "id" },
+      { params: { category: CategoryID.PROGRAMMING }, locale: "id" },
+      { params: { category: CategoryID.MUSIC }, locale: "id" },
+      { params: { category: CategoryID.ESTONIA }, locale: "id" },
     ],
     fallback: true,
   };

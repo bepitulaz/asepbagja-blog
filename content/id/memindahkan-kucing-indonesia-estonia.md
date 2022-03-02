@@ -4,7 +4,7 @@ date: 2022-02-27
 images:
 - "/blog-img/pet-carrier.jpg"
 categories:
-- Personal
+- Pribadi
 summary: "Cerita proses kami memindahkan kucing-kucing kesayangan dari Denpasar ke Tallinn."
 lang: "Bahasa Indonesia"
 ---

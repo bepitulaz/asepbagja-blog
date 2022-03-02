@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import { Content, Article } from "@/libs/data-type";
+import { Article } from "@/libs/data-type";
 import { readFromFileSystem } from "@/libs/file-fetch";
 import BaseLayout from "@/components/BaseLayout";
 import HtmlContent from "@/components/HtmlContent";
@@ -16,12 +16,8 @@ interface PageProps {
   data: Article[];
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const idPosts = await readFromFileSystem(Content.ID);
-  const enPosts = await readFromFileSystem(Content.EN);
-  const featuredPosts = await readFromFileSystem(Content.FEATURED);
-
-  const posts = idPosts.concat(enPosts).concat(featuredPosts);
+export const getStaticProps: GetStaticProps = async (context) => {
+  const posts = await readFromFileSystem(context.locale);
 
   const parseMarkdown = async () => {
     return Promise.all(
@@ -41,13 +37,15 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const idPosts = await readFromFileSystem(Content.ID);
-  const enPosts = await readFromFileSystem(Content.EN);
-  const featuredPosts = await readFromFileSystem(Content.FEATURED);
+export const getStaticPaths: GetStaticPaths = async (context) => {
+  let posts = Array<Article>();
+  const locales = context.locales ?? "en";
+  for (const locale of locales) {
+    const data = await readFromFileSystem(locale);
+    posts.concat(data);
+  }
 
   // Join all post array
-  const posts = idPosts.concat(enPosts).concat(featuredPosts);
   const paths = posts.map((post) => {
     return {
       params: {
@@ -159,8 +157,6 @@ const ReadingPage: NextPage<PageProps> = (props) => {
                   </p>
                   <p className="fw-lighter lh-1" style={{ fontSize: "0.8rem" }}>
                     <time dateTime={article?.date as string}>{article?.date}</time>
-                    {" | "}
-                    <span>Language: {article?.language}</span>
                   </p>
                 </div>
               </Col>

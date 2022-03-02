@@ -4,7 +4,7 @@ date: 2019-07-03
 images:
 - "/blog-img/running_remote.jpg"
 categories:
-- Business
+- Bisnis
 aliases:
 - /artikel/apa-itu-estonia-e-residency
 - /artikel/apa-itu-estonia-e-residency/

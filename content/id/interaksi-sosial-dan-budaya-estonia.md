@@ -7,6 +7,7 @@ categories:
 - Estonia
 summary: "Bagaimana cara berinteraksi dengan orang-orang di Estonia agar bisa berintegrasi dengan baik."
 lang: "Bahasa Indonesia"
+featured: true
 ---
 
 Interaksi sosial adalah hubungan sosial antara individu, individu dengan kelompok, dan kelompok dengan kelompok. Kita sebagai manusia akan selalu melakukan interaksi sosial di manapun kita berada, karena manusia adalah makhluk sosial. Jarang sekali seseorang bisa hidup tanpa bantuan orang lain sama sekali.

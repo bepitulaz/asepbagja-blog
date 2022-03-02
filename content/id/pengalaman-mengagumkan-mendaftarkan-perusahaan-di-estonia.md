@@ -5,7 +5,7 @@ draft: false
 images:
 - "/blog-img/card-in-use.jpeg"
 categories:
-- Business
+- Bisnis
 aliases:
 - /artikel/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia
 - /artikel/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia/

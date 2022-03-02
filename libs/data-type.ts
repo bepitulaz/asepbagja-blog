@@ -1,25 +1,19 @@
 export type Metadata = {
-  title: string | null;
-  images: string[] | null;
-  categories: string[] | null;
-  aliases: string[] | null;
-  summary: string | null;
+  title: string;
+  images: string[];
+  categories: string[];
+  aliases?: string[];
+  summary: string;
+  featured: boolean;
 };
 
 export type Article = {
   filename: string;
-  language: Language | null;
-  slug: string | null;
-  date: string | null;
+  slug: string;
+  date: string;
   metadata: Metadata;
-  content: string | null;
+  content: string;
 };
-
-export enum Content {
-  FEATURED = "featured",
-  EN = "en",
-  ID = "id",
-}
 
 export enum Language {
   EN = "English",

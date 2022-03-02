@@ -2,7 +2,7 @@
 title: "Bye, Bali! Sampai Jumpa Lagi." 
 date: 2021-09-26
 categories:
-- Personal
+- Pribadi
 images:
 - "/blog-img/fly-ankara.jpg"
 summary: "Bulan madu saya selama 3,5 tahun di Bali sudah selesai, saatnya berpindah."

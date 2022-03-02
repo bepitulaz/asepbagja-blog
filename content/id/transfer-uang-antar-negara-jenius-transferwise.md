@@ -4,7 +4,7 @@ date: 2019-09-23
 images:
 - "/blog-img/tw-step-3.png"
 categories:
-- Business
+- Bisnis
 aliases:
 - /artikel/transfer-uang-antar-negara-jenius-transferwise
 - /artikel/transfer-uang-antar-negara-jenius-transferwise/

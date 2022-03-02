@@ -4,7 +4,7 @@ date: 2019-12-26
 images:
 - "/blog-img/graduation.png"
 categories:
-- Personal
+- Pribadi
 aliases:
 - /artikel/satu-dekade-saya
 - /artikel/satu-dekade-saya/

@@ -7,6 +7,7 @@ images:
 - "/blog-img/ableton-human-migration.png"
 summary: "How to control and automate a DAW such as Ableton Live with Node.js."
 lang: "English"
+featured: true
 ---
 
 Recently, I released my debut single [A New Life](/music/a-new-life-singles). It's a [generative music](https://en.wikipedia.org/wiki/Generative_music) album that I composed and programmed using JavaScript. In this article, I will share the process behind it. But, before going to the code, let me explain some music technology terms that I use a lot.

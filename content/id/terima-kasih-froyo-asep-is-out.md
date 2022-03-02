@@ -4,7 +4,7 @@ date: 2017-08-02
 images:
 - "/blog-img/mic_drop.jpg"
 categories:
-- Business
+- Bisnis
 aliases:
 - /artikel/terima-kasih-froyo-asep-is-out
 - /artikel/terima-kasih-froyo-asep-is-out/

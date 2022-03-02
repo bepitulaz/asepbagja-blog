@@ -19,12 +19,11 @@ module.exports = nextTranslate({
   },
   // This function will redirect the old blog urls to the new urls
   async redirects() {
-    const idPosts = await readFromFileSystem("id");
     const enPosts = await readFromFileSystem("en");
-    const featuredPosts = await readFromFileSystem("featured");
+    const idPosts = await readFromFileSystem("id");
 
     // Join all post array
-    const posts = idPosts.concat(enPosts).concat(featuredPosts);
+    const posts = enPosts.concat(idPosts);
 
     // Mapping the aliases to the redirect schema
     const aliases = posts

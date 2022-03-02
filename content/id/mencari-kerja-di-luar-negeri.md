@@ -2,7 +2,7 @@
 title: "Mencari Pekerjaan Sebagai Software Developer Di Luar Negeri" 
 date: 2021-12-20
 categories:
-- Personal
+- Pribadi
 images:
 - "/blog-img/snow-in-tallinn.jpg"
 summary: "Proses saya dalam mencari pekerjaan di benua Eropa."

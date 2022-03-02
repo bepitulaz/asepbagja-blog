@@ -11,7 +11,6 @@ interface FeaturedArticleProps {
   href: string
   categoryTitle: string
   publishedDate: string
-  language: string
   imageSrc: string
   imageAlt: string
 }
@@ -22,7 +21,6 @@ const FeaturedArticle = ({
   href,
   categoryTitle,
   publishedDate,
-  language,
   imageSrc,
   imageAlt
 } : FeaturedArticleProps) : JSX.Element => {
@@ -47,7 +45,7 @@ const FeaturedArticle = ({
                 <h2>{title}</h2>
               </a>
               <p className="mt-4">{excerpt}</p>
-              <p className="fw-light">{publishedDate} | Language: {language}</p>
+              <p className="fw-light">{publishedDate}</p>
             </div>
           </Col>
         </Row>

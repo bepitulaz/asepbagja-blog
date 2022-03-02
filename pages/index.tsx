@@ -1,37 +1,61 @@
-import { GetStaticProps } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import useTranslation from "next-translate/useTranslation";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import SectionTitle from "../components/SectionTitle";
-import { OneGrid, FeaturedArticle, TwoGrids } from "../components/PostCard";
-import BaseLayout from "../components/BaseLayout";
-import Hero from "../components/Hero";
-import PodcastCard from "../components/PodcastCard";
-import { Content } from "../libs/data-type";
-import { readFromFileSystem, generateRSSFeed } from "../libs/file-fetch";
+import SectionTitle from "@/components/SectionTitle";
+import { OneGrid, FeaturedArticle, TwoGrids } from "@/components/PostCard";
+import BaseLayout from "@/components/BaseLayout";
+import Hero from "@/components/Hero";
+import PodcastCard from "@/components/PodcastCard";
+import { Article, CategoryEN, CategoryID } from "@/libs/data-type";
+import { readFromFileSystem, generateRSSFeed } from "@/libs/file-fetch";
+import { ReactElement } from "react";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const idPosts = await readFromFileSystem(Content.ID);
-  const enPosts = await readFromFileSystem(Content.EN);
-  const featuredPosts = await readFromFileSystem(Content.FEATURED);
+interface PageProps {
+  posts: Article[];
+}
 
-  const articlesForRSS = featuredPosts.concat(enPosts).concat(idPosts);
-  generateRSSFeed(articlesForRSS);
+export const getStaticProps: GetStaticProps = async (context) => {
+  const posts = await readFromFileSystem(context.locale);
+
+  generateRSSFeed(posts);
 
   return {
     props: {
-      data: {
-        en: enPosts,
-        id: idPosts,
-        featured: featuredPosts[0],
-      },
+      posts
     },
   };
 };
 
-export default function Home(props: any): JSX.Element {
-  const { data } = props;
+const Home: NextPage<PageProps> = ({ posts }) => {
+  const { t, lang } = useTranslation();
+
+  const businessText = t("common:business");
+  const musicText = t("common:music");
+  const programmingText = t("common:programming");
+  const estoniaText = t("common:estonia");
+  const personalText = t("common:personal");
+  const seeAllText = t("common:see-all");
+
+  const businessRoute = lang === "id" ? `/${CategoryID.BUSINESS}` : `/${CategoryEN.BUSINESS}`;
+  const musicRoute = lang === "id" ? `/${CategoryID.MUSIC}` : `/${CategoryEN.MUSIC}`;
+  const programmingRoute = lang === "id" ? `/${CategoryID.PROGRAMMING}` : `/${CategoryEN.PROGRAMMING}`;
+  const estoniaRoute = lang === "id" ? `/${CategoryID.ESTONIA}` : `/${CategoryEN.ESTONIA}`;
+  const personalRoute = lang === "id" ? `/${CategoryID.PERSONAL}` : `/${CategoryEN.PERSONAL}`;
+
+  const [featuredPost] = posts.filter((post) => post.metadata.featured);
+  const programmingPosts = posts.filter((post) => {
+    const isCategoryEN = post.metadata.categories.includes(CategoryEN.PROGRAMMING);
+    const isCategoryID = post.metadata.categories.includes(CategoryID.PROGRAMMING);
+    return !post.metadata.featured && (isCategoryEN || isCategoryID);
+  });
+  const personalPosts = posts.filter((post) => {
+    const isCategoryEN = post.metadata.categories.includes(CategoryEN.PERSONAL);
+    const isCategoryID = post.metadata.categories.includes(CategoryID.PERSONAL);
+    return !post.metadata.featured && (isCategoryEN || isCategoryID);
+  });
 
   return (
     <BaseLayout>
@@ -83,11 +107,11 @@ export default function Home(props: any): JSX.Element {
         <meta name="theme-color" content="#ffffff" />
         <meta
           property="og:image"
-          content={`https://www.asepbagja.com${data.featured.metadata.images[0]}`}
+          content={`https://www.asepbagja.com${featuredPost.metadata.images[0]}`}
         />
         <meta
           name="twitter:image"
-          content={`https://www.asepbagja.com${data.featured.metadata.images[0]}`}
+          content={`https://www.asepbagja.com${featuredPost.metadata.images[0]}`}
         />
         <link rel="canonical" href="https://www.asepbagja.com" />
       </Head>
@@ -96,16 +120,15 @@ export default function Home(props: any): JSX.Element {
 
       {/* Newest article */}
       <FeaturedArticle
-        title={data.featured.metadata.title}
-        excerpt={data.featured.metadata.summary}
-        href={`/${data.featured.metadata.categories[0].toLowerCase()}/${
-          data.featured.slug
+        title={featuredPost.metadata.title}
+        excerpt={featuredPost.metadata.summary}
+        href={`/${featuredPost.metadata.categories[0].toLowerCase()}/${
+          featuredPost.slug
         }`}
-        categoryTitle={data.featured.metadata.categories[0]}
-        publishedDate={data.featured.date}
-        language={data.featured.language}
-        imageSrc={data.featured.metadata.images[0]}
-        imageAlt={`the thumbnail of ${data.featured.metadata.title}`}
+        categoryTitle={featuredPost.metadata.categories[0]}
+        publishedDate={featuredPost.date}
+        imageSrc={featuredPost.metadata.images[0]}
+        imageAlt={`the thumbnail of ${featuredPost.metadata.title}`}
       />
 
       {/* Latest Podcasts */}
@@ -162,87 +185,88 @@ export default function Home(props: any): JSX.Element {
           <Row>
             <Col>
               <SectionTitle
-                sectionTitle="English"
-                buttonTitle="See all"
-                linkHref="/en"
+                sectionTitle={programmingText}
+                buttonTitle={seeAllText}
+                linkHref={programmingRoute}
               />
             </Col>
           </Row>
           <Row className="mt-md-3">
-            <OneGrid
-              title={data.en[0].metadata.title}
-              excerpt={data.en[0].metadata.summary}
-              imageSrc={data.en[0].metadata.images[0]}
-              imageAlt={`the thumbnail of ${data.en[0].metadata.title}`}
-              href={`/${data.en[0].metadata.categories[0].toLowerCase()}/${
-                data.en[0].slug
-              }`}
-            />
-            <OneGrid
-              title={data.en[1].metadata.title}
-              excerpt={data.en[1].metadata.summary}
-              imageSrc={data.en[1].metadata.images[0]}
-              imageAlt={`the thumbnail of ${data.en[0].metadata.title}`}
-              href={`/${data.en[1].metadata.categories[0].toLowerCase()}/${
-                data.en[1].slug
-              }`}
-            />
-            <TwoGrids
-              title={data.en[2].metadata.title}
-              excerpt={data.en[2].metadata.summary}
-              imageSrc={data.en[2].metadata.images[0]}
-              imageAlt={`the thumbnail of ${data.en[0].metadata.title}`}
-              href={`/${data.en[2].metadata.categories[0].toLowerCase()}/${
-                data.en[2].slug
-              }`}
-            />
+            {twoGridsRight(programmingPosts.slice(0, 3))}
           </Row>
         </Container>
       </section>
 
-      {/* All articles */}
       <section className="mt-5 pt-3">
         <Container>
           <Row>
             <Col>
               <SectionTitle
-                sectionTitle="Bahasa Indonesia"
-                buttonTitle="Lihat"
-                linkHref="/id"
+                sectionTitle={personalText}
+                buttonTitle={seeAllText}
+                linkHref={personalRoute}
               />
             </Col>
           </Row>
           <Row className="mt-md-3">
-            <TwoGrids
-              title={data.id[0].metadata.title}
-              excerpt={data.id[0].metadata.summary}
-              imageSrc={data.id[0].metadata.images[0]}
-              imageAlt={`the thumbnail of ${data.id[0].metadata.title}`}
-              href={`/${data.id[0].metadata.categories[0].toLowerCase()}/${
-                data.id[0].slug
-              }`}
-            />
-            <OneGrid
-              title={data.id[1].metadata.title}
-              excerpt={data.id[1].metadata.summary}
-              imageSrc={data.id[1].metadata.images[0]}
-              imageAlt={`the thumbnail of ${data.id[0].metadata.title}`}
-              href={`/${data.id[1].metadata.categories[0].toLowerCase()}/${
-                data.id[1].slug
-              }`}
-            />
-            <OneGrid
-              title={data.id[2].metadata.title}
-              excerpt={data.id[2].metadata.summary}
-              imageSrc={data.id[2].metadata.images[0]}
-              imageAlt={`the thumbnail of ${data.id[0].metadata.title}`}
-              href={`/${data.id[2].metadata.categories[0].toLowerCase()}/${
-                data.id[2].slug
-              }`}
-            />
+            {twoGridsLeft(personalPosts.slice(0, 3))}
           </Row>
         </Container>
       </section>
     </BaseLayout>
   );
 }
+
+const twoGridsRight = (posts: Article[]): Array<ReactElement> => {
+  return posts.map((post, index) => index === 2 ? (
+    <TwoGrids
+      key={index}
+      title={post.metadata.title}
+      excerpt={post.metadata.summary}
+      imageSrc={post.metadata.images[0]}
+      imageAlt={`the thumbnail of ${post.metadata.title}`}
+      href={`/${post.metadata.categories[0]}/${
+        post.slug
+      }`}
+    />
+  ) : (
+    <OneGrid
+      key={index}
+      title={post.metadata.title}
+      excerpt={post.metadata.summary}
+      imageSrc={post.metadata.images[0]}
+      imageAlt={`the thumbnail of ${post.metadata.title}`}
+      href={`/${post.metadata.categories[0]}/${
+        post.slug
+      }`}
+    />
+  ));
+};
+
+const twoGridsLeft = (posts: Article[]): Array<ReactElement> => {
+  return posts.map((post, index) => index === 0 ? (
+    <TwoGrids
+      key={index}
+      title={post.metadata.title}
+      excerpt={post.metadata.summary}
+      imageSrc={post.metadata.images[0]}
+      imageAlt={`the thumbnail of ${post.metadata.title}`}
+      href={`/${post.metadata.categories[0]}/${
+        post.slug
+      }`}
+    />
+  ) : (
+    <OneGrid
+      key={index}
+      title={post.metadata.title}
+      excerpt={post.metadata.summary}
+      imageSrc={post.metadata.images[0]}
+      imageAlt={`the thumbnail of ${post.metadata.title}`}
+      href={`/${post.metadata.categories[0]}/${
+        post.slug
+      }`}
+    />
+  ));
+};
+
+export default Home;

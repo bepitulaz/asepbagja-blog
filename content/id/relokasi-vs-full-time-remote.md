@@ -2,7 +2,7 @@
 title: "Kerja Full-Time Di Perusahaan Luar Negeri: Relokasi atau Remote?" 
 date: 2022-01-03
 categories:
-- Personal
+- Pribadi
 images:
 - "/blog-img/luggage-relocation.jpg"
 summary: "Ada beberapa orang yang bertanya ke saya, \"kenapa pilih relokasi kalau bisa remote?\""
