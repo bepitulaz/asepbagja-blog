@@ -1,7 +1,7 @@
-import Link from "next/link"
 import Col from "react-bootstrap/Col"
 import Image from "next/image"
 import styles from "./PostCard.module.scss"
+import { ReactElement } from "react"
 
 interface OneGridProps {
   title: string
@@ -17,7 +17,7 @@ const OneGrid = ({
   href,
   imageSrc,
   imageAlt
-} : OneGridProps) : JSX.Element => {
+} : OneGridProps) : ReactElement => {
   return (
     <Col xs={12} lg={3} className={"pb-lg-4"}>
       <div className={styles.imageContainer}>

@@ -1,9 +1,10 @@
-import Link from "next/link"
+import useTranslation from "next-translate/useTranslation";
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 import Image from "react-bootstrap/Image"
 import Container from "react-bootstrap/Container"
 import SectionTitle from "../SectionTitle"
+import { FunctionComponent, ReactElement } from "react";
 
 interface FeaturedArticleProps {
   title: string
@@ -15,7 +16,7 @@ interface FeaturedArticleProps {
   imageAlt: string
 }
 
-const FeaturedArticle = ({
+const FeaturedArticle: FunctionComponent<FeaturedArticleProps> = ({
   title,
   excerpt,
   href,
@@ -23,13 +24,16 @@ const FeaturedArticle = ({
   publishedDate,
   imageSrc,
   imageAlt
-} : FeaturedArticleProps) : JSX.Element => {
+}) : ReactElement => {
+  const { t } = useTranslation();
+  const featuredText = t("common:featured");
+
   return (
     <article className="mt-5">
       <Container>
         <Row>
           <Col>
-            <SectionTitle sectionTitle="Featured article" showButton={false} />
+            <SectionTitle sectionTitle={featuredText} showButton={false} />
           </Col>
         </Row>
         <Row className="mt-md-3">

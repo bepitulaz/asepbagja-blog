@@ -1,7 +1,7 @@
-import Link from "next/link"
 import Col from "react-bootstrap/Col"
 import Image from "next/image"
 import styles from "./PostCard.module.scss"
+import { ReactElement } from "react"
 
 interface TwoGridProps {
   title: string
@@ -17,7 +17,7 @@ const TwoGrids = ({
   href,
   imageSrc,
   imageAlt
-} : TwoGridProps) : JSX.Element => {
+} : TwoGridProps) : ReactElement => {
   return (
     <Col xs={12} lg={6} className={"pb-lg-4"}>
       <div className={styles.imageContainer}>
