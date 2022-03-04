@@ -11,6 +11,8 @@ aliases:
 - /posts/transfer-uang-antar-negara-jenius-transferwise
 - /id/artikel/transfer-uang-antar-negara-jenius-transferwise
 - /id/artikel/transfer-uang-antar-negara-jenius-transferwise/
+- /business/transfer-uang-antar-negara-jenius-transferwise
+- /business/transfer-uang-antar-negara-jenius-transferwise/
 summary: "TransferWise memiliki kemampuan untuk mengirim uang dengan biaya murah ke 59 negara termasuk Indonesia."
 ---
 

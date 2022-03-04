@@ -8,6 +8,8 @@ categories:
 aliases:
 - /personal/musim-dingin-di-estonia
 - /personal/musim-dingin-di-estonia/
+- /estonia/musim-dingin-di-estonia
+- /estonia/musim-dingin-di-estonia/
 summary: "Hal penting yang saya pelajari dari musim dingin pertama saya di Estonia."
 ---
 

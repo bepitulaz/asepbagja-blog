@@ -12,6 +12,8 @@ aliases:
 - /posts/apa-itu-estonia-e-residency/
 - /id/artikel/apa-itu-estonia-e-residency
 - /id/artikel/apa-itu-estonia-e-residency/
+- /business/apa-itu-estonia-e-residency
+- /business/apa-itu-estonia-e-residency/
 summary: "Dengan mengikuti program e-Residency, kamu akan mendapatkan kartu eID Estonia."
 ---
 

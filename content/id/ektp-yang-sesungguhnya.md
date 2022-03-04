@@ -8,6 +8,8 @@ images:
 aliases:
 - /personal/ektp-yang-sesungguhnya
 - /personal/ektp-yang-sesungguhnya/
+- /estonia/ektp-yang-sesungguhnya
+- /estonia/ektp-yang-sesungguhnya/
 summary: "Penerapan E-KTP atau eID di Estonia, seperti apa bentuknya?"
 lang: "Bahasa Indonesia"
 ---

@@ -2,8 +2,9 @@
   "locales": ["en", "id"],
   "defaultLocale": "en",
   "pages": {
-    "*": ["common"],
+    "*": ["common", "meta"],
     "/": ["home", "about"],
-    "/about": ["about"]
+    "/about": ["about"],
+    "/[category]/[slug]": ["single"]
   }
 }

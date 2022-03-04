@@ -16,17 +16,23 @@ const BaseLayout = (props: any): JSX.Element => {
   const estoniaText = t("common:estonia");
   const personalText = t("common:personal");
 
-  const businessRoute = lang === "id" ? `/${CategoryID.BUSINESS}` : `/${CategoryEN.BUSINESS}`;
-  const musicRoute = lang === "id" ? `/${CategoryID.MUSIC}` : `/${CategoryEN.MUSIC}`;
-  const programmingRoute = lang === "id" ? `/${CategoryID.PROGRAMMING}` : `/${CategoryEN.PROGRAMMING}`;
-  const estoniaRoute = lang === "id" ? `/${CategoryID.ESTONIA}` : `/${CategoryEN.ESTONIA}`;
-  const personalRoute = lang === "id" ? `/${CategoryID.PERSONAL}` : `/${CategoryEN.PERSONAL}`;
+  const businessRoute =
+    lang === "id" ? `/${CategoryID.BUSINESS}` : `/${CategoryEN.BUSINESS}`;
+  const musicRoute =
+    lang === "id" ? `/${CategoryID.MUSIC}` : `/${CategoryEN.MUSIC}`;
+  const programmingRoute =
+    lang === "id" ? `/${CategoryID.PROGRAMMING}` : `/${CategoryEN.PROGRAMMING}`;
+  const estoniaRoute =
+    lang === "id" ? `/${CategoryID.ESTONIA}` : `/${CategoryEN.ESTONIA}`;
+  const personalRoute =
+    lang === "id" ? `/${CategoryID.PERSONAL}` : `/${CategoryEN.PERSONAL}`;
+  const homeRoute = lang === "en" ? "" : lang;
 
   return (
     <div className="flex-wrapper">
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="/">Asep Bagja</Navbar.Brand>
+          <Navbar.Brand href={`/${homeRoute}`}>Asep Bagja</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
             id="basic-navbar-nav"
@@ -36,20 +42,28 @@ const BaseLayout = (props: any): JSX.Element => {
               <Link href={businessRoute} passHref locale={lang}>
                 <Nav.Link>{businessText}</Nav.Link>
               </Link>
-              <Link href={musicRoute} passHref locale={lang}>
-                <Nav.Link>{musicText}</Nav.Link>
-              </Link>
+              {lang === "en" && (
+                <Link href={musicRoute} passHref locale={lang}>
+                  <Nav.Link>{musicText}</Nav.Link>
+                </Link>
+              )}
               <Link href={programmingRoute} passHref locale={lang}>
                 <Nav.Link>{programmingText}</Nav.Link>
               </Link>
-              <NavDropdown title={lifeText} id="basic-nav-dropdown">
-                <Link href={estoniaRoute} passHref locale={lang}>
-                  <NavDropdown.Item>{estoniaText}</NavDropdown.Item>
-                </Link>
+              {lang === "en" ? (
                 <Link href={personalRoute} passHref locale={lang}>
-                  <NavDropdown.Item>{personalText}</NavDropdown.Item>
+                  <Nav.Link>{personalText}</Nav.Link>
                 </Link>
-              </NavDropdown>
+              ) : (
+                <NavDropdown title={lifeText} id="basic-nav-dropdown">
+                  <Link href={estoniaRoute} passHref locale={lang}>
+                    <NavDropdown.Item>{estoniaText}</NavDropdown.Item>
+                  </Link>
+                  <Link href={personalRoute} passHref locale={lang}>
+                    <NavDropdown.Item>{personalText}</NavDropdown.Item>
+                  </Link>
+                </NavDropdown>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -63,8 +77,8 @@ const BaseLayout = (props: any): JSX.Element => {
             <Col xs={12} md={6}>
               <Nav>
                 <Nav.Item>
-                  <Link href="/about" passHref>
-                    <Nav.Link className="text-white">About Asep</Nav.Link>
+                  <Link href={lang === "id" ? "/id/tentang" : "/about"} passHref>
+                    <Nav.Link className="text-white">{t("meta:about")} Asep</Nav.Link>
                   </Link>
                 </Nav.Item>
               </Nav>

@@ -9,6 +9,8 @@ aliases:
 - /artikel/satu-dekade-saya
 - /artikel/satu-dekade-saya/
 - /id/artikel/satu-dekade-saya
+- /personal/satu-dekade-saya
+- /personal/satu-dekade-saya/
 summary: "Di media sosial, banyak orang menuliskan pencapaian-pencapaian penting di hidupnya selama periode 2010-2019."
 ---
 

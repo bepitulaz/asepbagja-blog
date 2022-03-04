@@ -13,6 +13,7 @@ export type Article = {
   date: string;
   metadata: Metadata;
   content: string;
+  locale?: string;
 };
 
 export enum Language {
@@ -38,5 +39,5 @@ export enum CategoryID {
 
 export enum TrackingEvent {
   READ_UNTIL_END = "Read until end",
-  FINANCIAL_BOX_APPEARED = "Financial box appeared",
+  CTA_BOX_APPEARED = "CTA box appeared",
 }

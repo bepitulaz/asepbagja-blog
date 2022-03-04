@@ -26,34 +26,32 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 const Home: NextPage<PageProps> = ({ posts }) => {
-  const { lang } = useTranslation();
+  const { t, lang } = useTranslation();
   const [featuredPost] = posts.filter((post) => post.metadata.featured);
 
   return (
     <BaseLayout>
       <Head>
-        <title>Home | Asep Bagja</title>
+        <title>{t("meta:home")} | Asep Bagja</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="description"
-          content="My personal blog where I share my opinion and topic that I'm interested."
-        />
+        <meta name="description" content={t("meta:description")} />
         <meta property="og:type" content="website" />
-        <meta name="og:title" property="og:title" content="Home | Asep Bagja" />
+        <meta
+          name="og:title"
+          property="og:title"
+          content={`${t("meta:home")} | Asep Bagja`}
+        />
         <meta
           name="og:description"
           property="og:description"
-          content="My personal blog where I share my opinion and topic that I'm interested."
+          content={t("meta:description")}
         />
-        <meta property="og:site_name" content="The Blog of Asep Bagja" />
+        <meta property="og:site_name" content={t("meta:sitename")} />
         <meta property="og:url" content="https://www.asepbagja.com" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="The Blog of Asep Bagja" />
-        <meta
-          name="twitter:description"
-          content="My personal blog where I share my opinion and topic that I'm interested."
-        />
+        <meta name="twitter:title" content={t("meta:title")} />
+        <meta name="twitter:description" content={t("meta:description")} />
         <meta name="twitter:site" content="@bepitulaz" />
         <meta name="twitter:creator" content="@bepitulaz" />
         <link
@@ -85,7 +83,10 @@ const Home: NextPage<PageProps> = ({ posts }) => {
           name="twitter:image"
           content={`https://www.asepbagja.com${featuredPost.metadata.images[0]}`}
         />
-        <link rel="canonical" href="https://www.asepbagja.com" />
+        <link
+          rel="canonical"
+          href={`https://www.asepbagja.com${lang === "en" ? "" : "/" + lang}`}
+        />
       </Head>
 
       <Hero />

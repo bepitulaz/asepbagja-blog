@@ -12,6 +12,8 @@ aliases:
 - /posts/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia
 - /id/artikel/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia
 - /id/artikel/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia/
+- /business/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia
+- /business/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia/
 summary: "Tidak perlu mengeluarkan pulpen maupun pergi ke tukang fotokopi. Semua hanya dengan menggunakan kartu e-Residency."
 ---
 

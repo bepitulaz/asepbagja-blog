@@ -10,6 +10,8 @@ aliases:
 - /artikel/terima-kasih-froyo-asep-is-out/
 - /posts/terima-kasih-froyo-asep-is-out
 - /id/artikel/terima-kasih-froyo-asep-is-out
+- /business/terima-kasih-froyo-asep-is-out
+- /business/terima-kasih-froyo-asep-is-out/
 summary: "Akhirnya saya memutuskan untuk exit dari Froyo setelah melakukan berbagai macam perhitungan dan pertimbangan."
 ---
 
