@@ -1,17 +1,18 @@
 import { GetStaticProps, GetStaticPaths, NextPage } from "next";
 import Head from "next/head";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import { Article } from "@/libs/data-type";
+import { Article, CategoryID } from "@/libs/data-type";
 import { readFromFileSystem } from "@/libs/file-fetch";
 import BaseLayout from "@/components/BaseLayout";
 import HtmlContent from "@/components/HtmlContent";
 import Discussion from "@/components/Discussion";
 import CtaBox from "@/components/CtaBox";
 import { capitalize, markdownToHtml } from "@/libs/utilities";
+import { useEffect } from "react";
 
 interface PageProps {
   data: Article[];
@@ -71,11 +72,28 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 
 const ReadingPage: NextPage<PageProps> = ({ data, locale }) => {
   const router = useRouter();
-  const { slug } = router.query;
+  const { slug, category } = router.query;
   const { t, lang } = useTranslation();
 
   const filteredArticles = data?.filter((post: Article) => post.slug === slug);
   const article = filteredArticles?.[0];
+
+  useEffect(() => {
+    // Migrating old URL to new ID URL. For SEO backward compatibility.
+    if (locale === "en") {
+      const listOfCategories = [
+        CategoryID.PROGRAMMING,
+        CategoryID.PERSONAL,
+        CategoryID.BUSINESS,
+        CategoryID.ESTONIA,
+      ];
+
+      const isCategoryID = listOfCategories.includes(category as CategoryID);
+      if(isCategoryID) {
+        Router.push(`/id/${category}/${slug}`);
+      }
+    }
+  }, [category, locale, slug]);
 
   return (
     <BaseLayout>
