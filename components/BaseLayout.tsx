@@ -1,6 +1,12 @@
 import { Col, Container, NavDropdown, Navbar, Nav, Row } from "react-bootstrap";
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Spotify } from "react-bootstrap-icons";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Spotify,
+  Flag,
+} from "react-bootstrap-icons";
 import useTranslation from "next-translate/useTranslation";
 import { CategoryEN, CategoryID } from "@/libs/data-type";
 
@@ -38,6 +44,16 @@ const BaseLayout = (props: any): JSX.Element => {
             id="basic-navbar-nav"
             className="justify-content-end"
           >
+            <Nav className="me-auto">
+              <NavDropdown title={<Flag />} id="language-chooser">
+                <Link href={"/"} passHref locale={"en"}>
+                  <NavDropdown.Item>English</NavDropdown.Item>
+                </Link>
+                <Link href={"/"} passHref locale={"id"}>
+                  <NavDropdown.Item>Bahasa Indonesia</NavDropdown.Item>
+                </Link>
+              </NavDropdown>
+            </Nav>
             <Nav className="mr-auto">
               <Link href={businessRoute} passHref locale={lang}>
                 <Nav.Link>{businessText}</Nav.Link>
@@ -77,8 +93,13 @@ const BaseLayout = (props: any): JSX.Element => {
             <Col xs={12} md={6}>
               <Nav>
                 <Nav.Item>
-                  <Link href={lang === "id" ? "/id/tentang" : "/about"} passHref>
-                    <Nav.Link className="text-white">{t("meta:about")} Asep</Nav.Link>
+                  <Link
+                    href={lang === "id" ? "/id/tentang" : "/about"}
+                    passHref
+                  >
+                    <Nav.Link className="text-white">
+                      {t("meta:about")} Asep
+                    </Nav.Link>
                   </Link>
                 </Nav.Item>
               </Nav>

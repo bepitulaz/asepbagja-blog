@@ -11,6 +11,7 @@ import { readFromFileSystem, generateRSSFeed } from "@/libs/file-fetch";
 
 interface PageProps {
   posts: Article[];
+  locale: string;
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -21,11 +22,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       posts,
+      locale: context.locale,
     },
   };
 };
 
-const Home: NextPage<PageProps> = ({ posts }) => {
+const Home: NextPage<PageProps> = ({ posts, locale }) => {
   const { t, lang } = useTranslation();
   const [featuredPost] = posts.filter((post) => post.metadata.featured);
 
@@ -94,7 +96,7 @@ const Home: NextPage<PageProps> = ({ posts }) => {
       <FeaturedArticle
         title={featuredPost.metadata.title}
         excerpt={featuredPost.metadata.summary}
-        href={`/${featuredPost.metadata.categories[0].toLowerCase()}/${
+        href={`${locale === "en" ? "" : "/" + locale}/${featuredPost.metadata.categories[0].toLowerCase()}/${
           featuredPost.slug
         }`}
         categoryTitle={featuredPost.metadata.categories[0]}

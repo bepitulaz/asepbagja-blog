@@ -7,9 +7,6 @@ categories:
 - Estonia
 summary: "Gegar budaya melihat kehidupan yang sangat efisien di Estonia berkat teknologi."
 lang: "Bahasa Indonesia"
-aliases:
-- /estonia/kehidupan-yang-efisien-estonia
-- /estonia/kehidupan-yang-efisien-estonia/
 ---
 
 Estonia sebuah negara dengan jumlah populasi yang sangat kecil, hanya sekitar 1,32 juta orang menurut data tahun 2021. Di Tallinn sendiri menurut data tahun 2021, populasi penduduk hanya 444.532, artinya 33% penduduk Estonia terpusat di ibukota sisanya tersebar di kota-kota lain. Menurut statistik hanya ada 2 kota lain selain Tallinn yang memiliki populasi penduduk di atas 50 ribu orang, yaitu Tartu (93 ribu) dan Narva (57 ribu). Sedangkan jumlah kota di Estonia sendiri ada 47. Terbayang kan betapa sepinya suasana kota-kota di Estonia jika dibandingkan dengan kota-kota di Indonesia.

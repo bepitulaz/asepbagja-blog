@@ -16,8 +16,6 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
   const { t } = useTranslation();
 
   const businessText = t("common:business");
-  const musicText = t("common:music");
-  const programmingText = t("common:programming");
   const estoniaText = t("common:estonia");
   const personalText = t("common:personal");
   const seeAllText = t("common:see-all");
@@ -126,8 +124,8 @@ const TwoGridsRight: FunctionComponent<LayoutProps> = ({ posts }): ReactElement 
       title={post.metadata.title}
       excerpt={post.metadata.summary}
       imageSrc={post.metadata.images[0]}
-      imageAlt={`the thumbnail of ${post.metadata.title}`}
-      href={`/${post.metadata.categories[0]}/${
+      imageAlt={`Foto artikel: ${post.metadata.title}`}
+      href={`/id/${post.metadata.categories[0]}/${
         post.slug
       }`}
     />
@@ -137,8 +135,8 @@ const TwoGridsRight: FunctionComponent<LayoutProps> = ({ posts }): ReactElement 
       title={post.metadata.title}
       excerpt={post.metadata.summary}
       imageSrc={post.metadata.images[0]}
-      imageAlt={`the thumbnail of ${post.metadata.title}`}
-      href={`/${post.metadata.categories[0]}/${
+      imageAlt={`Foto artikel ${post.metadata.title}`}
+      href={`/id/${post.metadata.categories[0]}/${
         post.slug
       }`}
     />
@@ -157,8 +155,8 @@ const TwoGridsLeft: FunctionComponent<LayoutProps> = ({ posts }): ReactElement =
       title={post.metadata.title}
       excerpt={post.metadata.summary}
       imageSrc={post.metadata.images[0]}
-      imageAlt={`the thumbnail of ${post.metadata.title}`}
-      href={`/${post.metadata.categories[0]}/${
+      imageAlt={`Foto artikel ${post.metadata.title}`}
+      href={`/id/${post.metadata.categories[0]}/${
         post.slug
       }`}
     />
@@ -168,8 +166,8 @@ const TwoGridsLeft: FunctionComponent<LayoutProps> = ({ posts }): ReactElement =
       title={post.metadata.title}
       excerpt={post.metadata.summary}
       imageSrc={post.metadata.images[0]}
-      imageAlt={`the thumbnail of ${post.metadata.title}`}
-      href={`/${post.metadata.categories[0]}/${
+      imageAlt={`Foto artikel ${post.metadata.title}`}
+      href={`/id/${post.metadata.categories[0]}/${
         post.slug
       }`}
     />
