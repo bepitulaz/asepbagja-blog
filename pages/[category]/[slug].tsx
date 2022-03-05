@@ -1,27 +1,25 @@
 import { GetStaticProps, GetStaticPaths, NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import useTranslation from "next-translate/useTranslation";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import { Content, Article } from "@/libs/data-type";
+import { Article } from "@/libs/data-type";
 import { readFromFileSystem } from "@/libs/file-fetch";
 import BaseLayout from "@/components/BaseLayout";
 import HtmlContent from "@/components/HtmlContent";
 import Discussion from "@/components/Discussion";
-import FinancialSupport from "@/components/FinancialSupport";
+import CtaBox from "@/components/CtaBox";
 import { capitalize, markdownToHtml } from "@/libs/utilities";
 
 interface PageProps {
   data: Article[];
+  locale: string;
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const idPosts = await readFromFileSystem(Content.ID);
-  const enPosts = await readFromFileSystem(Content.EN);
-  const featuredPosts = await readFromFileSystem(Content.FEATURED);
-
-  const posts = idPosts.concat(enPosts).concat(featuredPosts);
+export const getStaticProps: GetStaticProps = async (context) => {
+  const posts = await readFromFileSystem(context.locale);
 
   const parseMarkdown = async () => {
     return Promise.all(
@@ -37,36 +35,44 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       data: htmlPosts,
+      locale: context.locale ?? "en",
     },
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const idPosts = await readFromFileSystem(Content.ID);
-  const enPosts = await readFromFileSystem(Content.EN);
-  const featuredPosts = await readFromFileSystem(Content.FEATURED);
+export const getStaticPaths: GetStaticPaths = async (context) => {
+  let posts = Array<Article>();
+  const locales = context.locales ?? "en";
+  for (const locale of locales) {
+    const data = await readFromFileSystem(locale);
+    const postsWithLocale = data.map((post) => {
+      post.locale = locale;
+      return post;
+    });
+    posts.concat(postsWithLocale);
+  }
 
   // Join all post array
-  const posts = idPosts.concat(enPosts).concat(featuredPosts);
   const paths = posts.map((post) => {
     return {
       params: {
         category: post.metadata.categories?.[0].toLowerCase(),
         slug: post.slug || "",
       },
+      locale: post.locale,
     };
   });
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
-const ReadingPage: NextPage<PageProps> = (props) => {
-  const { data } = props;
+const ReadingPage: NextPage<PageProps> = ({ data, locale }) => {
   const router = useRouter();
   const { slug } = router.query;
+  const { t, lang } = useTranslation();
 
   const filteredArticles = data?.filter((post: Article) => post.slug === slug);
   const article = filteredArticles?.[0];
@@ -77,7 +83,10 @@ const ReadingPage: NextPage<PageProps> = (props) => {
         <title>{article?.metadata.title} | Asep Bagja</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={article?.metadata.summary || "No description is provided."} />
+        <meta
+          name="description"
+          content={article?.metadata.summary || t("meta:no-description")}
+        />
         <meta property="og:type" content="website" />
         <meta
           name="og:title"
@@ -87,19 +96,24 @@ const ReadingPage: NextPage<PageProps> = (props) => {
         <meta
           name="og:description"
           property="og:description"
-          content={article?.metadata.summary || "No description is provided."}
+          content={article?.metadata.summary || t("meta:no-description")}
         />
-        <meta property="og:site_name" content="The Blog of Asep Bagja" />
+        <meta property="og:site_name" content={t("meta:sitename")} />
         <meta
           property="og:url"
-          content={`https://www.asepbagja.com/${article?.metadata.categories?.[0].toLowerCase()}/${slug}`}
+          content={`https://www.asepbagja.com${
+            lang === "en" ? "/" : "/" + lang + "/"
+          }${article?.metadata.categories?.[0].toLowerCase()}/${slug}`}
         />
         <meta name="twitter:card" content="summary" />
         <meta
           name="twitter:title"
           content={`${article?.metadata.title} | Asep Bagja`}
         />
-        <meta name="twitter:description" content={article?.metadata.summary || "No description is provided."} />
+        <meta
+          name="twitter:description"
+          content={article?.metadata.summary || t("meta:no-description")}
+        />
         <meta name="twitter:site" content="@bepitulaz" />
         <meta name="twitter:creator" content="@bepitulaz" />
         <link
@@ -133,7 +147,9 @@ const ReadingPage: NextPage<PageProps> = (props) => {
         />
         <link
           rel="canonical"
-          href={`https://www.asepbagja.com/${article?.metadata?.categories?.[0].toLowerCase()}/${slug}`}
+          href={`https://www.asepbagja.com${
+            lang === "en" ? "/" : "/" + lang + "/"
+          }${article?.metadata?.categories?.[0].toLowerCase()}/${slug}`}
         />
       </Head>
 
@@ -158,30 +174,30 @@ const ReadingPage: NextPage<PageProps> = (props) => {
                     {article?.metadata.summary}
                   </p>
                   <p className="fw-lighter lh-1" style={{ fontSize: "0.8rem" }}>
-                    <time dateTime={article?.date as string}>{article?.date}</time>
-                    {" | "}
-                    <span>Language: {article?.language}</span>
+                    <time dateTime={article?.date as string}>
+                      {article?.date}
+                    </time>
                   </p>
                 </div>
               </Col>
             </Row>
             <Row className="mt-5">
               <Col lg={{ span: 8, offset: 2 }}>
-                <HtmlContent content={article.content as string} />
+                <HtmlContent content={article?.content as string} />
               </Col>
             </Row>
           </article>
           <section className="mt-3">
             <Row>
               <Col lg={{ span: 8, offset: 2 }}>
-                <FinancialSupport article={article} />
+                <CtaBox article={article} />
               </Col>
             </Row>
           </section>
           <section className="mt-3">
             <Row>
               <Col lg={{ span: 8, offset: 2 }}>
-                <Discussion article={article} />
+                <Discussion article={article} locale={locale} />
               </Col>
             </Row>
           </section>
@@ -189,6 +205,6 @@ const ReadingPage: NextPage<PageProps> = (props) => {
       </main>
     </BaseLayout>
   );
-}
+};
 
 export default ReadingPage;

@@ -2,11 +2,12 @@ import { promises as fs } from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { Feed } from "feed";
-import { Article, Content } from "./data-type";
+import { Article } from "./data-type";
 
 // Get all contents from the file system
-export async function readFromFileSystem(langCode: Content) {
-  const contentDir = path.join(process.cwd(), "content", langCode);
+export async function readFromFileSystem(langCode: string | undefined) {
+  const lang = langCode || "en";
+  const contentDir = path.join(process.cwd(), "content", lang);
   const filenames = await fs.readdir(contentDir);
 
   const posts = filenames.map(async (filename) => {
@@ -14,22 +15,19 @@ export async function readFromFileSystem(langCode: Content) {
     const fileContents = await fs.readFile(filePath, "utf8");
     const content = matter(fileContents);
 
-    let longNameLang = "English";
-    if (langCode == Content.ID) {
-      longNameLang = "Bahasa Indonesia";
-    }
-
     const post: Article = {
       filename,
-      language: content?.data?.lang ?? longNameLang,
       slug: content?.data?.slug ?? filename.slice(0, -3),
       date: content?.data?.date,
       metadata: {
         title: content?.data?.title,
         images: content?.data?.images,
-        categories: content?.data?.categories,
+        categories: content?.data?.categories.map((category: string) =>
+          category.toLowerCase()
+        ),
         aliases: content?.data?.aliases ?? [],
         summary: content?.data?.summary ?? "",
+        featured: content?.data?.featured ?? false,
       },
       content: content?.content,
     };
@@ -81,16 +79,16 @@ export function generateRSSFeed(articles: Array<Article>) {
 
   articles.forEach((article) => {
     const category = article.metadata?.categories?.[0] || "";
-    
+
     let theDate;
-    if(article.date) {
+    if (article.date) {
       const dateSplit = article.date.split("/");
       const year = parseInt(dateSplit[2]);
       const month = parseInt(dateSplit[1]);
       const day = parseInt(dateSplit[0]);
       theDate = new Date(year, month, day);
     }
-    
+
     feed.addItem({
       title: article.metadata?.title || "",
       id: `${baseUrl}/${category.toLowerCase()}/${article.slug}`,

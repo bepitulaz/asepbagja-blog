@@ -1,32 +1,27 @@
 export type Metadata = {
-  title: string | null;
-  images: string[] | null;
-  categories: string[] | null;
-  aliases: string[] | null;
-  summary: string | null;
+  title: string;
+  images: string[];
+  categories: string[];
+  aliases?: string[];
+  summary: string;
+  featured: boolean;
 };
 
 export type Article = {
   filename: string;
-  language: Language | null;
-  slug: string | null;
-  date: string | null;
+  slug: string;
+  date: string;
   metadata: Metadata;
-  content: string | null;
+  content: string;
+  locale?: string;
 };
-
-export enum Content {
-  FEATURED = "featured",
-  EN = "en",
-  ID = "id",
-}
 
 export enum Language {
   EN = "English",
   ID = "Bahasa Indonesia",
 }
 
-export enum Category {
+export enum CategoryEN {
   BUSINESS = "business",
   PERSONAL = "personal",
   PROGRAMMING = "programming",
@@ -34,7 +29,15 @@ export enum Category {
   ESTONIA = "estonia",
 }
 
+export enum CategoryID {
+  BUSINESS = "bisnis",
+  PERSONAL = "pribadi",
+  PROGRAMMING = "pemrograman",
+  MUSIC = "musik",
+  ESTONIA = "estonia",
+}
+
 export enum TrackingEvent {
   READ_UNTIL_END = "Read until end",
-  FINANCIAL_BOX_APPEARED = "Financial box appeared",
+  CTA_BOX_APPEARED = "CTA box appeared",
 }

@@ -4,12 +4,14 @@ date: 2019-09-19
 images:
 - "/blog-img/candlestick.jpg"
 categories:
-- Programming
+- Pemrograman
 aliases:
 - /artikel/membangun-sistem-hft-sederhana
 - /artikel/membangun-sistem-hft-sederhana/
 - /posts/membangun-sistem-hft-sederhana
 - /id/artikel/membangun-sistem-hft-sederhana
+- /programming/membangun-sistem-hft-sederhana
+- /programming/membangun-sistem-hft-sederhana/
 summary: "High-Frequency Trading (HFT) adalah strategi perdagangan aset di mana trader tidak menyimpan aset lama-lama."
 ---
 

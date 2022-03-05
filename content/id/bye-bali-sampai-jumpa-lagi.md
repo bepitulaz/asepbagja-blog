@@ -2,11 +2,14 @@
 title: "Bye, Bali! Sampai Jumpa Lagi." 
 date: 2021-09-26
 categories:
-- Personal
+- Pribadi
 images:
 - "/blog-img/fly-ankara.jpg"
 summary: "Bulan madu saya selama 3,5 tahun di Bali sudah selesai, saatnya berpindah."
 lang: "Bahasa Indonesia"
+aliases:
+- /personal/bye-bali-sampai-jumpa-lagi
+- /personal/bye-bali-sampai-jumpa-lagi/
 ---
 
 Saat saya menuliskan artikel ini, posisi saya sudah berada di kota Ankara, Turki. Sedang bersantai di balkon hotel, menikmati udara sejuk, dan sinar mentari kawasan Mediterania. Saya berada di kota ini untuk mengurus visa untuk tinggal di Estonia. Ya, akhirnya setelah pertama kali mengenal Estonia dan [membangun bisnis di sana](/business/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia) secara jarak jauh pada tahun 2017, sekarang saya memutuskan untuk berpindah ke sana.

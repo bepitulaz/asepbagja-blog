@@ -1,0 +1,10 @@
+{
+  "locales": ["en", "id"],
+  "defaultLocale": "en",
+  "pages": {
+    "*": ["common", "meta"],
+    "/": ["home", "about"],
+    "/about": ["about"],
+    "/[category]/[slug]": ["single"]
+  }
+}

@@ -4,9 +4,12 @@ date: 2022-02-27
 images:
 - "/blog-img/pet-carrier.jpg"
 categories:
-- Personal
+- Pribadi
 summary: "Cerita proses kami memindahkan kucing-kucing kesayangan dari Denpasar ke Tallinn."
 lang: "Bahasa Indonesia"
+aliases:
+- /personal/memindahkan-kucing-indonesia-estonia
+- /personal/memindahkan-kucing-indonesia-estonia/
 ---
 
 Setelah lima bulan berpisah, akhirnya kucing-kucing kesayangan bergabung kembali dengan istri dan saya. Prosesnya cukup panjang untuk memindahkan mereka dari Denpasar sampai ke Tallinn, dan lumayan memakan biaya yang tidak sedikit. Untung saja biaya relokasi kucing-kucing ini juga sebagian besar ditanggung oleh tempat saya bekerja yang memang menganggap hewan peliharaan adalah bagian dari keluarga.

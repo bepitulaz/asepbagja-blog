@@ -1,24 +1,29 @@
-import { GetStaticProps, GetStaticPaths } from "next";
+import { GetStaticProps, GetStaticPaths, NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import useTranslation from "next-translate/useTranslation";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import SectionTitle from "../../components/SectionTitle";
-import { OneGrid, TwoGrids } from "../../components/PostCard";
-import BaseLayout from "../../components/BaseLayout";
-import { capitalize } from "../../libs/utilities";
-import { Article, Content, Category } from "../../libs/data-type";
-import { readFromFileSystem } from "../../libs/file-fetch";
+import SectionTitle from "@/components/SectionTitle";
+import { OneGrid, TwoGrids } from "@/components/PostCard";
+import BaseLayout from "@/components/BaseLayout";
+import { capitalize } from "@/libs/utilities";
+import { Article, CategoryEN, CategoryID } from "@/libs/data-type";
+import { readFromFileSystem } from "@/libs/file-fetch";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const idPosts = await readFromFileSystem(Content.ID);
-  const enPosts = await readFromFileSystem(Content.EN);
-  const featuredPosts = await readFromFileSystem(Content.FEATURED);
+interface PageProps {
+  data: Article[];
+  locale: string;
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const posts = await readFromFileSystem(context.locale);
 
   return {
     props: {
-      data: idPosts.concat(enPosts).concat(featuredPosts),
+      data: posts,
+      locale: context.locale ?? "en",
     },
   };
 };
@@ -26,26 +31,30 @@ export const getStaticProps: GetStaticProps = async () => {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [
-      { params: { category: Category.BUSINESS } },
-      { params: { category: Category.PERSONAL } },
-      { params: { category: Category.PROGRAMMING } },
-      { params: { category: Category.MUSIC } },
-      { params: { category: Category.ESTONIA } },
+      { params: { category: CategoryEN.BUSINESS }, locale: "en" },
+      { params: { category: CategoryEN.PERSONAL }, locale: "en" },
+      { params: { category: CategoryEN.PROGRAMMING }, locale: "en" },
+      { params: { category: CategoryEN.MUSIC }, locale: "en" },
+      { params: { category: CategoryEN.ESTONIA }, locale: "en" },
+      { params: { category: CategoryID.BUSINESS }, locale: "id" },
+      { params: { category: CategoryID.PERSONAL }, locale: "id" },
+      { params: { category: CategoryID.PROGRAMMING }, locale: "id" },
+      { params: { category: CategoryID.MUSIC }, locale: "id" },
+      { params: { category: CategoryID.ESTONIA }, locale: "id" },
     ],
     fallback: true,
   };
 };
 
-export default function CategoryPage(props: any): JSX.Element {
-  const { data } = props;
+const CategoryPage: NextPage<PageProps> = ({ data, locale }) => {
   const router = useRouter();
   const { category } = router.query;
+  const { t, lang } = useTranslation();
+  const langRoute = locale === "en" ? "" : `/${locale}`;
 
   const postsByCategory = data?.filter((post: Article) => {
-    const capitalCategory = capitalize(category);
-
-    if (typeof capitalCategory === "string") {
-      return post.metadata?.categories?.includes(capitalCategory);
+    if (typeof category === "string") {
+      return post.metadata?.categories?.includes(category);
     }
 
     return post;
@@ -62,7 +71,7 @@ export default function CategoryPage(props: any): JSX.Element {
             excerpt={post.metadata.summary}
             imageSrc={post.metadata.images?.[0]}
             imageAlt={`the thumbnail of ${post.metadata.title}`}
-            href={`/${post.metadata.categories?.[0].toLowerCase()}/${
+            href={`${langRoute}/${post.metadata.categories?.[0].toLowerCase()}/${
               post.slug
             }`}
           />
@@ -75,7 +84,7 @@ export default function CategoryPage(props: any): JSX.Element {
             excerpt={post.metadata.summary}
             imageSrc={post.metadata.images?.[0]}
             imageAlt={`the thumbnail of ${post.metadata.title}`}
-            href={`/${post.metadata.categories?.[0].toLowerCase()}/${
+            href={`${langRoute}/${post.metadata.categories?.[0].toLowerCase()}/${
               post.slug
             }`}
           />
@@ -100,10 +109,7 @@ export default function CategoryPage(props: any): JSX.Element {
         <title>{capitalize(category)} | Asep Bagja</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="description"
-          content="My personal blog where I share my opinion and topic that I'm interested."
-        />
+        <meta name="description" content={t("meta:description")} />
         <meta property="og:type" content="website" />
         <meta
           name="og:title"
@@ -113,22 +119,21 @@ export default function CategoryPage(props: any): JSX.Element {
         <meta
           name="og:description"
           property="og:description"
-          content="My personal blog where I share my opinion and topic that I'm interested."
+          content={t("meta:description")}
         />
-        <meta property="og:site_name" content="The Blog of Asep Bagja" />
+        <meta property="og:site_name" content={t("meta:sitename")} />
         <meta
           property="og:url"
-          content={`https://www.asepbagja.com/${category}`}
+          content={`https://www.asepbagja.com${
+            lang === "en" ? "/" : "/" + lang + "/"
+          }${category}`}
         />
         <meta name="twitter:card" content="summary" />
         <meta
           name="twitter:title"
           content={`${capitalize(category)} | Asep Bagja`}
         />
-        <meta
-          name="twitter:description"
-          content="My personal blog where I share my opinion and topic that I'm interested."
-        />
+        <meta name="twitter:description" content={t("meta:description")} />
         <meta name="twitter:site" content="@bepitulaz" />
         <meta name="twitter:creator" content="@bepitulaz" />
         <link
@@ -160,7 +165,12 @@ export default function CategoryPage(props: any): JSX.Element {
           name="twitter:image"
           content={`https://www.asepbagja.com${data?.[0].metadata.images?.[0]}`}
         />
-        <link rel="canonical" href={`https://www.asepbagja.com/${category}`} />
+        <link
+          rel="canonical"
+          href={`https://www.asepbagja.com${
+            lang === "en" ? "/" : "/" + lang + "/"
+          }${category}`}
+        />
       </Head>
 
       <section className="mt-5 pt-3">
@@ -180,4 +190,6 @@ export default function CategoryPage(props: any): JSX.Element {
       </section>
     </BaseLayout>
   );
-}
+};
+
+export default CategoryPage;
