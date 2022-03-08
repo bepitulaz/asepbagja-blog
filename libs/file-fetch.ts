@@ -3,13 +3,13 @@ import path from "path";
 import matter from "gray-matter";
 import { Feed } from "feed";
 import { Article } from "./data-type";
+import { markdownToHtml } from "./utilities";
 
 // Get all contents from the file system
 export async function readFromFileSystem(langCode: string | undefined) {
   const lang = langCode || "en";
   const contentDir = path.join(process.cwd(), "content", lang);
   const filenames = await fs.readdir(contentDir);
-
   const posts = filenames.map(async (filename) => {
     const filePath = path.join(contentDir, filename);
     const fileContents = await fs.readFile(filePath, "utf8");
@@ -58,7 +58,7 @@ export function generateRSSFeed(articles: Array<Article>) {
     email: "asep.bagja.p@gmail.com",
     link: "https://twitter.com/bepitulaz",
   };
-  const date = new Date();
+  let date = new Date();
 
   const feed = new Feed({
     title: "The blog of Asep Bagja",
@@ -77,29 +77,32 @@ export function generateRSSFeed(articles: Array<Article>) {
     author,
   });
 
-  articles.forEach((article) => {
-    const category = article.metadata?.categories?.[0] || "";
+  const generateItems = async () => {
+    for (const article of articles) {
+      const category = article.metadata?.categories?.[0] || "";
 
-    let theDate;
-    if (article.date) {
-      const dateSplit = article.date.split("/");
-      const year = parseInt(dateSplit[2]);
-      const month = parseInt(dateSplit[1]);
-      const day = parseInt(dateSplit[0]);
-      theDate = new Date(year, month, day);
+      if (article.date) {
+        const dateSplit = article.date.split("/");
+        const year = parseInt(dateSplit[2]);
+        const month = parseInt(dateSplit[1]);
+        const day = parseInt(dateSplit[0]);
+        date = new Date(year, month, day);
+      }
+
+      feed.addItem({
+        title: article.metadata?.title || "",
+        id: `${baseUrl}/${category.toLowerCase()}/${article.slug}`,
+        link: `${baseUrl}/${category.toLowerCase()}/${article.slug}`,
+        description: article.metadata?.summary || "",
+        content: (await markdownToHtml(article?.content)) || "",
+        author: [author],
+        date: article?.date ? new Date(article.date) : date,
+      });
     }
 
-    feed.addItem({
-      title: article.metadata?.title || "",
-      id: `${baseUrl}/${category.toLowerCase()}/${article.slug}`,
-      link: `${baseUrl}/${category.toLowerCase()}/${article.slug}`,
-      description: article.metadata?.summary || "",
-      content: article?.content || "",
-      author: [author],
-      date: article?.date ? new Date(article.date) : date,
-    });
-  });
+    // Write the RSS output to a public file
+    fs.writeFile("public/rss.xml", feed.rss2());
+  };
 
-  // Write the RSS output to a public file
-  fs.writeFile("public/rss.xml", feed.rss2());
+  generateItems();
 }

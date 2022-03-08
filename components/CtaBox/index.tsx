@@ -45,7 +45,7 @@ const CtaBox: FunctionComponent<CtaBoxProps> = ({ article }) => {
         observer.observe(observedTag);
       }
     }
-  }, []);
+  }, [article, plausible]);
 
   return (
     <div id="ctabox" className={styles.financialSupportBox}>

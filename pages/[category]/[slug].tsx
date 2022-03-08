@@ -1,7 +1,6 @@
 import { GetStaticProps, GetStaticPaths, NextPage } from "next";
 import Head from "next/head";
-import Router, { useRouter } from "next/router";
-import useTranslation from "next-translate/useTranslation";
+import getT from "next-translate/getT";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -13,16 +12,43 @@ import HtmlContent from "@/components/HtmlContent";
 import Discussion from "@/components/Discussion";
 import CtaBox from "@/components/CtaBox";
 import { capitalize, markdownToHtml } from "@/libs/utilities";
-import { useEffect } from "react";
 
 interface PageProps {
   data: Article[];
   locale: string;
+  noMetaDescription: string;
+  metaSiteName: string;
+  currentSlug: string;
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const posts = await readFromFileSystem(context.locale);
+  const { category, slug } = context.params!;
+  // Migrating old URL to new ID URL. For SEO backward compatibility.
+  if (context.locale === "en") {
+    const listOfCategories = [
+      CategoryID.PROGRAMMING,
+      CategoryID.PERSONAL,
+      CategoryID.BUSINESS,
+      CategoryID.ESTONIA,
+    ];
 
+    const isCategoryID = listOfCategories.includes(category as CategoryID);
+    if (isCategoryID) {
+      return {
+        redirect: {
+          permanent: true,
+          destination: `/id/${category}/${slug}`,
+        }
+      }
+    }
+  }
+
+  const t = await getT(context.locale, "meta");
+  const noMetaDescription = t("noDescription");
+  const metaSiteName = t("sitename");
+
+  const posts = await readFromFileSystem(context.locale);
+  
   const parseMarkdown = async () => {
     return Promise.all(
       posts.map(async (post) => {
@@ -38,6 +64,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       data: htmlPosts,
       locale: context.locale ?? "en",
+      noMetaDescription,
+      metaSiteName,
+      currentSlug: slug,
     },
   };
 };
@@ -71,30 +100,15 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
   };
 };
 
-const ReadingPage: NextPage<PageProps> = ({ data, locale }) => {
-  const router = useRouter();
-  const { slug, category } = router.query;
-  const { t, lang } = useTranslation();
-
-  const filteredArticles = data?.filter((post: Article) => post.slug === slug);
+const ReadingPage: NextPage<PageProps> = ({
+  data,
+  locale,
+  noMetaDescription,
+  metaSiteName,
+  currentSlug,
+}) => {
+  const filteredArticles = data?.filter((post: Article) => post.slug === currentSlug);
   const article = filteredArticles?.[0];
-
-  useEffect(() => {
-    // Migrating old URL to new ID URL. For SEO backward compatibility.
-    if (locale === "en") {
-      const listOfCategories = [
-        CategoryID.PROGRAMMING,
-        CategoryID.PERSONAL,
-        CategoryID.BUSINESS,
-        CategoryID.ESTONIA,
-      ];
-
-      const isCategoryID = listOfCategories.includes(category as CategoryID);
-      if (isCategoryID) {
-        Router.push(`/id/${category}/${slug}`);
-      }
-    }
-  }, [category, locale, slug]);
 
   return (
     <BaseLayout>
@@ -109,7 +123,7 @@ const ReadingPage: NextPage<PageProps> = ({ data, locale }) => {
             />
             <meta
               name="description"
-              content={article?.metadata.summary || t("meta:no-description")}
+              content={article?.metadata.summary || noMetaDescription}
             />
             <meta property="og:type" content="website" />
             <meta
@@ -120,14 +134,14 @@ const ReadingPage: NextPage<PageProps> = ({ data, locale }) => {
             <meta
               name="og:description"
               property="og:description"
-              content={article?.metadata.summary || t("meta:no-description")}
+              content={article?.metadata.summary || noMetaDescription}
             />
-            <meta property="og:site_name" content={t("meta:sitename")} />
+            <meta property="og:site_name" content={metaSiteName} />
             <meta
               property="og:url"
               content={`https://www.asepbagja.com${
-                lang === "en" ? "/" : "/" + lang + "/"
-              }${article?.metadata.categories?.[0].toLowerCase()}/${slug}`}
+                locale === "en" ? "/" : "/" + locale + "/"
+              }${article?.metadata.categories?.[0].toLowerCase()}/${currentSlug}`}
             />
             <meta name="twitter:card" content="summary" />
             <meta
@@ -136,7 +150,7 @@ const ReadingPage: NextPage<PageProps> = ({ data, locale }) => {
             />
             <meta
               name="twitter:description"
-              content={article?.metadata.summary || t("meta:no-description")}
+              content={article?.metadata.summary || noMetaDescription}
             />
             <meta name="twitter:site" content="@bepitulaz" />
             <meta name="twitter:creator" content="@bepitulaz" />
@@ -176,8 +190,8 @@ const ReadingPage: NextPage<PageProps> = ({ data, locale }) => {
             <link
               rel="canonical"
               href={`https://www.asepbagja.com${
-                lang === "en" ? "/" : "/" + lang + "/"
-              }${article?.metadata?.categories?.[0].toLowerCase()}/${slug}`}
+                locale === "en" ? "/" : "/" + locale + "/"
+              }${article?.metadata?.categories?.[0].toLowerCase()}/${currentSlug}`}
             />
           </Head>
 
