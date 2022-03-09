@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { Feed } from "feed";
 import { Article } from "./data-type";
-import { markdownToHtml } from "./utilities";
+import { markdownToRSS } from "./utilities";
 
 // Get all contents from the file system
 export async function readFromFileSystem(langCode: string | undefined) {
@@ -94,7 +94,7 @@ export function generateRSSFeed(articles: Array<Article>) {
         id: `${baseUrl}/${category.toLowerCase()}/${article.slug}`,
         link: `${baseUrl}/${category.toLowerCase()}/${article.slug}`,
         description: article.metadata?.summary || "",
-        content: (await markdownToHtml(article?.content)) || "",
+        content: (await markdownToRSS(article?.content)) || "",
         author: [author],
         date: article?.date ? new Date(article.date) : date,
       });

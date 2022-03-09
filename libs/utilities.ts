@@ -23,3 +23,13 @@ export async function markdownToHtml(markdown: string): Promise<string> {
     .process(markdown);
   return result.toString();
 }
+
+export async function markdownToRSS(markdown: string): Promise<string> {
+  const result = await unified()
+    .use(remarkParse)
+    .use(remarkRehype, { allowDangerousHtml: false })
+    .use(rehypeRaw)
+    .use(rehypeStringify, { allowDangerousHtml: false })
+    .process(markdown);
+  return result.toString();
+}
