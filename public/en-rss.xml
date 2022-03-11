@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>The blog of Asep Bagja</title>
+        <link>https://www.asepbagja.com</link>
+        <description>My personal blog where I share my opinion and topic that I'm interested.</description>
+        <lastBuildDate>Fri, 11 Mar 2022 07:19:03 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>The blog of Asep Bagja</generator>
+        <language>en</language>
+        <copyright>All rights reserved 2014-2022, Asep Bagja Priandana</copyright>
+        <item>
+            <title><![CDATA[MIDI scripting Ableton Live with Node.js]]></title>
+            <link>https://www.asepbagja.com/programming/midi-scripting-ableton-nodejs</link>
+            <guid>https://www.asepbagja.com/programming/midi-scripting-ableton-nodejs</guid>
+            <pubDate>Tue, 15 Feb 2022 22:00:00 GMT</pubDate>
+            <description><![CDATA[How to control and automate a DAW such as Ableton Live with Node.js.]]></description>
+            <content:encoded><![CDATA[<p>Recently, I released my debut single <a href="/music/a-new-life-singles">A New Life</a>. It's a <a href="https://en.wikipedia.org/wiki/Generative_music">generative music</a> album that I composed and programmed using JavaScript. In this article, I will share the process behind it. But, before going to the code, let me explain some music technology terms that I use a lot.</p> <p><a href="https://www.asepbagja.com/programming/midi-scripting-ableton-nodejs">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Single: A New Life]]></title>
+            <link>https://www.asepbagja.com/music/a-new-life-singles</link>
+            <guid>https://www.asepbagja.com/music/a-new-life-singles</guid>
+            <pubDate>Wed, 09 Feb 2022 22:00:00 GMT</pubDate>
+            <description><![CDATA[My first music single is out. Listen it on your favourite streaming service.]]></description>
+            <content:encoded><![CDATA[<p>Inspired by the life-changing experience of moving abroad, I wrote and released my first electronic ambient music single: A New Life. I can say that A New Life is a programmable and generative music single because the music is programmed by using JavaScript, a computer programming language. All melodies that you hear are coming from real-life data. A New Life consists of 2 tracks.</p> <p><a href="https://www.asepbagja.com/music/a-new-life-singles">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Experiment: Boost Node.js App Performance With Rust]]></title>
+            <link>https://www.asepbagja.com/programming/experiment-nodejs-rust</link>
+            <guid>https://www.asepbagja.com/programming/experiment-nodejs-rust</guid>
+            <pubDate>Thu, 16 Sep 2021 21:00:00 GMT</pubDate>
+            <description><![CDATA[My experiment to make the Node.js app fast with WebAssembly and Node native module that written in Rust.]]></description>
+            <content:encoded><![CDATA[<p>Recently, I'm planning to build a weekend project for personal purposes. It's an application to analyse stock market data for helping me in my investment journey. I plan to use Node.js as the backend. However, I'm curious about how Node.js perform when handling a large dataset. How fast can it do the operation?</p> <p><a href="https://www.asepbagja.com/programming/experiment-nodejs-rust">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Insights to Sell Agritech Product]]></title>
+            <link>https://www.asepbagja.com/business/insights-agritech-product</link>
+            <guid>https://www.asepbagja.com/business/insights-agritech-product</guid>
+            <pubDate>Thu, 02 May 2019 21:00:00 GMT</pubDate>
+            <description><![CDATA[Some interesting insights from a couple of years building an open source software for agriculture to share with you.]]></description>
+            <content:encoded><![CDATA[<p>My company <a href="https://tanibox.com">Tanibox</a> is developing agriculture software for two years. We focus on <a href="https://usetania.org">Tania</a>, our open source farm management software. We love growing plants, but we--all co-founders of Tanibox--never touch agriculture as an industry before Tanibox exist. So, we jumped to agriculture technology industry by trial and error. Here are some interesting insights from a couple of years building an open source software for agriculture to share with you.</p> <p><a href="https://www.asepbagja.com/business/insights-agritech-product">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Going Back to My Personal Web]]></title>
+            <link>https://www.asepbagja.com/personal/going-back-to-personal-web</link>
+            <guid>https://www.asepbagja.com/personal/going-back-to-personal-web</guid>
+            <pubDate>Mon, 22 Apr 2019 21:00:00 GMT</pubDate>
+            <description><![CDATA[How if I make this blog like a social media?]]></description>
+            <content:encoded><![CDATA[<p>It's been a while since my last post on this website. Three years ago. It's time to dust off and start writing again. I want to challenge my self, "how if I make this blog like a social media?" I will prioritise to post anything here instead of posting in social media whether it's a short or long content.</p> <p><a href="https://www.asepbagja.com/personal/going-back-to-personal-web">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Introduction to Functional Programming in JavaScript (Part 2)]]></title>
+            <link>https://www.asepbagja.com/programming/introduction-to-functional-programming-in-javascript-part-2</link>
+            <guid>https://www.asepbagja.com/programming/introduction-to-functional-programming-in-javascript-part-2</guid>
+            <pubDate>Wed, 03 Aug 2016 21:00:00 GMT</pubDate>
+            <description><![CDATA[JavaScript has the first-class function. It means the functions in JavaScript treats as a value.]]></description>
+            <content:encoded><![CDATA[<p>In <a href="/posts/introduction-to-functional-programming-in-javascript-part-1/">part 1</a>, we had learned about two important concepts in functional programming paradigm: immutable data and pure function. Now, we will learn another important concept in functional programming, that is higher order function.</p> <p><a href="https://www.asepbagja.com/programming/introduction-to-functional-programming-in-javascript-part-2">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Introduction to Functional Programming in JavaScript (Part 1)]]></title>
+            <link>https://www.asepbagja.com/programming/introduction-to-functional-programming-in-javascript-part-1</link>
+            <guid>https://www.asepbagja.com/programming/introduction-to-functional-programming-in-javascript-part-1</guid>
+            <pubDate>Tue, 02 Aug 2016 21:00:00 GMT</pubDate>
+            <description><![CDATA[Functional programming paradigm concentrates on computing results rather than performing actions.]]></description>
+            <content:encoded><![CDATA[<p>Imperative programming is a programming paradigm that uses a sequence of statements to reach a certain goal. It focuses on how to perform actions to achieve the expected result. Otherwise, functional programming paradigm concentrates on computing results rather than performing actions. In another word, the imperative one is an annoying micromanager in your office, and the functional one is a macromanager who just describe what's the job to be done.</p> <p><a href="https://www.asepbagja.com/programming/introduction-to-functional-programming-in-javascript-part-1">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Add Free SSL to Existing WordPress Site with Docker and Let's Encrypt]]></title>
+            <link>https://www.asepbagja.com/programming/add-free-ssl-to-existing-wordpress-site-with-docker-and-lets-encrypt</link>
+            <guid>https://www.asepbagja.com/programming/add-free-ssl-to-existing-wordpress-site-with-docker-and-lets-encrypt</guid>
+            <pubDate>Sat, 23 Jul 2016 21:00:00 GMT</pubDate>
+            <description><![CDATA[Google announced that they use HTTPS as a ranking signal on 2014, and it becomes more standard in their search result]]></description>
+            <content:encoded><![CDATA[<p>Google announced that they use HTTPS as a ranking signal <a href="https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html">on 2014</a>, and it becomes more standard in their search result. Therefore, I decide to use HTTPS also for this blog; and it looks pretty too for having a green lock icon on the browser. I'm a Docker devotee, so I'll show you how to do it by using Docker.</p> <p><a href="https://www.asepbagja.com/programming/add-free-ssl-to-existing-wordpress-site-with-docker-and-lets-encrypt">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Why Did I Start to Invest in The Stock Market?]]></title>
+            <link>https://www.asepbagja.com/business/why-did-i-start-to-invest-in-the-stock-market</link>
+            <guid>https://www.asepbagja.com/business/why-did-i-start-to-invest-in-the-stock-market</guid>
+            <pubDate>Sun, 12 Jun 2016 21:00:00 GMT</pubDate>
+            <description><![CDATA[I should find a way to invest my money.]]></description>
+            <content:encoded><![CDATA[<p>Most of you perhaps ever heard or read about <a href="http://www.amazon.com/exec/obidos/ASIN/0446677477/mikeleeorg-20">The Cashflow Quadrant</a> by Robert Kiyosaki. I bought his book when I was a high school student. The book explained about quadrant of economic roles: employee, self-employed, business owner, and investor. The employee is people who have a job, I was. The self-employed is individuals who own a job, I was. The business owner is individuals who have a system that produces cash flow for themselves and other work for them; this is me now. The last is the investor, people who can make their money work for them; this is my next target.</p> <p><a href="https://www.asepbagja.com/business/why-did-i-start-to-invest-in-the-stock-market">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[2016 Personal Challenges]]></title>
+            <link>https://www.asepbagja.com/personal/2016-personal-challenges</link>
+            <guid>https://www.asepbagja.com/personal/2016-personal-challenges</guid>
+            <pubDate>Wed, 03 Feb 2016 22:00:00 GMT</pubDate>
+            <description><![CDATA[Annually I challenged myself with some new skills and some targets.]]></description>
+            <content:encoded><![CDATA[<p><strong>Happy new year 2016.</strong></p> <p><a href="https://www.asepbagja.com/personal/2016-personal-challenges">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Simple, Cheap, and Scalable IoT Data Logging With Clojure]]></title>
+            <link>https://www.asepbagja.com/programming/simple-and-cheap-iot-data-logging-with-clojure</link>
+            <guid>https://www.asepbagja.com/programming/simple-and-cheap-iot-data-logging-with-clojure</guid>
+            <pubDate>Thu, 07 Jan 2016 22:00:00 GMT</pubDate>
+            <description><![CDATA[The concept is simple. Just catch the string from the sensor, transform it into Clojure data structure.]]></description>
+            <content:encoded><![CDATA[<p>I have a small green house in <a href="https://asep.co/my-familys-journey-to-grow-our-own-food/">my home front yard</a>, and I deployed some sensors like temperature, humidity, electrical conductivity (EC), and pH sensor there.</p> <p><a href="https://www.asepbagja.com/programming/simple-and-cheap-iot-data-logging-with-clojure">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Geekcamp Jakarta 2015. Programmable Music]]></title>
+            <link>https://www.asepbagja.com/programming/geekcamp-jakarta-2015-programmable-music</link>
+            <guid>https://www.asepbagja.com/programming/geekcamp-jakarta-2015-programmable-music</guid>
+            <pubDate>Thu, 03 Dec 2015 22:00:00 GMT</pubDate>
+            <description><![CDATA[This is my presentation about computer generated music using Clojure and Overtone.]]></description>
+            <content:encoded><![CDATA[<p><a href="http://geekcamp.id/">Geekcamp Jakarta 2015</a> is a technology and business conference organized by KMKLabs. This is my presentation about computer generated music using Clojure and Overtone. The talk is using Bahasa Indonesia, but here I try to give the English transcript.</p> <p><a href="https://www.asepbagja.com/programming/geekcamp-jakarta-2015-programmable-music">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[My Family’s Journey to Grow Our Own Food]]></title>
+            <link>https://www.asepbagja.com/personal/my-familys-journey-to-grow-our-own-food</link>
+            <guid>https://www.asepbagja.com/personal/my-familys-journey-to-grow-our-own-food</guid>
+            <pubDate>Thu, 26 Nov 2015 22:00:00 GMT</pubDate>
+            <description><![CDATA[Hydroponic was the answer. We can plant without soil but only water.]]></description>
+            <content:encoded><![CDATA[<p>My wife's dream after we married was having a garden at home. But at that moment, we were living in an apartment with a very small balcony. It's theoritically impossible to plant anything. So, we discovered a way to plant vegetable at small space and we found it. Hydroponic was the answer. We can plant without soil but only water.</p> <p><a href="https://www.asepbagja.com/personal/my-familys-journey-to-grow-our-own-food">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Do Not Refuse The Corporate Culture]]></title>
+            <link>https://www.asepbagja.com/personal/do-not-refuse-the-corporate-culture</link>
+            <guid>https://www.asepbagja.com/personal/do-not-refuse-the-corporate-culture</guid>
+            <pubDate>Fri, 13 Nov 2015 22:00:00 GMT</pubDate>
+            <description><![CDATA[A letter from my dad about how to make my company bigger.]]></description>
+            <content:encoded><![CDATA[<p><em>A letter from my dad about how to make my company bigger.</em></p> <p><a href="https://www.asepbagja.com/personal/do-not-refuse-the-corporate-culture">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[28 Years Old. Do Something Matters Now.]]></title>
+            <link>https://www.asepbagja.com/personal/28-years-old-do-something-matters-now</link>
+            <guid>https://www.asepbagja.com/personal/28-years-old-do-something-matters-now</guid>
+            <pubDate>Tue, 20 Oct 2015 21:00:00 GMT</pubDate>
+            <description><![CDATA[Today, September 21, 2015, I'm officially 28 years old.]]></description>
+            <content:encoded><![CDATA[<p>Today, September 21, 2015, I'm officially 28 years old.</p> <p><a href="https://www.asepbagja.com/personal/28-years-old-do-something-matters-now">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Urban Farming with Clojure]]></title>
+            <link>https://www.asepbagja.com/programming/urban-farming-with-clojure</link>
+            <guid>https://www.asepbagja.com/programming/urban-farming-with-clojure</guid>
+            <pubDate>Tue, 08 Sep 2015 21:00:00 GMT</pubDate>
+            <description><![CDATA[Physical world is actually concurrent, thus why not give Clojure a shot?]]></description>
+            <content:encoded><![CDATA[<p>Currently, I'm developing an indoor farming system to grow vegetables (at the moment is Lettuce) and herbs in my house. You can check the project's progress on <a href="https://hackaday.io/project/7124-tanibox-indoor-farming-system">my Hackaday's page</a>. The system should controls the lighting on and off at the correct time, logs the temperature and humidity and triggers the fan based on it, and sends the farm log to the server, so, I can predict the harvest time and the farm optimal condition in the future. At the heart of the system, I'm using Raspberry Pi as a micro controller.</p> <p><a href="https://www.asepbagja.com/programming/urban-farming-with-clojure">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[R.I.P All of My Fish. Postmortem of A Hardware Automation Project]]></title>
+            <link>https://www.asepbagja.com/programming/r-i-p-all-of-my-fish-postmortem-of-a-hardware-automation-project</link>
+            <guid>https://www.asepbagja.com/programming/r-i-p-all-of-my-fish-postmortem-of-a-hardware-automation-project</guid>
+            <pubDate>Thu, 20 Aug 2015 21:00:00 GMT</pubDate>
+            <description><![CDATA[One of the biggest problem of having pet is filling its needs while the owner leaving the home.]]></description>
+            <content:encoded><![CDATA[<p><em>One of the biggest problem of having pet is filling its needs while the owner leaving the home.</em></p> <p><a href="https://www.asepbagja.com/programming/r-i-p-all-of-my-fish-postmortem-of-a-hardware-automation-project">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Full Stack Clojure Project]]></title>
+            <link>https://www.asepbagja.com/programming/full-stack-clojure-project</link>
+            <guid>https://www.asepbagja.com/programming/full-stack-clojure-project</guid>
+            <pubDate>Thu, 25 Jun 2015 21:00:00 GMT</pubDate>
+            <description><![CDATA[Why I'm deeply in love with Clojure? That's because I can do full stack development only in one language.]]></description>
+            <content:encoded><![CDATA[<p>Why I'm deeply in love with Clojure? That's because I can do full stack development only in one language. I can write HTML with the same Clojure data structure, then styling it by writing CSS in exactly the same data structure. When I need to do user interface development, I can use ClojureScript then compile it into JavaScript. Actually writing ClojureScript is more pleasant than writing vanilla JavaScript. How about the backend development? You don't say. Clojure was invented for that purpose.</p> <p><a href="https://www.asepbagja.com/programming/full-stack-clojure-project">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Integrating React Bootstrap and Reagent]]></title>
+            <link>https://www.asepbagja.com/programming/integrating-react-bootstrap-and-reagent</link>
+            <guid>https://www.asepbagja.com/programming/integrating-react-bootstrap-and-reagent</guid>
+            <pubDate>Wed, 10 Jun 2015 21:00:00 GMT</pubDate>
+            <description><![CDATA[Integrating React Bootstrap and Reagent was confusing me at the first.]]></description>
+            <content:encoded><![CDATA[<p>This weekend, I am experimenting to use <a href="http://react-bootstrap.github.io/">React Bootstrap</a> with ClojureScript. For whom that doesn't know it yet, React Bootstrap is a <a href="http://getbootstrap.com/">Bootstrap 3</a> component built with <a href="http://facebook.github.io/react/">ReactJS</a>. I'm using <a href="https://reagent-project.github.io/">Reagent</a> library for interacting with React from ClojureScript, instead of <a href="https://github.com/omcljs/om">Om</a>.</p> <p><a href="https://www.asepbagja.com/programming/integrating-react-bootstrap-and-reagent">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[My Learning Curve In IoT World As A Web and iOS Developer]]></title>
+            <link>https://www.asepbagja.com/programming/my-learning-curve-in-iot-world-as-a-web-and-ios-developer</link>
+            <guid>https://www.asepbagja.com/programming/my-learning-curve-in-iot-world-as-a-web-and-ios-developer</guid>
+            <pubDate>Wed, 15 Apr 2015 21:00:00 GMT</pubDate>
+            <description><![CDATA[I was interested for learning electronic again as a hobby around 2-3 years ago.]]></description>
+            <content:encoded><![CDATA[<p>As a web developer and iOS developer, I didn't know much about hardware or bare metal programming. I only learned about resistor, capasitor, transistor, etc when I was still in junior high school, thus my electronic knowledge is very limited.</p> <p><a href="https://www.asepbagja.com/programming/my-learning-curve-in-iot-world-as-a-web-and-ios-developer">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Is Learning to Code Necessary for Everyone?]]></title>
+            <link>https://www.asepbagja.com/programming/is-learning-to-code-necessary-for-everyone</link>
+            <guid>https://www.asepbagja.com/programming/is-learning-to-code-necessary-for-everyone</guid>
+            <pubDate>Fri, 27 Feb 2015 22:00:00 GMT</pubDate>
+            <description><![CDATA[Many peoples that desire to make business in technology industry are not always coming from computer science background.]]></description>
+            <content:encoded><![CDATA[<p>Although coding is not a basic communication skill for human, I prefer to encourage people for learning it, especially for someone who wants to expresses and develops his/her idea in technology industry but doesn't come from computer science background. There are couple of reasons according to that opinion.</p> <p><a href="https://www.asepbagja.com/programming/is-learning-to-code-necessary-for-everyone">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+        <item>
+            <title><![CDATA[Me and Programming Languages]]></title>
+            <link>https://www.asepbagja.com/programming/me-and-programming-languages</link>
+            <guid>https://www.asepbagja.com/programming/me-and-programming-languages</guid>
+            <pubDate>Thu, 11 Dec 2014 22:00:00 GMT</pubDate>
+            <description><![CDATA[I met her around 2003 from my high school accounting teacher. She was my very first date in programming world.]]></description>
+            <content:encoded><![CDATA[<p><em>This is the story of my life about my relationship with some programming languages from the first time I learnt computer programming until now. It was like finding a life partner.</em></p> <p><a href="https://www.asepbagja.com/programming/me-and-programming-languages">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
+    </channel>
+</rss>

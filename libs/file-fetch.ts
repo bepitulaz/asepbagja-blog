@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { Feed } from "feed";
 import { Article } from "./data-type";
-import { markdownToRSS } from "./utilities";
+import { markdownToRSS, getFirstParagraph } from "./utilities";
 
 // Get all contents from the file system
 export async function readFromFileSystem(langCode: string | undefined) {
@@ -51,7 +51,7 @@ export async function readFromFileSystem(langCode: string | undefined) {
   return sortedArticle;
 }
 
-export function generateRSSFeed(articles: Array<Article>) {
+export function generateRSSFeed(articles: Array<Article>, locale: string) {
   const baseUrl = "https://www.asepbagja.com";
   const author = {
     name: "Asep Bagja Priandana",
@@ -60,48 +60,60 @@ export function generateRSSFeed(articles: Array<Article>) {
   };
   let date = new Date();
 
-  const feed = new Feed({
-    title: "The blog of Asep Bagja",
-    description:
-      "The personal blog where Asep shares his opinion and topic that he is interested.",
+  const titleEN = "The blog of Asep Bagja";
+  const titleID = "Blog Asep Bagja";
+  const descriptionEN =
+    "My personal blog where I share my opinion and topic that I'm interested.";
+  const descriptionID =
+    "Blog pribadi tempat saya berbagi pendapat dan topik menarik yang saya sukai.";
+
+  const header = {
+    title: locale === "id" ? titleID : titleEN,
+    description: locale === "id" ? descriptionID : descriptionEN,
     id: baseUrl,
     link: baseUrl,
-    language: "en", // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
+    language: locale, // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
     favicon: `${baseUrl}/favicon.ico`,
     copyright: `All rights reserved 2014-${date.getFullYear()}, ${author.name}`,
     updated: date, // optional, default = today
-    generator: "The blog of Asep Bagja", // optional, default = 'Feed for Node.js'
+    generator: locale === "id" ? titleID : titleEN, // optional, default = 'Feed for Node.js'
     feedLinks: {
-      rss2: `${baseUrl}/rss.xml`,
+      rss2: `${baseUrl}/${locale}-rss.xml`,
     },
     author,
-  });
+  };
+  const feed = new Feed(header);
 
   const generateItems = async () => {
     for (const article of articles) {
       const category = article.metadata?.categories?.[0] || "";
 
-      if (article.date) {
-        const dateSplit = article.date.split("/");
-        const year = parseInt(dateSplit[2]);
-        const month = parseInt(dateSplit[1]);
-        const day = parseInt(dateSplit[0]);
-        date = new Date(year, month, day);
-      }
+      const dateSplit = article.date.split("/");
+      const year = parseInt(dateSplit[2]);
+      const month = parseInt(dateSplit[1]);
+      const day = parseInt(dateSplit[0]);
+      date = new Date(year, month, day);
 
-      feed.addItem({
+      const articleUrl = `${baseUrl}/${category.toLowerCase()}/${article.slug}`;
+      const content = (await markdownToRSS(article?.content)) || "";
+      const firstParagrah = getFirstParagraph(content);
+      const contentWithCTA = `${firstParagrah} <p><a href="${articleUrl}">Read full article on Asep Bagja's blog</a></p>`;
+
+      const post = {
         title: article.metadata?.title || "",
-        id: `${baseUrl}/${category.toLowerCase()}/${article.slug}`,
-        link: `${baseUrl}/${category.toLowerCase()}/${article.slug}`,
+        id: articleUrl,
+        link: articleUrl,
         description: article.metadata?.summary || "",
-        content: (await markdownToRSS(article?.content)) || "",
+        content: contentWithCTA,
         author: [author],
-        date: article?.date ? new Date(article.date) : date,
-      });
+        date,
+      };
+
+      feed.addItem(post);
     }
 
     // Write the RSS output to a public file
-    fs.writeFile("public/rss.xml", feed.rss2());
+    fs.writeFile(`public/${locale}-rss.xml`, feed.rss2());
   };
 
   generateItems();

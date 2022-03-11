@@ -31,5 +31,12 @@ export async function markdownToRSS(markdown: string): Promise<string> {
     .use(rehypeRaw)
     .use(rehypeStringify, { allowDangerousHtml: false })
     .process(markdown);
+  
   return result.toString();
 }
+
+export function getFirstParagraph(content: string): string {
+  const regex = /<p>(.*?)<\/p>/;
+  const result = regex.exec(content);
+  return (result) ? result[0] : "";
+};

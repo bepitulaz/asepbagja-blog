@@ -17,7 +17,7 @@ interface PageProps {
 export const getStaticProps: GetStaticProps = async (context) => {
   const posts = await readFromFileSystem(context.locale);
 
-  generateRSSFeed(posts);
+  generateRSSFeed(posts, context.locale!);
 
   return {
     props: {
