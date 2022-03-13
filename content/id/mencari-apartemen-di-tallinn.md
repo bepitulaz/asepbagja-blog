@@ -43,7 +43,7 @@ Semakin tua bangunannya, biasanya kelas energinya juga tidak bagus-bagus amat ke
 <div class="text-center">
 <figure class="figure">
 <img src="/blog-img/korterid-energiamargis.png" class="figure-img img-fluid" alt="Kelas Energi" />
-<figcaption class="figure-caption text-center">Contah informasi dari situs KV. Energiamärgis adalah kelas energi.</a></figcaption>
+<figcaption class="figure-caption text-center">Contoh informasi dari situs KV. Energiamärgis adalah kelas energi.</a></figcaption>
 </figure>
 </div>
 
