@@ -66,6 +66,8 @@ export function generateRSSFeed(articles: Array<Article>, locale: string) {
     "My personal blog where I share my opinion and topic that I'm interested.";
   const descriptionID =
     "Blog pribadi tempat saya berbagi pendapat dan topik menarik yang saya sukai.";
+  const ctaEN = "Read full article on Asep Bagja's blog";
+  const ctaID = "Baca selengkapnya di blog Asep Bagja";
 
   const header = {
     title: locale === "id" ? titleID : titleEN,
@@ -97,7 +99,7 @@ export function generateRSSFeed(articles: Array<Article>, locale: string) {
       const articleUrl = `${baseUrl}/${category.toLowerCase()}/${article.slug}`;
       const content = (await markdownToRSS(article?.content)) || "";
       const firstParagrah = getFirstParagraph(content);
-      const contentWithCTA = `${firstParagrah} <p><a href="${articleUrl}">Read full article on Asep Bagja's blog</a></p>`;
+      const contentWithCTA = `${firstParagrah} <p><a href="${articleUrl}">${locale === "id" ? ctaID : ctaEN}</a></p>`;
 
       const post = {
         title: article.metadata?.title || "",
