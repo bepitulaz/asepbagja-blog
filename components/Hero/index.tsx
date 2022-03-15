@@ -63,12 +63,15 @@ const Hero = (): ReactElement => {
                 <Dropdown.Item>Bahasa Indonesia</Dropdown.Item>
               </Link>
             </DropdownButton>
-            <Link href={rssRoute} passHref locale={lang}>
-              <a className="btn btn-outline-dark btn-sm mx-1">
-                <RssFill className="me-1" />
-                {t("common:follow")}
-              </a>
-            </Link>
+            <a
+              href={rssRoute}
+              target="_blank"
+              className="btn btn-outline-dark btn-sm mx-1"
+              rel="noreferrer"
+            >
+              <RssFill className="me-1" />
+              {t("common:follow")}
+            </a>
           </div>
         </Col>
       </Row>
