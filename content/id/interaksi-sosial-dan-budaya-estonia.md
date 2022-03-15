@@ -49,7 +49,7 @@ Dari kejadian tersebut, saya menarik kesimpulan untuk berkomunikasi dengan layan
 
 ### Menghormati ruang personal orang lain
 
-Saat pandemi Covid-19, kita selalu disuruh untuk menjaga jarak setidaknya 1,5 meter. Saya teringat sebuah omongan dari orang Estonia di grup e-Residency, "I don't think we need that. We always stand more than 2 metres in our life. (Saya rasa kami tidak perlu itu. Kami selalu berdiri dengan jarak lebih dari 2 meter di kehidupan kami.)" Saya baru bisa paham setelah akhirnya [pindah ke Tallinn](/personal/mencari-kerja-di-luar-negeri). Saat menunggu bus atau tram mereka akan berdiri dengan jarak yang sangat renggang agar tidak disapa oleh orang lain. Biasanya yang berdiri berdekatan hanya sesama yang sudah saling kenal saja.
+Saat pandemi Covid-19, kita selalu disuruh untuk menjaga jarak setidaknya 1,5 meter. Saya teringat sebuah omongan dari orang Estonia di grup e-Residency, "I don't think we need that. We always stand more than 2 metres in our life. (Saya rasa kami tidak perlu itu. Kami selalu berdiri dengan jarak lebih dari 2 meter di kehidupan kami.)" Saya baru bisa paham setelah akhirnya [pindah ke Tallinn](https://www.asepbagja.com/id/pribadi/mencari-kerja-di-luar-negeri). Saat menunggu bus atau tram mereka akan berdiri dengan jarak yang sangat renggang agar tidak disapa oleh orang lain. Biasanya yang berdiri berdekatan hanya sesama yang sudah saling kenal saja.
 
 <figure class="figure">
 <img src="/blog-img/personal-space.jpg" class="figure-img img-fluid" alt="Orang-orang menunggu bus" />

@@ -1,8 +1,13 @@
 import Link from "next/link";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
+import {
+  DropdownButton,
+  Dropdown,
+  Container,
+  Row,
+  Col,
+  Image,
+} from "react-bootstrap";
+import { RssFill } from "react-bootstrap-icons";
 import { ReactElement } from "react";
 import useTranslation from "next-translate/useTranslation";
 import TransText from "next-translate/TransText";
@@ -13,6 +18,10 @@ const Hero = (): ReactElement => {
   const greetingText = t("home:greeting");
   const aboutText = t("about:title");
   const aboutRoute = lang === "id" ? "/tentang" : "/about";
+  const rssRoute =
+    lang === "id"
+      ? "https://www.asepbagja.com/id-rss.xml"
+      : "https://www.asepbagja.com/en-rss.xml";
 
   return (
     <Container className="py-5">
@@ -29,13 +38,38 @@ const Hero = (): ReactElement => {
           <p className="h4">{greetingText}</p>
           <h1>Asep Bagja Priandana</h1>
           <p className="lead">
-            <TransText text={taglineText} components={{
-              br: <br />
-            }}/>
+            <TransText
+              text={taglineText}
+              components={{
+                br: <br />,
+              }}
+            />
           </p>
-          <Link href={aboutRoute} passHref locale={lang}>
-            <a className="btn btn-outline-dark btn-lg">{aboutText}</a>
-          </Link>
+          <div className="d-flex justify-content-center">
+            <Link href={aboutRoute} passHref locale={lang}>
+              <a className="btn btn-outline-danger btn-sm mx-1">{aboutText}</a>
+            </Link>
+            <DropdownButton
+              id="language-selection"
+              title={t("common:language")}
+              size="sm"
+              variant="outline-dark"
+              className="mx-1"
+            >
+              <Link href="/" passHref locale="en">
+                <Dropdown.Item>English</Dropdown.Item>
+              </Link>
+              <Link href="/" passHref locale="id">
+                <Dropdown.Item>Bahasa Indonesia</Dropdown.Item>
+              </Link>
+            </DropdownButton>
+            <Link href={rssRoute} passHref locale={lang}>
+              <a className="btn btn-outline-dark btn-sm mx-1">
+                <RssFill className="me-1" />
+                {t("common:follow")}
+              </a>
+            </Link>
+          </div>
         </Col>
       </Row>
     </Container>

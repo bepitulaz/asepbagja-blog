@@ -17,7 +17,7 @@ aliases:
 summary: "Dengan mengikuti program e-Residency, kamu akan mendapatkan kartu eID Estonia."
 ---
 
-Saya sering sekali mendapat pertanyaan dari teman atau kenalan setiap kali mereka melihat website [Tanibox](https://tanibox.com), "Loh, Tanibox itu alamatnya di Estonia? Kok, bisa? Kenapa?" Untuk menjawab pertanyaan ini, saya harus memulai dengan menjelaskan program [Estonia e-Residency](http://e-resident.gov.ee/). Sedangkan untuk menjawab pertanyaan, "kenapa kok Estonia?", kamu bisa memulai kisah awalnya di tulisan saya pada tahun 2017 [di sini](/id/artikel/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia).
+Saya sering sekali mendapat pertanyaan dari teman atau kenalan setiap kali mereka melihat website [Tanibox](https://tanibox.com), "Loh, Tanibox itu alamatnya di Estonia? Kok, bisa? Kenapa?" Untuk menjawab pertanyaan ini, saya harus memulai dengan menjelaskan program [Estonia e-Residency](http://e-resident.gov.ee/). Sedangkan untuk menjawab pertanyaan, "kenapa kok Estonia?", kamu bisa memulai kisah awalnya di tulisan saya pada tahun 2017 [di sini](https://www.asepbagja.com/id/artikel/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia).
 
 !["Running Remote 2019"](/blog-img/running_remote.jpg)
 *Menjadi panelist di Running Remote Conference 2019 bersama tim dari pemerintah Estonia untuk program e-Residency*

@@ -12,7 +12,7 @@ aliases:
 - /personal/mencari-kerja-di-luar-negeri/
 ---
 
-Tiga bulan berlalu semenjak saya pindah dari [Denpasar ke Tallinn, Estonia](/personal/bye-bali-sampai-jumpa-lagi). Sekarang saatnya saya berbagi pengalaman tentang bagaimana caranya saya bisa mendapatkan pekerjaan sebagai *software developer* di Estonia dan di masa pandemi pula. Yang mana di masa sekarang bepergian ke luar negeri itu lebih sulit dari biasanya.
+Tiga bulan berlalu semenjak saya pindah dari [Denpasar ke Tallinn, Estonia](https://www.asepbagja.com/id/pribadi/bye-bali-sampai-jumpa-lagi). Sekarang saatnya saya berbagi pengalaman tentang bagaimana caranya saya bisa mendapatkan pekerjaan sebagai *software developer* di Estonia dan di masa pandemi pula. Yang mana di masa sekarang bepergian ke luar negeri itu lebih sulit dari biasanya.
 
 ![Asep in Tallinn](/blog-img/snow-in-tallinn.jpg)
 

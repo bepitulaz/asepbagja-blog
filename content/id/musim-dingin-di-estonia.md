@@ -70,7 +70,7 @@ Kini saya sudah punya aturan sendiri untuk lapisan berpakaian saat musim dingin,
 4. Di bawah -20°C saya belum pernah merasakan. Sepertinya harus keluar dari Tallinn untuk bisa merasakan suhu segitu. Setahu saya, wilayah Estonia bagian timur sempat mencatat suhu -30°C di bulan November 2021 kemarin.
 5. Untuk alas kaki, berapapun suhunya di musim dingin saya selalu pakai sepatu boot yang tahan air dan memiliki insulasi yang baik. Jangan lupa menggunakan kaos kaki dengan bahan selain katun.
 
-Bagaimana? Apakah kamu ingin mencoba pindah ke negara dingin? Jika ya, mungkin artikel saya sebelumnya bisa membantu kamu untuk [mendapatkan pekerjaan di negara-negara wilayah utara](/personal/mencari-kerja-di-luar-negeri).
+Bagaimana? Apakah kamu ingin mencoba pindah ke negara dingin? Jika ya, mungkin artikel saya sebelumnya bisa membantu kamu untuk [mendapatkan pekerjaan di negara-negara wilayah utara](https://www.asepbagja.com/id/pribadi/mencari-kerja-di-luar-negeri).
 
 <figure class="figure">
 <img src="/blog-img/kadriorg-winter.jpg" class="figure-img img-fluid" alt="suasana musim gugur di Estonia" />

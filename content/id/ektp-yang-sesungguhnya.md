@@ -20,7 +20,7 @@ Lalu berikutnya saya menemukan sebuah utas berikut ini. Walaupun saya tahu ini h
 
 <blockquote class="twitter-tweet"><p lang="in" dir="ltr">Jadi to sum up:<br>- Screenshot<br>- Print<br>- Photocopy the print-out as back-up<br><br>Kalau mau lebih advanced lagi, bisa juga e-KTP digitalnya dititip di admin perusahaan pinjol. Kalau suatu hari butuh, tinggal kontak admin pinjol yang selalu online dan available 24/7. You’re welcome.</p>&mdash; Ravio Patra (@raviopatra) <a href="https://twitter.com/raviopatra/status/1479439405957873664?ref_src=twsrc%5Etfw">January 7, 2022</a></blockquote>
 
-Setelah membaca utas tersebut, saya jadi ingin berbagi pengalaman soal bagaimana sih penerapan E-KTP, yang kalau di Estonia disebutnya eID. Kebetulan saya sudah merasakan kemudahan [eID Estonia sejak 2017](/business/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia) jauh sebelum saya tinggal di Estonia lewat program Estonia e-Residency. Ketika akhirnya [saya pindah ke Estonia](/personal/bye-bali-sampai-jumpa-lagi) tahun 2021, saya makin merasakan manfaatnya eID dengan data yang terintegrasi di setiap sendi-sendi kehidupan.
+Setelah membaca utas tersebut, saya jadi ingin berbagi pengalaman soal bagaimana sih penerapan E-KTP, yang kalau di Estonia disebutnya eID. Kebetulan saya sudah merasakan kemudahan [eID Estonia sejak 2017](https://www.asepbagja.com/id/bisnis/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia) jauh sebelum saya tinggal di Estonia lewat program Estonia e-Residency. Ketika akhirnya [saya pindah ke Estonia](https://www.asepbagja.com/id/pribadi/bye-bali-sampai-jumpa-lagi) tahun 2021, saya makin merasakan manfaatnya eID dengan data yang terintegrasi di setiap sendi-sendi kehidupan.
 
 **Bagaimana bentuknya eID?**
 

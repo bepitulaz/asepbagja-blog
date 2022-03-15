@@ -8,7 +8,7 @@ images:
 summary: "JavaScript has the first-class function. It means the functions in JavaScript treats as a value."
 ---
 
-In [part 1](/posts/introduction-to-functional-programming-in-javascript-part-1/), we had learned about two important concepts in functional programming paradigm: immutable data and pure function. Now, we will learn another important concept in functional programming, that is higher order function.
+In [part 1](https://www.asepbagja.com/programming/introduction-to-functional-programming-in-javascript-part-1/), we had learned about two important concepts in functional programming paradigm: immutable data and pure function. Now, we will learn another important concept in functional programming, that is higher order function.
 
 According to Wikipedia, higher-order function is a function that does at least one of the following:
 
@@ -217,7 +217,7 @@ Currying is a useful technique in functional programming. It can avoid repetitio
 
 **Summary and What's Next?**
 
-JavaScript supports higher-order function very well. It makes JavaScript suitable to apply some techniques from functional programming paradigm, and we can combine it with the knowledge that we had learned from the [part 1](http://asepbagja.com/introduction-to-functional-programming-in-javascript-part-1/) of the article to make our code more brevity.
+JavaScript supports higher-order function very well. It makes JavaScript suitable to apply some techniques from functional programming paradigm, and we can combine it with the knowledge that we had learned from the [part 1](http://asepbagja.com/programming/introduction-to-functional-programming-in-javascript-part-1/) of the article to make our code more brevity.
 
 Learning functional programming won't hurt you. I encourage you to learn a programming language that specifically designed for it because many techniques and concepts are hard to explain or do in JavaScript. You can pick Haskell, Clojure, Scala, Elixir, OCaml, etc. By knowing imperative programming and functional programming you will get the best of both worlds.
 

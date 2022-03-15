@@ -62,7 +62,7 @@ Masih galau dengan tujuan hidup, bisnis, dan karir. *Quarter life crisis* saya l
 
 ### 2017
 
-Mengambil keputusan besar. Saya memutuskan untuk [*exit* dari Froyo](https://asepbagja.com/id/artikel/terima-kasih-froyo-asep-is-out/) dan menjual seluruh kepemilikan saham saya di sana. Di tahun ini krisis seperempat abad saya menghilang. Bersama istri, tekad kami bulat untuk menjadikan Tanibox sebagai sebuah bisnis.
+Mengambil keputusan besar. Saya memutuskan untuk [*exit* dari Froyo](https://asepbagja.com/id/bisnis/terima-kasih-froyo-asep-is-out/) dan menjual seluruh kepemilikan saham saya di sana. Di tahun ini krisis seperempat abad saya menghilang. Bersama istri, tekad kami bulat untuk menjadikan Tanibox sebagai sebuah bisnis.
 
 Kami segera [**mendaftarkan Tanibox**](https://asepbagja.com/id/artikel/pengalaman-mengagumkan-mendaftarkan-perusahaan-di-estonia/) sebagai perusahaan di Indonesia dan Estonia sekaligus.
 

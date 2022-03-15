@@ -12,7 +12,7 @@ aliases:
 - /personal/relokasi-vs-full-time-remote/
 ---
 
-Karena ada warga Twitter yang bertanya seperti ini, maka saya akan lanjutkan artikel sebelumnya tentang [mencari kerja di luar negeri](/personal/mencari-kerja-di-luar-negeri).
+Karena ada warga Twitter yang bertanya seperti ini, maka saya akan lanjutkan artikel sebelumnya tentang [mencari kerja di luar negeri](https://www.asepbagja.com/id/pribadi/mencari-kerja-di-luar-negeri).
 
 <blockquote class="twitter-tweet"><p lang="in" dir="ltr">Mantep banget, thanks for sharing mas Asep. Boleh tau kah pertimbangan memilih relokasi daripada full-time remote?</p>&mdash; Wanda Ichsanul Isra 🇮🇩 (@wnd_isra) <a href="https://twitter.com/wnd_isra/status/1473240751567867909?ref_src=twsrc%5Etfw">December 21, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -35,7 +35,7 @@ Dari melihat kondisi sosial masyarakat saat ini, arah pembangunan Indonesia di 1
 
 **2. Peluang dan kesempatan karir di masa depan**
 
-Sebenarnya ini masih berhubungan dengan poin sebelumnya. Karena saya berkarir di industri teknologi informasi, saya merasa perlu pindah ke tempat yang mendukung. Untuk di Indonesia, Jakarta masih menjadi primadona untuk industri ini, tapi saya sudah lelah dengan Jakarta sampai saya dan istri memilih untuk [pindah ke Bali](/business/terima-kasih-froyo-asep-is-out). 
+Sebenarnya ini masih berhubungan dengan poin sebelumnya. Karena saya berkarir di industri teknologi informasi, saya merasa perlu pindah ke tempat yang mendukung. Untuk di Indonesia, Jakarta masih menjadi primadona untuk industri ini, tapi saya sudah lelah dengan Jakarta sampai saya dan istri memilih untuk [pindah ke Bali](https://www.asepbagja.com/id/bisnis/terima-kasih-froyo-asep-is-out). 
 
 Amerika Serikat? Saya dulu sempat tertarik dan ingin sekali bisa pindah ke sana. Tapi semakin saya pelajari mulai dari budaya kerja, legalisasi senjata api, dan biaya hidup akhirnya saya mengurungkan niat untuk mencari jalan supaya bisa pindah ke sana.
 

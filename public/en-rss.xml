@@ -4,7 +4,7 @@
         <title>The blog of Asep Bagja</title>
         <link>https://www.asepbagja.com</link>
         <description>My personal blog where I share my opinion and topic that I'm interested.</description>
-        <lastBuildDate>Sun, 13 Mar 2022 14:47:26 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 15 Mar 2022 07:59:49 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The blog of Asep Bagja</generator>
         <language>en</language>
@@ -15,7 +15,7 @@
             <guid>https://www.asepbagja.com/programming/midi-scripting-ableton-nodejs</guid>
             <pubDate>Tue, 15 Feb 2022 22:00:00 GMT</pubDate>
             <description><![CDATA[How to control and automate a DAW such as Ableton Live with Node.js.]]></description>
-            <content:encoded><![CDATA[<p>Recently, I released my debut single <a href="/music/a-new-life-singles">A New Life</a>. It's a <a href="https://en.wikipedia.org/wiki/Generative_music">generative music</a> album that I composed and programmed using JavaScript. In this article, I will share the process behind it. But, before going to the code, let me explain some music technology terms that I use a lot.</p> <p><a href="https://www.asepbagja.com/programming/midi-scripting-ableton-nodejs">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <content:encoded><![CDATA[<p>Recently, I released my debut single <a href="https://www.asepbagja.com/music/a-new-life-singles">A New Life</a>. It's a <a href="https://en.wikipedia.org/wiki/Generative_music">generative music</a> album that I composed and programmed using JavaScript. In this article, I will share the process behind it. But, before going to the code, let me explain some music technology terms that I use a lot.</p> <p><a href="https://www.asepbagja.com/programming/midi-scripting-ableton-nodejs">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
             <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
         </item>
         <item>
@@ -60,7 +60,7 @@
             <guid>https://www.asepbagja.com/programming/introduction-to-functional-programming-in-javascript-part-2</guid>
             <pubDate>Wed, 03 Aug 2016 21:00:00 GMT</pubDate>
             <description><![CDATA[JavaScript has the first-class function. It means the functions in JavaScript treats as a value.]]></description>
-            <content:encoded><![CDATA[<p>In <a href="/posts/introduction-to-functional-programming-in-javascript-part-1/">part 1</a>, we had learned about two important concepts in functional programming paradigm: immutable data and pure function. Now, we will learn another important concept in functional programming, that is higher order function.</p> <p><a href="https://www.asepbagja.com/programming/introduction-to-functional-programming-in-javascript-part-2">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <content:encoded><![CDATA[<p>In <a href="https://www.asepbagja.com/programming/introduction-to-functional-programming-in-javascript-part-1/">part 1</a>, we had learned about two important concepts in functional programming paradigm: immutable data and pure function. Now, we will learn another important concept in functional programming, that is higher order function.</p> <p><a href="https://www.asepbagja.com/programming/introduction-to-functional-programming-in-javascript-part-2">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
             <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
         </item>
         <item>
@@ -105,7 +105,7 @@
             <guid>https://www.asepbagja.com/programming/simple-and-cheap-iot-data-logging-with-clojure</guid>
             <pubDate>Thu, 07 Jan 2016 22:00:00 GMT</pubDate>
             <description><![CDATA[The concept is simple. Just catch the string from the sensor, transform it into Clojure data structure.]]></description>
-            <content:encoded><![CDATA[<p>I have a small green house in <a href="https://asep.co/my-familys-journey-to-grow-our-own-food/">my home front yard</a>, and I deployed some sensors like temperature, humidity, electrical conductivity (EC), and pH sensor there.</p> <p><a href="https://www.asepbagja.com/programming/simple-and-cheap-iot-data-logging-with-clojure">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <content:encoded><![CDATA[<p>I have a small green house in <a href="https://www.asepbagja.com/personal/my-familys-journey-to-grow-our-own-food/">my home front yard</a>, and I deployed some sensors like temperature, humidity, electrical conductivity (EC), and pH sensor there.</p> <p><a href="https://www.asepbagja.com/programming/simple-and-cheap-iot-data-logging-with-clojure">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
             <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
         </item>
         <item>

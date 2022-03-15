@@ -40,7 +40,7 @@ Berbelanja di supermarket di Estonia, jangan harap akan mendapat sambutan hangat
 
 Kalau di supermarket besar seperti Rimi Hyper atau Prisma malah biasanya ada 3 jenis kasir *puldikassa* (kasir remote), *iseteeninduskassa* (kasir mesin swayalan), dan kasir manusia. Tapi biasanya jalur kasir manusia ini hanya sedikit, paling satu atau dua lajur. Kasir manusia biasanya digunakan kalau kasir-kasir otomatis sedang ramai pengunjung atau ada gangguan sistem.
 
-Berbelanja dengan menggunakan jalur *puldikassa* jauh lebih efisien lagi dibandingkan *iseteeninduskassa*, sayangnya sistem ini hanya bisa digunakan jika kita sudah menjadi penduduk resmi dan punya eID (KTP). [KTP di Estonia sudah terintegrasi ke mana-mana](/estonia/ektp-yang-sesungguhnya) seperti yang pernah saya tulis di artikel sebelumnya.
+Berbelanja dengan menggunakan jalur *puldikassa* jauh lebih efisien lagi dibandingkan *iseteeninduskassa*, sayangnya sistem ini hanya bisa digunakan jika kita sudah menjadi penduduk resmi dan punya eID (KTP). [KTP di Estonia sudah terintegrasi ke mana-mana](https://www.asepbagja.com/id/estonia/ektp-yang-sesungguhnya) seperti yang pernah saya tulis di artikel sebelumnya.
 
 Untuk menggunakan *puldikassa* caranya dengan mengambil pemindai barcode di stasiunnya dengan cara membuka kuncinya dengan mengetap KTP Estonia ke mesin. Lalu berbelanja seperti biasa. Setiap kamu mengambil satu barang, langsung pindai saja barcode-nya.
 

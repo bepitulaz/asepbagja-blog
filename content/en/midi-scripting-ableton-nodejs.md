@@ -10,7 +10,7 @@ lang: "English"
 featured: true
 ---
 
-Recently, I released my debut single [A New Life](/music/a-new-life-singles). It's a [generative music](https://en.wikipedia.org/wiki/Generative_music) album that I composed and programmed using JavaScript. In this article, I will share the process behind it. But, before going to the code, let me explain some music technology terms that I use a lot.
+Recently, I released my debut single [A New Life](https://www.asepbagja.com/music/a-new-life-singles). It's a [generative music](https://en.wikipedia.org/wiki/Generative_music) album that I composed and programmed using JavaScript. In this article, I will share the process behind it. But, before going to the code, let me explain some music technology terms that I use a lot.
 
 ![A New Life](/music-img/a-new-life.jpg)
 
@@ -100,6 +100,6 @@ virtualInput.on("clock", () => {
 
 **Wrap up**
 
-The code above is the skeleton to compose the music and sync Node.js scripts with the sequencer in DAW. Now, you can read and play with the complete source code in [A New Life's Github repository](https://github.com/bepitulaz/music-a-new-life).
+The code above is the skeleton to compose the music and sync Node.js scripts with the sequencer in DAW. Now, you can read and play with the complete source code in [A New Life's Github repository](https://github.com/bepitulaz/generative-music).
 
 Please, check the [MIDI specification](https://midi.org/specifications) for the additional resource.
