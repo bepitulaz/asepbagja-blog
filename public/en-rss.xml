@@ -4,11 +4,20 @@
         <title>The blog of Asep Bagja</title>
         <link>https://www.asepbagja.com</link>
         <description>My personal blog where I share my opinion and topic that I'm interested.</description>
-        <lastBuildDate>Tue, 15 Mar 2022 07:59:49 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 17 Mar 2022 07:10:46 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The blog of Asep Bagja</generator>
         <language>en</language>
         <copyright>All rights reserved 2014-2022, Asep Bagja Priandana</copyright>
+        <item>
+            <title><![CDATA[My Photo Collection on Unsplash]]></title>
+            <link>https://www.asepbagja.com/personal/photo-collection-unsplash</link>
+            <guid>https://www.asepbagja.com/personal/photo-collection-unsplash</guid>
+            <pubDate>Sat, 16 Apr 2022 21:00:00 GMT</pubDate>
+            <description><![CDATA[You can legally use my photo collections on Unsplash.]]></description>
+            <content:encoded><![CDATA[<p>Photography is my other hobby besides music. I occasionally take photos with a mirrorless camera or smartphone whenever I go outside. Usually, I upload some of them to my Instagram profile. However, there are some great photos that I don't upload because it doesn't suit my Instagram vibe. Those kinds of photo files will end up in my cloud storage.</p> <p><a href="https://www.asepbagja.com/personal/photo-collection-unsplash">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
         <item>
             <title><![CDATA[MIDI scripting Ableton Live with Node.js]]></title>
             <link>https://www.asepbagja.com/programming/midi-scripting-ableton-nodejs</link>
