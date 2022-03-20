@@ -80,7 +80,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
       post.locale = locale;
       return post;
     });
-    posts.concat(postsWithLocale);
+    posts = posts.concat(postsWithLocale);
   }
 
   // Join all post array
