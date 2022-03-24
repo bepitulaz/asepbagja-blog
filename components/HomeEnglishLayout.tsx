@@ -3,6 +3,8 @@ import useTranslation from "next-translate/useTranslation";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import { PlayCircleFill } from "react-bootstrap-icons";
 import SectionTitle from "@/components/SectionTitle";
 import PodcastCard from "@/components/PodcastCard";
 import { OneGrid, TwoGrids } from "@/components/PostCard";
@@ -12,22 +14,25 @@ interface LayoutProps {
   posts: Article[];
 }
 
-const HomeEnglishLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactElement => {
+const HomeEnglishLayout: FunctionComponent<LayoutProps> = ({
+  posts,
+}): ReactElement => {
   const { t } = useTranslation();
 
-  const businessText = t("common:business");
-  const musicText = t("common:music");
   const programmingText = t("common:programming");
-  const estoniaText = t("common:estonia");
   const personalText = t("common:personal");
   const seeAllText = t("common:see-all");
 
   const programmingPosts = posts.filter((post) => {
-    const isCategoryExist = post.metadata.categories.includes(CategoryEN.PROGRAMMING);
+    const isCategoryExist = post.metadata.categories.includes(
+      CategoryEN.PROGRAMMING
+    );
     return !post.metadata.featured && isCategoryExist;
   });
   const personalPosts = posts.filter((post) => {
-    const isCategoryExist = post.metadata.categories.includes(CategoryEN.PERSONAL);
+    const isCategoryExist = post.metadata.categories.includes(
+      CategoryEN.PERSONAL
+    );
     return !post.metadata.featured && isCategoryExist;
   });
 
@@ -39,7 +44,7 @@ const HomeEnglishLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactElem
           <Row>
             <Col>
               <SectionTitle
-                sectionTitle="Podcasts"
+                sectionTitle="Music"
                 bsTextColourClass="text-white"
                 showButton={false}
               />
@@ -47,36 +52,37 @@ const HomeEnglishLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactElem
           </Row>
           <Row className="mt-md-3">
             <PodcastCard
-              imageSrc={"/images/asep-talks.png"}
-              imageAlt={"Podcast Catatan Asep Bagja cover art"}
-              title={"Catatan Asep Bagja"}
+              imageSrc={"/music-img/a-new-life-square.jpg"}
+              imageAlt={"A New Life cover art"}
+              title={"A New Life"}
               summary={
-                "My solo podcast in Bahasa Indonesia. I talk various topics such as programming, finance, and hobby."
+                "A generative ambient music that's inspired by my immigration journey in 2021. All songs are generated from real-time world data."
               }
               href={
-                "https://open.spotify.com/show/0e3qAxJ8c7j4noDX9birAp?si=gabJYhhcSKGM_BZ4D040zA&dl_branch=1"
+                "https://artists.landr.com/692531292711"
               }
-            />
+              sizeInLarge={6}
+            >
+              <Button variant="outline-light" size="sm">
+                <PlayCircleFill size={20} className="mr-3" /> Listen on your favourite platform
+              </Button>
+            </PodcastCard>
             <PodcastCard
-              imageSrc={"/images/ngopini-sejenak.png"}
-              imageAlt={"Ngopini sejenak cover art"}
-              title={"Ngopini Sejenak"}
+              imageSrc={"/music-img/people-just-want-peace-square.jpg"}
+              imageAlt={"People Just Want Peace cover art"}
+              title={"People Just Want Peace"}
               summary={
-                "We talk about various topics in the adult life. I co-host it with my wife, Retno, in Bahasa Indonesia."
+                "Inspired by the world event, a war in Ukraine in 2022, I composed this music to bring a message that we just want peace."
               }
               href={
-                "https://open.spotify.com/show/12NnDN0zkmAFM6NNYmt8dh?si=iwW08XDOSqaYcWjGjii_eQ&dl_branch=1"
+                "https://artists.landr.com/692531433367"
               }
-            />
-            <PodcastCard
-              imageSrc={"/images/Ujung_CoverArt.png"}
-              imageAlt={"Podcast Ujung Ke Ujung cover art"}
-              title={"Ujung Ke Ujung"}
-              summary={
-                "We talk about career in IT industry in Bahasa Indonesia. Co-host: Radita Liem and I."
-              }
-              href={"https://ujung.ee"}
-            />
+              sizeInLarge={6}
+            >
+              <Button variant="outline-light" size="sm">
+                <PlayCircleFill size={20} className="mr-3" /> Listen on your favourite platform
+              </Button>
+            </PodcastCard>
           </Row>
         </Container>
       </section>
@@ -117,69 +123,61 @@ const HomeEnglishLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactElem
       </section>
     </>
   );
-}
-
-const TwoGridsRight: FunctionComponent<LayoutProps> = ({ posts }): ReactElement => {
-  const components = posts.map((post, index) => index === 2 ? (
-    <TwoGrids
-      key={index}
-      title={post.metadata.title}
-      excerpt={post.metadata.summary}
-      imageSrc={post.metadata.images[0]}
-      imageAlt={`the thumbnail of ${post.metadata.title}`}
-      href={`/${post.metadata.categories[0]}/${
-        post.slug
-      }`}
-    />
-  ) : (
-    <OneGrid
-      key={index}
-      title={post.metadata.title}
-      excerpt={post.metadata.summary}
-      imageSrc={post.metadata.images[0]}
-      imageAlt={`the thumbnail of ${post.metadata.title}`}
-      href={`/${post.metadata.categories[0]}/${
-        post.slug
-      }`}
-    />
-  ));
-  return (
-    <>
-      {components}
-    </>
-  );
 };
 
-const TwoGridsLeft: FunctionComponent<LayoutProps> = ({ posts }): ReactElement => {
-  const components = posts.map((post, index) => index === 0 ? (
-    <TwoGrids
-      key={index}
-      title={post.metadata.title}
-      excerpt={post.metadata.summary}
-      imageSrc={post.metadata.images[0]}
-      imageAlt={`the thumbnail of ${post.metadata.title}`}
-      href={`/${post.metadata.categories[0]}/${
-        post.slug
-      }`}
-    />
-  ) : (
-    <OneGrid
-      key={index}
-      title={post.metadata.title}
-      excerpt={post.metadata.summary}
-      imageSrc={post.metadata.images[0]}
-      imageAlt={`the thumbnail of ${post.metadata.title}`}
-      href={`/${post.metadata.categories[0]}/${
-        post.slug
-      }`}
-    />
-  ));
-
-  return (
-    <>
-      {components}
-    </>
+const TwoGridsRight: FunctionComponent<LayoutProps> = ({
+  posts,
+}): ReactElement => {
+  const components = posts.map((post, index) =>
+    index === 2 ? (
+      <TwoGrids
+        key={index}
+        title={post.metadata.title}
+        excerpt={post.metadata.summary}
+        imageSrc={post.metadata.images[0]}
+        imageAlt={`the thumbnail of ${post.metadata.title}`}
+        href={`/${post.metadata.categories[0]}/${post.slug}`}
+      />
+    ) : (
+      <OneGrid
+        key={index}
+        title={post.metadata.title}
+        excerpt={post.metadata.summary}
+        imageSrc={post.metadata.images[0]}
+        imageAlt={`the thumbnail of ${post.metadata.title}`}
+        href={`/${post.metadata.categories[0]}/${post.slug}`}
+      />
+    )
   );
+  return <>{components}</>;
+};
+
+const TwoGridsLeft: FunctionComponent<LayoutProps> = ({
+  posts,
+}): ReactElement => {
+  const components = posts.map((post, index) =>
+    index === 0 ? (
+      <TwoGrids
+        key={index}
+        title={post.metadata.title}
+        excerpt={post.metadata.summary}
+        imageSrc={post.metadata.images[0]}
+        imageAlt={`the thumbnail of ${post.metadata.title}`}
+        href={`/${post.metadata.categories[0]}/${post.slug}`}
+      />
+    ) : (
+      <OneGrid
+        key={index}
+        title={post.metadata.title}
+        excerpt={post.metadata.summary}
+        imageSrc={post.metadata.images[0]}
+        imageAlt={`the thumbnail of ${post.metadata.title}`}
+        href={`/${post.metadata.categories[0]}/${post.slug}`}
+      />
+    )
+  );
+
+  return <>{components}</>;
 };
 
 export default HomeEnglishLayout;

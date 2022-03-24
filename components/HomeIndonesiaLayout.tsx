@@ -49,7 +49,7 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
               imageAlt={"Podcast Catatan Asep Bagja cover art"}
               title={"Catatan Asep Bagja"}
               summary={
-                "My solo podcast in Bahasa Indonesia. I talk various topics such as programming, finance, and hobby."
+                "Solo podcast di mana saya berbicara aneka macam topik yang saya senangi."
               }
               href={
                 "https://open.spotify.com/show/0e3qAxJ8c7j4noDX9birAp?si=gabJYhhcSKGM_BZ4D040zA&dl_branch=1"
@@ -60,7 +60,7 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
               imageAlt={"Ngopini sejenak cover art"}
               title={"Ngopini Sejenak"}
               summary={
-                "We talk about various topics in the adult life. I co-host it with my wife, Retno, in Bahasa Indonesia."
+                "Sebuah podcast bersama istri saya, Retno, yang berisi soal kehidupan orang dewasa."
               }
               href={
                 "https://open.spotify.com/show/12NnDN0zkmAFM6NNYmt8dh?si=iwW08XDOSqaYcWjGjii_eQ&dl_branch=1"
@@ -71,7 +71,7 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
               imageAlt={"Podcast Ujung Ke Ujung cover art"}
               title={"Ujung Ke Ujung"}
               summary={
-                "We talk about career in IT industry in Bahasa Indonesia. Co-host: Radita Liem and I."
+                "Membicarakan karir di industri IT. Co-hosting: Radita Liem, peneliti di bidang komputasi performa tinggi."
               }
               href={"https://ujung.ee"}
             />
