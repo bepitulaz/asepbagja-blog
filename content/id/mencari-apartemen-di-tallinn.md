@@ -7,7 +7,7 @@ categories:
 - Estonia
 summary: "Pengalaman saya mencari dan menyewa apartemen di kota Tallinn, Estonia."
 lang: "Bahasa Indonesia"
-featured: true
+featured: false
 ---
 
 Saat memutuskan untuk pindah dan menetap ke satu tempat, biasanya yang pertama kali dilakukan adalah mencari tempat tinggal. Itu juga yang saya lakukan selama ini saat merantau dan berpindah dari satu kota ke kota lain di Indonesia. Tentu saja mencari tempat tinggal di negara lain memberikan pengalaman yang berbeda dengan mencari tempat tinggal di Indonesia.
