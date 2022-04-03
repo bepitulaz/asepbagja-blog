@@ -4,11 +4,20 @@
         <title>The blog of Asep Bagja</title>
         <link>https://www.asepbagja.com</link>
         <description>My personal blog where I share my opinion and topic that I'm interested.</description>
-        <lastBuildDate>Thu, 17 Mar 2022 07:10:46 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 03 Apr 2022 08:18:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The blog of Asep Bagja</generator>
         <language>en</language>
         <copyright>All rights reserved 2014-2022, Asep Bagja Priandana</copyright>
+        <item>
+            <title><![CDATA[Single: People Just Want Peace]]></title>
+            <link>https://www.asepbagja.com/music/people-just-want-peace</link>
+            <guid>https://www.asepbagja.com/music/people-just-want-peace</guid>
+            <pubDate>Wed, 20 Apr 2022 21:00:00 GMT</pubDate>
+            <description><![CDATA[I composed the music to bring the message of peace to all over the world.]]></description>
+            <content:encoded><![CDATA[<p>I walked around Tallinn's old town area a few weeks ago and stumbled upon this graffiti. I guess someone created it after the protest event against Russia's aggression in Ukraine in February 2022. The war that's still happening now.</p> <p><a href="https://www.asepbagja.com/music/people-just-want-peace">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
         <item>
             <title><![CDATA[My Photo Collection on Unsplash]]></title>
             <link>https://www.asepbagja.com/personal/photo-collection-unsplash</link>
