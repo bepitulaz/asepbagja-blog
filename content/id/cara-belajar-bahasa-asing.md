@@ -60,7 +60,7 @@ Untuk versi berbayarnya memiliki fitur yang lebih lengkap seperti mendengarkan d
 
 Jika kamu mau mencoba fitur premium Speakly secara gratis selama satu bulan penuh, kamu bisa menggunakan kode undangan saya di [tautan ini](https://www.speakly.me/share/mc_2yURQ2g66).
 
-**iTalki**
+**italki**
 
 Saya menggunakan aplikasi ini untuk melatih percakapan dengan orang betulan. Jadi di aplikasi ini kita dapat mencari guru bahasa untuk melatih kemampuan komunikasi di bahasa yang sedang dipelajari. Aplikasi ini berbayar tergantung harga yang dicantumkan oleh masing-masing guru.
 
