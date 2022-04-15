@@ -6,7 +6,7 @@ images:
 categories:
 - Music
 summary: "I composed the music to bring the message of peace to all over the world."
-featured: true
+featured: false
 ---
 
 I walked around Tallinn's old town area a few weeks ago and stumbled upon this graffiti. I guess someone created it after the protest event against Russia's aggression in Ukraine in February 2022. The war that's still happening now.
