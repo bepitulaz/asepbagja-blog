@@ -4,11 +4,20 @@
         <title>The blog of Asep Bagja</title>
         <link>https://www.asepbagja.com</link>
         <description>My personal blog where I share my opinion and topic that I'm interested.</description>
-        <lastBuildDate>Fri, 15 Apr 2022 11:01:54 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 19 Apr 2022 16:13:34 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The blog of Asep Bagja</generator>
         <language>en</language>
         <copyright>All rights reserved 2014-2022, Asep Bagja Priandana</copyright>
+        <item>
+            <title><![CDATA[Finding A Job As A Software Developer Abroad]]></title>
+            <link>https://www.asepbagja.com/personal/finding-job-software-developer-abroad</link>
+            <guid>https://www.asepbagja.com/personal/finding-job-software-developer-abroad</guid>
+            <pubDate>Wed, 18 May 2022 21:00:00 GMT</pubDate>
+            <description><![CDATA[My job-seeking process in Europe]]></description>
+            <content:encoded><![CDATA[<p>It has been six months since I moved from Denpasar to Tallinn, Estonia. It’s time for me to share my experience on how I landed the job as a software developer in Estonia during the pandemic - the time when it’s even more difficult than usual to travel abroad.</p> <p><a href="https://www.asepbagja.com/personal/finding-job-software-developer-abroad">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
         <item>
             <title><![CDATA[Why Do I Use A Keyboard Workstation In 2022?]]></title>
             <link>https://www.asepbagja.com/music/why-i-use-keyboard-workstation</link>
