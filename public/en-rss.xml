@@ -4,11 +4,20 @@
         <title>The blog of Asep Bagja</title>
         <link>https://www.asepbagja.com</link>
         <description>My personal blog where I share my opinion and topic that I'm interested.</description>
-        <lastBuildDate>Tue, 19 Apr 2022 16:13:34 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 29 Apr 2022 05:20:09 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The blog of Asep Bagja</generator>
         <language>en</language>
         <copyright>All rights reserved 2014-2022, Asep Bagja Priandana</copyright>
+        <item>
+            <title><![CDATA[Social Interaction And The Culture In Estonia]]></title>
+            <link>https://www.asepbagja.com/estonia/estonia-social-culture</link>
+            <guid>https://www.asepbagja.com/estonia/estonia-social-culture</guid>
+            <pubDate>Sat, 28 May 2022 21:00:00 GMT</pubDate>
+            <description><![CDATA[How to interact with Estonians and integrate well?]]></description>
+            <content:encoded><![CDATA[<p>Social interaction is social relationships between an individual to another individual, an individual to a group, and a group to another group. We as humans will always perform social interactions wherever we are since we are social creatures. It’s very rare for a person to live without other people’s help at all.</p> <p><a href="https://www.asepbagja.com/estonia/estonia-social-culture">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
         <item>
             <title><![CDATA[Finding A Job As A Software Developer Abroad]]></title>
             <link>https://www.asepbagja.com/personal/finding-job-software-developer-abroad</link>

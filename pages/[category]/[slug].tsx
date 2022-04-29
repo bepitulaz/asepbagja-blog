@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Spinner from "react-bootstrap/Spinner";
-import { Article, CategoryID } from "@/libs/data-type";
+import { Article, CategoryID, CategoryEN } from "@/libs/data-type";
 import { readFromFileSystem } from "@/libs/file-fetch";
 import BaseLayout from "@/components/BaseLayout";
 import HtmlContent from "@/components/HtmlContent";
@@ -24,7 +24,7 @@ interface PageProps {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { category, slug } = context.params!;
   // Migrating old URL to new ID URL. For SEO backward compatibility.
-  if (context.locale === "en") {
+  if (context.locale === "en" && category !== CategoryEN.ESTONIA) {
     const listOfCategories = [
       CategoryID.PROGRAMMING,
       CategoryID.PERSONAL,

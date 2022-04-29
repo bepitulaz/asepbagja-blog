@@ -66,20 +66,14 @@ const BaseLayout = (props: any): JSX.Element => {
               <Link href={programmingRoute} passHref locale={lang}>
                 <Nav.Link>{programmingText}</Nav.Link>
               </Link>
-              {lang === "en" ? (
-                <Link href={personalRoute} passHref locale={lang}>
-                  <Nav.Link>{personalText}</Nav.Link>
+              <NavDropdown title={lifeText} id="basic-nav-dropdown">
+                <Link href={estoniaRoute} passHref locale={lang}>
+                  <NavDropdown.Item>{estoniaText}</NavDropdown.Item>
                 </Link>
-              ) : (
-                <NavDropdown title={lifeText} id="basic-nav-dropdown">
-                  <Link href={estoniaRoute} passHref locale={lang}>
-                    <NavDropdown.Item>{estoniaText}</NavDropdown.Item>
-                  </Link>
-                  <Link href={personalRoute} passHref locale={lang}>
-                    <NavDropdown.Item>{personalText}</NavDropdown.Item>
-                  </Link>
-                </NavDropdown>
-              )}
+                <Link href={personalRoute} passHref locale={lang}>
+                  <NavDropdown.Item>{personalText}</NavDropdown.Item>
+                </Link>
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
