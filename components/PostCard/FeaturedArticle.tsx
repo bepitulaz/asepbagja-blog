@@ -41,7 +41,7 @@ const FeaturedArticle: FunctionComponent<FeaturedArticleProps> = ({
             <Image src={imageSrc} fluid alt={imageAlt} />
           </Col>
           <Col md={6} className="d-flex align-items-center pt-3 pt-md-0">
-            <div>
+            <div className="card-summary">
               <div className="mb-3">
                 <span className="badge bg-dark">{categoryTitle}</span>
               </div>

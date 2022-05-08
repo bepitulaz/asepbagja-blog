@@ -35,7 +35,26 @@ a.title-article {
   }
 }
 
+.card-summary {
+  p {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.2rem;
+  }
+}
+
 article {
+  p {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.2rem;
+    line-height: 2.25rem;
+  }
+
+  ul, ol {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.2rem;
+    line-height: 2.25rem;
+  }
+
   blockquote {
     background: #f9f9f9;
     border-left: 10px solid #ccc;
@@ -54,7 +73,7 @@ article {
   blockquote p {
     display: inline;
     font-size: 1.5rem;
-    line-height: 2rem;
+    line-height: 2.25rem;
   }
 
   h3 {

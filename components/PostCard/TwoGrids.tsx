@@ -23,7 +23,7 @@ const TwoGrids = ({
       <div className={styles.imageContainer}>
         <Image src={imageSrc} alt={imageAlt} layout={"fill"} objectFit={"cover"} />
       </div>
-      <div className="pt-3">
+      <div className="pt-3 card-summary">
         <a href={href} title={title} className="title-article text-body">
           <h4>{title}</h4>
         </a>
