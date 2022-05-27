@@ -43,7 +43,7 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
           <Row>
             <Col>
               <SectionTitle
-                sectionTitle="Musik"
+                sectionTitle="Diskografi"
                 bsTextColourClass="text-white"
                 showButton={false}
               />
@@ -53,33 +53,49 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
             <PodcastCard
               imageSrc={"/music-img/a-new-life-square.jpg"}
               imageAlt={"A New Life cover art"}
-              title={"A New Life"}
+              title={"A New Life - Single"}
               summary={
                 "Musik ambient yang dihasilkan dari data real-time. Terinspirasi dari perjalanan imigrasi saya di tahun 2021."
               }
               href={
                 "https://artists.landr.com/692531292711"
               }
-              sizeInLarge={6}
+              sizeInLarge={4}
             >
-              <Button variant="outline-light" size="sm">
-                <PlayCircleFill size={20} className="mr-3" /> Dengarkan di platform kesukaanmu
+              <Button variant="outline-light" size="sm" className="mt-3 w-100">
+                <PlayCircleFill size={20} className="mr-3" /> Dengarkan
               </Button>
             </PodcastCard>
             <PodcastCard
               imageSrc={"/music-img/people-just-want-peace-square.jpg"}
               imageAlt={"People Just Want Peace cover art"}
-              title={"People Just Want Peace"}
+              title={"People Just Want Peace - Single"}
               summary={
                 "Terinspirasi dari kejadian perang di Ukraina tahun 2022. Saya menuliskan musik ini untuk membawa pesan bahwa yang kita inginkan hanya perdamaian."
               }
               href={
                 "https://artists.landr.com/692531433367"
               }
-              sizeInLarge={6}
+              sizeInLarge={4}
             >
-              <Button variant="outline-light" size="sm">
-                <PlayCircleFill size={20} className="mr-3" /> Dengarkan di platform kesukaanmu
+              <Button variant="outline-light" size="sm" className="mt-3 w-100">
+                <PlayCircleFill size={20} className="mr-3" /> Dengarkan
+              </Button>
+            </PodcastCard>
+            <PodcastCard
+              imageSrc={"/music-img/the-enlightening-moment-square.jpg"}
+              imageAlt={"The Enlightening Moment cover art"}
+              title={"The Enlightening Moment - EP"}
+              summary={
+                "Rilis dalam format EP pertama saya di tahun 2022. Ide bisa datang dari manapun dan kapanpun, termasuk di kamar mandi."
+              }
+              href={
+                "https://artists.landr.com/692531599346"
+              }
+              sizeInLarge={4}
+            >
+              <Button variant="outline-light" size="sm" className="mt-3 w-100">
+                <PlayCircleFill size={20} className="mr-3" /> Dengarkan
               </Button>
             </PodcastCard>
           </Row>

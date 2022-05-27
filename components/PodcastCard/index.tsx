@@ -35,12 +35,12 @@ const PodcastCard: FunctionComponent<PodcastCardProps> = ({
             <Col xs={4}>
               <div className={styles.imageContainer}>
                 <Image src={imageSrc} alt={imageAlt} fluid rounded />
+                {children}
               </div>
             </Col>
             <Col xs={8} className="text-start card-summary">
               <h3>{title}</h3>
               <p className="text-white">{summary}</p>
-              {children}
             </Col>
           </Row>
         </a>

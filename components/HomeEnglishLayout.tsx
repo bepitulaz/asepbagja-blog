@@ -54,33 +54,49 @@ const HomeEnglishLayout: FunctionComponent<LayoutProps> = ({
             <PodcastCard
               imageSrc={"/music-img/a-new-life-square.jpg"}
               imageAlt={"A New Life cover art"}
-              title={"A New Life"}
+              title={"A New Life - Single"}
               summary={
                 "A generative ambient music that's inspired by my immigration journey in 2021. All songs are generated from real-time world data."
               }
               href={
                 "https://artists.landr.com/692531292711"
               }
-              sizeInLarge={6}
+              sizeInLarge={4}
             >
-              <Button variant="outline-light" size="sm">
-                <PlayCircleFill size={20} className="mr-3" /> Listen on your favourite platform
+              <Button variant="outline-light" size="sm" className="mt-3 w-100">
+                <PlayCircleFill size={20} className="mr-3" /> Listen now
               </Button>
             </PodcastCard>
             <PodcastCard
               imageSrc={"/music-img/people-just-want-peace-square.jpg"}
               imageAlt={"People Just Want Peace cover art"}
-              title={"People Just Want Peace"}
+              title={"People Just Want Peace - Single"}
               summary={
                 "Inspired by the world event, a war in Ukraine in 2022, I composed this music to bring a message that we just want peace."
               }
               href={
                 "https://artists.landr.com/692531433367"
               }
-              sizeInLarge={6}
+              sizeInLarge={4}
             >
-              <Button variant="outline-light" size="sm">
-                <PlayCircleFill size={20} className="mr-3" /> Listen on your favourite platform
+              <Button variant="outline-light" size="sm" className="mt-3 w-100">
+                <PlayCircleFill size={20} className="mr-3" /> Listen now
+              </Button>
+            </PodcastCard>
+            <PodcastCard
+              imageSrc={"/music-img/the-enlightening-moment-square.jpg"}
+              imageAlt={"The Enlightening Moment cover art"}
+              title={"The Enlightening Moment - EP"}
+              summary={
+                "My first EP in 2022. Ideas can be anywhere and anytime, even when we are in the bathroom. Shower thoughts."
+              }
+              href={
+                "https://artists.landr.com/692531599346"
+              }
+              sizeInLarge={4}
+            >
+              <Button variant="outline-light" size="sm" className="mt-3 w-100">
+                <PlayCircleFill size={20} className="mr-3" /> Listen now
               </Button>
             </PodcastCard>
           </Row>
