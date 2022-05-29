@@ -61,6 +61,16 @@ article {
     margin: 1.5em 10px;
     padding: 0.5em 10px;
     quotes: "\201C""\201D""\2018""\2019";
+
+    p {
+      display: inline;
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+    }
+
+    cite {
+      font-size: 1rem;
+    }
   }
   blockquote:before {
     color: #ccc;
@@ -69,11 +79,6 @@ article {
     line-height: 0.1em;
     margin-right: 0.25em;
     vertical-align: -0.4em;
-  }
-  blockquote p {
-    display: inline;
-    font-size: 1.5rem;
-    line-height: 2.25rem;
   }
 
   h3 {

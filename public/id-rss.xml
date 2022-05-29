@@ -4,11 +4,20 @@
         <title>Blog Asep Bagja</title>
         <link>https://www.asepbagja.com</link>
         <description>Blog pribadi tempat saya berbagi pendapat dan topik menarik yang saya sukai.</description>
-        <lastBuildDate>Sun, 01 May 2022 11:39:30 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 29 May 2022 08:06:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Blog Asep Bagja</generator>
         <language>id</language>
         <copyright>All rights reserved 2014-2022, Asep Bagja Priandana</copyright>
+        <item>
+            <title><![CDATA[Tech Bubble, Salah Siapa?]]></title>
+            <link>https://www.asepbagja.com/bisnis/tech-bubble-salah-siapa</link>
+            <guid>https://www.asepbagja.com/bisnis/tech-bubble-salah-siapa</guid>
+            <pubDate>Tue, 28 Jun 2022 21:00:00 GMT</pubDate>
+            <description><![CDATA[Opini pribadi tentang kehebohan dunia startup teknologi akhir-akhir ini.]]></description>
+            <content:encoded><![CDATA[<p>Satu minggu belakangan ini dunia startup teknologi sedang dikejutkan dengan banyaknya pemutusan hubungan kerja (PHK) secara masal. Tidak hanya di Indonesia, tetapi juga di beberapa perusahaan teknologi di Eropa dan juga Amerika Serikat. Alasan yang sering dibahas adalah efisiensi, karena pendapatan yang diterima perusahaan dari pelanggan mereka tidak sebanding dengan pengeluaran seperti gaji karyawan dan biaya akuisisi pelanggan.</p> <p><a href="https://www.asepbagja.com/bisnis/tech-bubble-salah-siapa">Baca selengkapnya di blog Asep Bagja</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
         <item>
             <title><![CDATA[Bahasa Estonia Dari Sudut Pandang Ekspatriat Dan Warga Lokal]]></title>
             <link>https://www.asepbagja.com/estonia/bahasa-estonia-ekspat-lokal</link>

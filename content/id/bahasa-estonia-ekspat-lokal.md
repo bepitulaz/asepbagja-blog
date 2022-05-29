@@ -7,7 +7,7 @@ categories:
 - Estonia
 summary: "Sebuah diskusi menarik tentang mengapa ekspatriat sebaiknya belajar bahasa Estonia dan bagaimana warga lokal menyikapinya."
 lang: "Bahasa Indonesia"
-featured: true
+featured: false
 ---
 
 Hari Kamis, 28 April 2022, saya mendapat kesempatan diajak menjadi pembicara di sebuah acara bertajuk [Expats & Experts](https://www.eventbrite.com/e/expats-experts-powered-by-glia-and-jobbatical-tickets-310278630737?aff=ebdsoporgprofile). Di acara tersebut membahas tentang bahasa Estonia dari sudut pandang ekspatriat yang mau/sedang mempelajarinya dan bagaimana warga asli Estonia menyikapi hal tersebut.
