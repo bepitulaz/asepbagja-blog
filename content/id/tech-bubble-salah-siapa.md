@@ -7,7 +7,7 @@ categories:
 - Bisnis
 summary: "Opini pribadi tentang kehebohan dunia startup teknologi akhir-akhir ini."
 lang: "Bahasa Indonesia"
-featured: true
+featured: false
 ---
 
 Satu minggu belakangan ini dunia startup teknologi sedang dikejutkan dengan banyaknya pemutusan hubungan kerja (PHK) secara masal. Tidak hanya di Indonesia, tetapi juga di beberapa perusahaan teknologi di Eropa dan juga Amerika Serikat. Alasan yang sering dibahas adalah efisiensi, karena pendapatan yang diterima perusahaan dari pelanggan mereka tidak sebanding dengan pengeluaran seperti gaji karyawan dan biaya akuisisi pelanggan.

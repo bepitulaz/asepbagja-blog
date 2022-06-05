@@ -4,11 +4,20 @@
         <title>Blog Asep Bagja</title>
         <link>https://www.asepbagja.com</link>
         <description>Blog pribadi tempat saya berbagi pendapat dan topik menarik yang saya sukai.</description>
-        <lastBuildDate>Sun, 29 May 2022 08:06:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 05 Jun 2022 09:53:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Blog Asep Bagja</generator>
         <language>id</language>
         <copyright>All rights reserved 2014-2022, Asep Bagja Priandana</copyright>
+        <item>
+            <title><![CDATA[Transaksi Perbankan Konvensional di Estonia]]></title>
+            <link>https://www.asepbagja.com/estonia/perbankan-di-estonia</link>
+            <guid>https://www.asepbagja.com/estonia/perbankan-di-estonia</guid>
+            <pubDate>Mon, 04 Jul 2022 21:00:00 GMT</pubDate>
+            <description><![CDATA[Seperti apa sistem perbankan konvensional di Estonia untuk transaksi di dalam negeri?]]></description>
+            <content:encoded><![CDATA[<p>Tema keributan minggu ini di jagat Twitter Indonesia adalah seputar ATM di Indonesia yang katanya lebih canggih daripada ATM di Amerika Serikat. Berawal dari orang Amerika Serikat yang <a href="https://www.tiktok.com/@joyfilledwander/video/7104890945346358555">memvideokan pengalamannya</a> menggunakan ATM di Indonesia yang memiliki fitur berlimpah, lalu muncul tanggapan dari diaspora Indonesia di Amerika Serikat yang berpendapat Amerika Serikat tidak kalah canggih. Tanggapannya tentu lebih melebar dari sekadar ATM, tapi juga dari kecanggihan perusahaan <em>fintech</em> di Amerika Serikat.</p> <p><a href="https://www.asepbagja.com/estonia/perbankan-di-estonia">Baca selengkapnya di blog Asep Bagja</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
         <item>
             <title><![CDATA[Tech Bubble, Salah Siapa?]]></title>
             <link>https://www.asepbagja.com/bisnis/tech-bubble-salah-siapa</link>
