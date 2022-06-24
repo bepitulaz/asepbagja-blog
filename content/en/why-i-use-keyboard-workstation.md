@@ -6,7 +6,7 @@ images:
 categories:
 - Music
 summary: "Why bother to buy a keyboard workstation if a laptop with a DAW and MIDI controller can give the same capability?"
-featured: true
+featured: false
 ---
 
 If you are a musician and your main musical instrument is a keyboard, you may hear about a keyboard workstation, synthesizer workstation, or workstation. What is it exactly? Do I need one?

@@ -4,11 +4,20 @@
         <title>The blog of Asep Bagja</title>
         <link>https://www.asepbagja.com</link>
         <description>My personal blog where I share my opinion and topic that I'm interested.</description>
-        <lastBuildDate>Sun, 22 May 2022 17:57:53 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Jun 2022 13:57:22 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>The blog of Asep Bagja</generator>
         <language>en</language>
         <copyright>All rights reserved 2014-2022, Asep Bagja Priandana</copyright>
+        <item>
+            <title><![CDATA[Behind Live In Estonia Project]]></title>
+            <link>https://www.asepbagja.com/personal/behind-live-in-estonia</link>
+            <guid>https://www.asepbagja.com/personal/behind-live-in-estonia</guid>
+            <pubDate>Sat, 23 Jul 2022 21:00:00 GMT</pubDate>
+            <description><![CDATA[What's the reason behind why I developed the Live In Estonia website? You can read it here.]]></description>
+            <content:encoded><![CDATA[<p>Photography, especially landscape and street photography, is my hobby besides music production. I bring a mirrorless camera, Sony A6000, almost every day wherever I go. This hobby escalated since I moved to Estonia in October 2021. Living in a new country with beautiful nature makes me more excited to take photos. The problem is, what will I do for that photos?</p> <p><a href="https://www.asepbagja.com/personal/behind-live-in-estonia">Read full article on Asep Bagja's blog</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
         <item>
             <title><![CDATA[Relocate Pet Cats from Bali to Estonia]]></title>
             <link>https://www.asepbagja.com/personal/relocate-cats-bali-estonia</link>
