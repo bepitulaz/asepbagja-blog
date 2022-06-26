@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect } from "react";
 import { Article, TrackingEvent } from "@/libs/data-type";
 import Button from "react-bootstrap/Button";
-import { EnvelopeCheck } from "react-bootstrap-icons";
+import { HeartFill } from "react-bootstrap-icons";
 import { usePlausible } from "next-plausible";
 import useTranslation from "next-translate/useTranslation";
 import styles from "./CtaBox.module.css";
@@ -53,7 +53,7 @@ const CtaBox: FunctionComponent<CtaBoxProps> = ({ article }) => {
       <p className="px-5">{descriptionText}</p>
       <div className="mt-2">
         <Button href={ctaLinkText} variant="primary" size="lg">
-          <EnvelopeCheck size={25} className="pb-1" />{" "}
+          <HeartFill size={25} className="pb-1" />{" "}
           <span>{buttonDescriptionText}</span>
         </Button>
         <p className={styles.paymentText}>{ctaDescriptionText}</p>
