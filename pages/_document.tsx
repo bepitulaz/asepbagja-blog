@@ -1,14 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-const kofi = `<script>
-kofiWidgetOverlay.draw('asepbagja', {
-  'type': 'floating-chat',
-  'floating-chat.donateButton.text': 'Tip Me',
-  'floating-chat.donateButton.background-color': '#d9534f',
-  'floating-chat.donateButton.text-color': '#fff'
-})
-</script>`;
-
 export default class MyDocument extends Document {
   render() {
     return (
@@ -22,8 +13,6 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js" />
-          <div dangerouslySetInnerHTML={{ __html: kofi }} />
         </body>
       </Html>
     );

@@ -1,5 +1,6 @@
 import { Col, Container, NavDropdown, Navbar, Nav, Row } from "react-bootstrap";
 import Link from "next/link";
+import Script from "next/script";
 import {
   Github,
   Linkedin,
@@ -150,6 +151,18 @@ const BaseLayout = (props: any): JSX.Element => {
           </Row>
         </Container>
       </footer>
+      <Script strategy={"beforeInteractive"} src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js" />
+      <Script
+        strategy={"afterInteractive"}
+        dangerouslySetInnerHTML={{
+          __html: `kofiWidgetOverlay.draw('asepbagja', {
+          'type': 'floating-chat',
+          'floating-chat.donateButton.text': 'Tip Me',
+          'floating-chat.donateButton.background-color': '#d9534f',
+          'floating-chat.donateButton.text-color': '#fff'
+          })`
+        }}
+      />
     </div>
   );
 };

@@ -7,7 +7,7 @@ categories:
 - Estonia
 summary: "Seperti apa sistem perbankan konvensional di Estonia untuk transaksi di dalam negeri?"
 lang: "Bahasa Indonesia"
-featured: true
+featured: false
 ---
 
 Tema keributan minggu ini di jagat Twitter Indonesia adalah seputar ATM di Indonesia yang katanya lebih canggih daripada ATM di Amerika Serikat. Berawal dari orang Amerika Serikat yang [memvideokan pengalamannya](https://www.tiktok.com/@joyfilledwander/video/7104890945346358555) menggunakan ATM di Indonesia yang memiliki fitur berlimpah, lalu muncul tanggapan dari diaspora Indonesia di Amerika Serikat yang berpendapat Amerika Serikat tidak kalah canggih. Tanggapannya tentu lebih melebar dari sekadar ATM, tapi juga dari kecanggihan perusahaan *fintech* di Amerika Serikat.
