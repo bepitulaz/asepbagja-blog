@@ -7,7 +7,7 @@ categories:
 - Pemrograman
 summary: "Hal yang saya pelajari setelah satu tahun bekerja di perusahaan di Estonia."
 lang: "Bahasa Indonesia"
-featured: true
+featured: false
 ---
 
 Sebagai pemrogram yang bekerja di suatu perusahaan, pasti pernah mendengar atau bahkan akrab dengan kalimat ini, "Jangan *deploy* ke *production* di hari Jumat, apalagi Jumat sore." Alasannya akibat takut jika setelah melakukan *deployment* kode baru kemudian terjadi *error* maka itu berarti akan menjadi Jumat malam yang panjang. Lembur mencari apa yang salah dan harus diperbaiki.
@@ -43,7 +43,7 @@ Baru setelah fitur tersebut dinyatakan stabil, biasanya satu minggu setelah *dep
 Saat melakukan pengembangan fitur, akan selalu ada kolega yang menjadi *reviewer* PR, sekalipun kolega tersebut tidak *coding* di tugas yang sama. PR tidak akan bisa di-*merge* tanpa ada persetujuan. Hal ini membuat setiap pemrogram jadi mengetahui kolega lain sedang membangun apa. Jadi saat terjadi masalah di *production* dan pemrogram utamanya tidak ada karena cuti, sakit, atau meninggal, maka anggota tim lain bisa mengambil alih. Mungkin proses *debugging*-nya tidak akan secepat saat pemrogram utama yang melakukan, tapi setidaknya setiap orang bisa kapan saja mengambil alih tugas tersebut.
 
 <figure class="figure">
-<img src="/blog-img/inside-the-mill.jpg" class="figure-img img-fluid" alt="Bagian dalam dari wind mill di Saaremaa." />
+<img src="https://www.asepbagja.com/blog-img/inside-the-mill.jpg" class="figure-img img-fluid" alt="Bagian dalam dari wind mill di Saaremaa." />
 <figcaption class="figure-caption text-center">Ilustrasi sebuah sistem yang saling berkaitan.</figcaption>
 </figure>
 
