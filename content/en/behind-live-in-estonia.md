@@ -6,14 +6,14 @@ images:
 categories:
 - Personal
 summary: "What's the reason behind why I developed the Live In Estonia website? You can read it here."
-featured: true
+featured: false
 ---
 
 Photography, especially landscape and street photography, is my hobby besides music production. I bring a mirrorless camera, Sony A6000, almost every day wherever I go. This hobby escalated since I moved to Estonia in October 2021. Living in a new country with beautiful nature makes me more excited to take photos. The problem is, what will I do for those photos?
 
 <div class="text-center">
 <figure class="figure">
-<img src="/blog-img/kesklinna-jaanituli.jpg" class="figure-img img-fluid" alt="People gathered around the bonfire." />
+<img src="https://www.asepbagja.com/blog-img/kesklinna-jaanituli.jpg" class="figure-img img-fluid" alt="People gathered around the bonfire." />
 <figcaption class="figure-caption text-center">The Midsummer's Eve celebration in Tallinn.</figcaption>
 </figure>
 </div>
