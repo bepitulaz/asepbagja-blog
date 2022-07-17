@@ -20,6 +20,7 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
   const businessText = t("common:business");
   const estoniaText = t("common:estonia");
   const personalText = t("common:personal");
+  const programmingText = t("common:programming");
   const seeAllText = t("common:see-all");
 
   const estoniaPosts = posts.filter((post) => {
@@ -32,6 +33,10 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
   });
   const businessPosts = posts.filter((post) => {
     const isCategoryExist = post.metadata.categories.includes(CategoryID.BUSINESS);
+    return !post.metadata.featured && isCategoryExist;
+  });
+  const programmingPosts = posts.filter((post) => {
+    const isCategoryExist = post.metadata.categories.includes(CategoryID.PROGRAMMING);
     return !post.metadata.featured && isCategoryExist;
   });
 
@@ -185,7 +190,7 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
         </Container>
       </section>
 
-      {/* All articles */}
+      {/* Business articles */}
       <section className="mt-5 pt-3">
         <Container>
           <Row>
@@ -199,6 +204,24 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
           </Row>
           <Row className="mt-md-3">
             <TwoGridsRight posts={businessPosts.slice(0, 3)} />
+          </Row>
+        </Container>
+      </section>
+
+      {/* Programming articles */}
+      <section className="mt-5 pt-3">
+        <Container>
+          <Row>
+            <Col>
+              <SectionTitle
+                sectionTitle={programmingText}
+                buttonTitle={seeAllText}
+                linkHref={`/${CategoryID.PROGRAMMING}`}
+              />
+            </Col>
+          </Row>
+          <Row className="mt-md-3">
+            <TwoGridsLeft posts={programmingPosts.slice(0, 3)} />
           </Row>
         </Container>
       </section>
