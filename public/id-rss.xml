@@ -4,11 +4,20 @@
         <title>Blog Asep Bagja</title>
         <link>https://www.asepbagja.com</link>
         <description>Blog pribadi tempat saya berbagi pendapat dan topik menarik yang saya sukai.</description>
-        <lastBuildDate>Sun, 10 Jul 2022 15:37:41 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 17 Jul 2022 16:43:27 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Blog Asep Bagja</generator>
         <language>id</language>
         <copyright>All rights reserved 2014-2022, Asep Bagja Priandana</copyright>
+        <item>
+            <title><![CDATA[40 Kilo Meter Pertama Lewat EuroVelo 10]]></title>
+            <link>https://www.asepbagja.com/estonia/40km-pertama-bersepeda</link>
+            <guid>https://www.asepbagja.com/estonia/40km-pertama-bersepeda</guid>
+            <pubDate>Tue, 16 Aug 2022 21:00:00 GMT</pubDate>
+            <description><![CDATA[Mencoba bersepeda agak jauh mengunjungi kota-kota di Estonia.]]></description>
+            <content:encoded><![CDATA[ <p><a href="https://www.asepbagja.com/estonia/40km-pertama-bersepeda">Baca selengkapnya di blog Asep Bagja</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
         <item>
             <title><![CDATA[Mulai Bersepeda]]></title>
             <link>https://www.asepbagja.com/personal/mulai-bersepeda</link>
