@@ -106,6 +106,7 @@ const BaseLayout = (props: any): JSX.Element => {
                     className="text-white"
                     href="https://open.spotify.com/artist/6v8f8XuEE8LPI8CHmbB0HM?si=YwcoObFyRq-eeSyEegsEDw"
                     target="_blank"
+                    rel="me"
                   >
                     <Spotify />
                   </Nav.Link>
@@ -115,6 +116,7 @@ const BaseLayout = (props: any): JSX.Element => {
                     className="text-white"
                     href="https://github.com/bepitulaz"
                     target="_blank"
+                    rel="me"
                   >
                     <Github />
                   </Nav.Link>
@@ -124,6 +126,7 @@ const BaseLayout = (props: any): JSX.Element => {
                     className="text-white"
                     href="https://twitter.com/bepitulaz"
                     target="_blank"
+                    rel="me"
                   >
                     <Twitter />
                   </Nav.Link>
@@ -133,6 +136,7 @@ const BaseLayout = (props: any): JSX.Element => {
                     className="text-white"
                     href="https://linkedin.com/in/asepbagja"
                     target="_blank"
+                    rel="me"
                   >
                     <Linkedin />
                   </Nav.Link>
