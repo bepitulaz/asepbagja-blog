@@ -10,7 +10,7 @@ lang: "Bahasa Indonesia"
 featured: true
 ---
 
-Saat bepergian dengan sepeda di dalam kota Tallinn, saya bisa mengayuh paling tidak 6km sampai 8km. Rasanya menyenangkan dapat menjelajah kota. Ketika telah melewati [satu bulan](https://www.asepbagja.com/id/personal/mulai-bersepeda) bersepeda, saya mulai berpikir, "Nampaknya menjelajah kota-kota lain juga menyenangkan." Apalagi saya mulai kuat mengayuh hingga 20km.
+Saat bepergian dengan sepeda di dalam kota Tallinn, saya bisa mengayuh paling tidak 6km sampai 8km. Rasanya menyenangkan dapat menjelajah kota. Ketika telah melewati [satu bulan](https://www.asepbagja.com/id/pribadi/mulai-bersepeda) bersepeda, saya mulai berpikir, "Nampaknya menjelajah kota-kota lain juga menyenangkan." Apalagi saya mulai kuat mengayuh hingga 20km.
 
 Saya pun mencari tahu, seberapa aman bersepeda jarak jauh di Estonia. Hingga akhirnya saya menemukan tentang <a href="https://en.eurovelo.com" target="_blank">EuroVelo</a>. EuroVelo adalah jalur sepeda jarak jauh antar negara yang menghubungkan keseluruhan benua Eropa. Di Estonia sendiri ada 3 jalur EuroVelo yaitu:
 1. Jalur 10 - Baltic Sea Cycle Route
