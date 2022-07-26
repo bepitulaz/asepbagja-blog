@@ -7,7 +7,7 @@ categories:
 - Personal
 summary: "Tidak ada salju. Saatnya bersepeda ke mana-mana."
 lang: "Bahasa Indonesia"
-featured: true
+featured: false
 ---
 
 Ketika salju terakhir di bulan Maret sudah berhenti dan temperatur udara sudah cukup hangat berkisar 7°C-10°C, saya dan istri mulai berencana untuk membeli sepeda. Karena kami lihat jalur sepeda di kota Tallinn cukup rapi dan aman, jadi sepertinya cukup nyaman untuk bepergian dengan menggunakan sepeda. Selain itu, Tallin dan keseluruhan Estonia pada umumnya cukup rata. Tidak ada tanjakan yang curam. Menjelajah kota dengan menggunakan sepeda tentu menjadi menyenangkan, karena lebih bisa *blusukan* dibanding menggunakan transportasi umum. Ditambah lagi, membuat badan menjadi lebih sehat. Seperti yang dijelaskan di video The Gym of Life berikut ini.

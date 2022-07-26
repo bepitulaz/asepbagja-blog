@@ -7,7 +7,7 @@ categories:
 - Estonia
 summary: "Mencoba bersepeda agak jauh mengunjungi kota-kota di Estonia."
 lang: "Bahasa Indonesia"
-featured: false
+featured: true
 ---
 
 Saat bepergian dengan sepeda di dalam kota Tallinn, saya bisa mengayuh paling tidak 6km sampai 8km. Rasanya menyenangkan dapat menjelajah kota. Ketika telah melewati [satu bulan](https://www.asepbagja.com/id/personal/mulai-bersepeda) bersepeda, saya mulai berpikir, "Nampaknya menjelajah kota-kota lain juga menyenangkan." Apalagi saya mulai kuat mengayuh hingga 20km.

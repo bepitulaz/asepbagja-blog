@@ -6,7 +6,7 @@ images:
 categories:
 - Personal
 summary: "The snow has stopped falling. It is time to go around on a bicycle."
-featured: true
+featured: false
 ---
 
 When the last snow in March stopped falling, and the air temperature got warm enough around 7°C-10°C, my wife and I started planning to buy bicycles. Since we saw that the bicycle lanes in Tallinn city are quite organized and safe, we thought it might be quite convenient to get around with bikes. Besides, Tallinn and most of Estonia are generally quite flat. There is no steep uphill. Exploring the city with bikes certainly can be fun, because we can wander more compared to using public transportation. Moreover, it makes us healthier just like The Gym of Life video explained below.
