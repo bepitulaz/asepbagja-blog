@@ -4,7 +4,7 @@ date: 2022-07-10
 images:
 - "/blog-img/bicycle-5.jpg"
 categories:
-- Personal
+- Pribadi
 summary: "Tidak ada salju. Saatnya bersepeda ke mana-mana."
 lang: "Bahasa Indonesia"
 featured: false
