@@ -39,7 +39,7 @@ Hal pertama yang saya lakukan adalah mencari di mana tempat untuk mencetak kartu
 
 Akhirnya saya berpikir lagi untuk mencari penyedia jasa *print-on-demand*, alih-alih percetakan biasa. *Print-on-demand* mampu mencetak secara satuan dengan desain yang berbeda-beda, dengan harga yang terjangkau. Tidak apa-apa sekalipun perusahaannya bukan di Estonia, yang penting harga cetak dan ongkos kirimnya masih terjangkau.
 
-Setelah menimbang-nimbang beberapa *print-on-demand* yang bisa mencetak kartu pos, akhirnya pilihan saya jatuh kepada [Printful](https://www.printful.com). Harga cetak masih masuk di bujet saya, dan ongkos kirimnya hanya 4€ karena pengirimannya dari Latvia. Latvia adalah negara tetangga di sebelah selatan Estonia.
+Setelah menimbang-nimbang beberapa *print-on-demand* yang bisa mencetak kartu pos, akhirnya pilihan saya jatuh kepada [Printful](https://www.printful.com/a/liveinestonia). Harga cetak masih masuk di bujet saya, dan ongkos kirimnya hanya 4€ karena pengirimannya dari Latvia. Latvia adalah negara tetangga di sebelah selatan Estonia.
 
 Saat itu saya mencoba cetak dulu 5 lembar, ternyata hasilnya kurang bagus. Tentu saja kesalahan bukan pada *print-on-demand*, tetapi dari saya sendiri yang kurang pandai mengatur desainnya. Maklum baru pertama kali melakukan cetak kartu pos.
 
