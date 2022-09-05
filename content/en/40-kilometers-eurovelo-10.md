@@ -7,7 +7,7 @@ categories:
 - Estonia
 summary: "Trying to cycle a bit farther to visit the cities in Estonia."
 lang: "English"
-featured: true
+featured: false
 ---
 
 When getting around by bicycle within the city of Tallinn, I am usually able to cycle for at least 6  to 8 kilometers. It has been so fun to be able to explore the city. [A month](https://www.asepbagja.com/personal/how-i-started-biking) after I started biking, I thought, “Exploring other cities seems fun too.” Especially since I started to be able to cycle for 20 kilometers.
