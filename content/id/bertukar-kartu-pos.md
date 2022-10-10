@@ -7,7 +7,7 @@ categories:
 - Pribadi
 summary: "Pada bulan Juli 2022, saya mengobrol dengan beberapa teman di sebuah grup chat tentang nostalgia menunggu tukang pos datang membawa surat dari para sahabat."
 lang: "Bahasa Indonesia"
-featured: true
+featured: false
 ---
 
 Orang-orang yang terlahir di tahun 1981-1996 atau biasa disebut generasi milenial (Generasi Y) adalah generasi transisi antara kehidupan yang serba analog dan digitalisasi berkat adanya internet dan telepon selular. Apalagi jika kamu milenial yang terlahir sebelum tahun 1990, besar kemungkinan masa kecil dan remajamu masih sempat mengalami banyak hal analog untuk berkomunikasi seperti telepon kartu, telepon koin, berkirim surat, atau malah sempat punya sahabat pena.
