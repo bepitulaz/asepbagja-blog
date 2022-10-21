@@ -5,8 +5,8 @@ import {
   Github,
   Linkedin,
   Twitter,
-  Spotify,
   Flag,
+  Youtube
 } from "react-bootstrap-icons";
 import useTranslation from "next-translate/useTranslation";
 import { CategoryEN, CategoryID } from "@/libs/data-type";
@@ -104,11 +104,11 @@ const BaseLayout = (props: any): JSX.Element => {
                 <Nav.Item>
                   <Nav.Link
                     className="text-white"
-                    href="https://open.spotify.com/artist/6v8f8XuEE8LPI8CHmbB0HM?si=YwcoObFyRq-eeSyEegsEDw"
+                    href="https://www.youtube.com/channel/UCjGnuWk0n6BWx7rXshMysbw"
                     target="_blank"
                     rel="me"
                   >
-                    <Spotify />
+                    <Youtube />
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>

@@ -22,4 +22,4 @@ Inspired by that graffiti and the big protest in Tallinn, I started composing th
 
 "People Just Want Peace" consists of two tracks, "Prologue" and "People Just Want Peace". I use field recording to create a Prologue track, my footstep on the flurry ice. I like to hear the ice sound. It feels peaceful to the ear. I keep involved a generative technique with JavaScript in this single to create a rhythmic synth sound for the main song.
 
-You can listen to "People Just Want Piece" on [your favourite streaming platforms](https://artists.landr.com/692531433367).
+You can listen to "People Just Want Piece" on [YouTube Music](https://music.youtube.com/playlist?list=OLAK5uy_k0LaLQSJhxc_bbMVTfmdFqsL-tEf5Ll2k&feature=share).

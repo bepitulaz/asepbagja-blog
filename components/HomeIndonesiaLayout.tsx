@@ -63,7 +63,7 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
                 "Musik ambient yang dihasilkan dari data real-time. Terinspirasi dari perjalanan imigrasi saya di tahun 2021."
               }
               href={
-                "https://artists.landr.com/692531292711"
+                "https://music.youtube.com/playlist?list=OLAK5uy_nZvBsFixdX7X9yuxjBy7a31GhOMQ3aH3M&feature=share"
               }
               sizeInLarge={4}
             >
@@ -79,7 +79,7 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
                 "Terinspirasi dari kejadian perang di Ukraina tahun 2022. Saya menuliskan musik ini untuk membawa pesan bahwa yang kita inginkan hanya perdamaian."
               }
               href={
-                "https://artists.landr.com/692531433367"
+                "https://music.youtube.com/playlist?list=OLAK5uy_k0LaLQSJhxc_bbMVTfmdFqsL-tEf5Ll2k&feature=share"
               }
               sizeInLarge={4}
             >
@@ -95,7 +95,7 @@ const HomeIndonesiaLayout: FunctionComponent<LayoutProps> = ({ posts }): ReactEl
                 "Rilis dalam format EP pertama saya di tahun 2022. Ide bisa datang dari manapun dan kapanpun, termasuk di kamar mandi."
               }
               href={
-                "https://artists.landr.com/692531599346"
+                "https://music.youtube.com/playlist?list=OLAK5uy_kSSHqVHLlpTB0uiRbBLrWDzslMZIdhY8s&feature=share"
               }
               sizeInLarge={4}
             >

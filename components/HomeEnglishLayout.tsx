@@ -59,7 +59,7 @@ const HomeEnglishLayout: FunctionComponent<LayoutProps> = ({
                 "A generative ambient music that's inspired by my immigration journey in 2021. All songs are generated from real-time world data."
               }
               href={
-                "https://artists.landr.com/692531292711"
+                "https://music.youtube.com/playlist?list=OLAK5uy_nZvBsFixdX7X9yuxjBy7a31GhOMQ3aH3M&feature=share"
               }
               sizeInLarge={4}
             >
@@ -75,7 +75,7 @@ const HomeEnglishLayout: FunctionComponent<LayoutProps> = ({
                 "Inspired by the world event, a war in Ukraine in 2022, I composed this music to bring a message that we just want peace."
               }
               href={
-                "https://artists.landr.com/692531433367"
+                "https://music.youtube.com/playlist?list=OLAK5uy_k0LaLQSJhxc_bbMVTfmdFqsL-tEf5Ll2k&feature=share"
               }
               sizeInLarge={4}
             >
@@ -91,7 +91,7 @@ const HomeEnglishLayout: FunctionComponent<LayoutProps> = ({
                 "My first EP in 2022. Ideas can be anywhere and anytime, even when we are in the bathroom. Shower thoughts."
               }
               href={
-                "https://artists.landr.com/692531599346"
+                "https://music.youtube.com/playlist?list=OLAK5uy_kSSHqVHLlpTB0uiRbBLrWDzslMZIdhY8s&feature=share"
               }
               sizeInLarge={4}
             >

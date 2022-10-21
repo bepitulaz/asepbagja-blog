@@ -24,8 +24,8 @@ Welcome to the winter wonderland.
 
 **Listen to "A New Life" at**
 
-- [Spotify](https://open.spotify.com/album/1f5KJowOd4hOtrEN7Tp8ET?si=fMQcS8BMQ3iJEX2hAEFfmA)
-- [Apple Music](https://music.apple.com/ee/album/a-new-life-single/1604685896)
-- [YouTube Music](https://music.youtube.com/playlist?list=OLAK5uy_nWXjf6QmZYjtgZQn9vggBhEObtQ3HUvDk&feature=share)
+- [Spotify](https://open.spotify.com/album/5b16ZFMPa21KaQo35thX6f?si=G6_vEHPiTOCfl0daoBuGoQ)
+- [Apple Music](https://music.apple.com/ee/album/a-new-life-single/1650494486)
+- [YouTube Music](https://music.youtube.com/playlist?list=OLAK5uy_nZvBsFixdX7X9yuxjBy7a31GhOMQ3aH3M&feature=share)
 
 If you are interested to see the source code of A New Life. You can visit it on [my GitHub](https://github.com/bepitulaz/music-a-new-life).
