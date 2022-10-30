@@ -7,7 +7,7 @@ categories:
 - Estonia
 summary: "Sorotan satu tahun pertama bermigrasi dan hidup di Estonia"
 lang: "Bahasa Indonesia"
-featured: true
+featured: false
 ---
 
 Malam hari, 9 Oktober 2021, saya dan istri menginjakkan kaki di bandara internasional Lennart Meri Tallinn. Itu adalah kali kedua kami ke Estonia. Suasana hari itu terasa berbeda dari sebelumnya, karena kami datang bukan untuk tujuan berlibur melainkan untuk pindah tempat tinggal. Sebelum pindah ke Tallinn, <a href="https://www.asepbagja.com/id/pribadi/bye-bali-sampai-jumpa-lagi" target="_blank">kami tinggal di Denpasar, Bali</a>.

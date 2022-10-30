@@ -4,11 +4,20 @@
         <title>Blog Asep Bagja</title>
         <link>https://www.asepbagja.com</link>
         <description>Blog pribadi tempat saya berbagi pendapat dan topik menarik yang saya sukai.</description>
-        <lastBuildDate>Mon, 10 Oct 2022 06:39:17 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 30 Oct 2022 08:14:48 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Blog Asep Bagja</generator>
         <language>id</language>
         <copyright>All rights reserved 2014-2022, Asep Bagja Priandana</copyright>
+        <item>
+            <title><![CDATA[Naissaar, A Ride To The Women's Island]]></title>
+            <link>https://www.asepbagja.com/estonia/naissaar-photo-book</link>
+            <guid>https://www.asepbagja.com/estonia/naissaar-photo-book</guid>
+            <pubDate>Tue, 29 Nov 2022 22:00:00 GMT</pubDate>
+            <description><![CDATA[Proyek buku foto pertama saya telah selesai dan terbit. Kamu bisa baca cerita di balik proyeknya di sini.]]></description>
+            <content:encoded><![CDATA[ <p><a href="https://www.asepbagja.com/estonia/naissaar-photo-book">Baca selengkapnya di blog Asep Bagja</a></p>]]></content:encoded>
+            <author>asep.bagja.p@gmail.com (Asep Bagja Priandana)</author>
+        </item>
         <item>
             <title><![CDATA[Setelah Setahun Hidup Di Estonia]]></title>
             <link>https://www.asepbagja.com/estonia/setahun-di-estonia</link>

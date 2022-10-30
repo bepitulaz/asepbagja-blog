@@ -7,7 +7,7 @@ categories:
 - Personal
 summary: "In July 2022, I was chatting with some friends in a group chat about the nostalgia of waiting for the postman to come with letters from friends."
 lang: "English"
-featured: true
+featured: false
 ---
 
 People who were born from the years 1981-1996 or commonly called the millennial generation (generation Y), are the transition generation between all-analog and digitalized lives, thanks to the existence of the internet and cellular phones. Especially if you’re a millennial born before 1990, there’s a high chance that you experienced a lot of analog communication modes, such as phone cards, telephone coins, mail exchanges, or even having pen pals in your childhood and adolescence. 
