@@ -5,7 +5,7 @@ images:
 - "/blog-img/kohvik.jpg"
 categories:
 - Pribadi
-summary: "Mengutamakan domain sendiri sebagai rumah konten utama jauh lebih baik dibanding fokus di sosial media."
+summary: "Mengutamakan domain sendiri sebagai rumah konten utama jauh lebih baik dibanding fokus di media sosial."
 lang: "Bahasa Indonesia"
 featured: false
 ---
@@ -20,7 +20,7 @@ Tiga tahun yang lalu saya pernah menulis tentang [memprioritaskan kembali blog p
 
 ### Konten di blog mudah dicari dan ditemukan
 
-Ketika saya melihat data kunjungan pembaca blog ini, ternyata paling banyak justru datang dari mesin pencari seperti Google, Bing, dan Yahoo. Kunjungan dari sosial media tidak seberapa besar. Bayangkan misal saya hanya menulis di Twitter dan Facebook, maka tulisan saya mungkin banyak yang sulit ditemukan oleh orang lain.
+Ketika saya melihat data kunjungan pembaca blog ini, ternyata paling banyak justru datang dari mesin pencari seperti Google, Bing, dan Yahoo. Kunjungan dari media sosial tidak seberapa besar. Bayangkan misal saya hanya menulis di Twitter dan Facebook, maka tulisan saya mungkin banyak yang sulit ditemukan oleh orang lain.
 
 ### Merdeka dari aturan-aturan platform pihak ketiga
 
