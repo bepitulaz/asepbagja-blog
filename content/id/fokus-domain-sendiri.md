@@ -15,6 +15,7 @@ Tiga tahun yang lalu saya pernah menulis tentang [memprioritaskan kembali blog p
 <div class="text-center">
 <figure class="figure">
 <img src="https://www.asepbagja.com/blog-img/kohvik.jpg" class="figure-img img-fluid" alt="Pemandangan sebuah kafe di kawasan Kalamaja, Tallinn." />
+<figcaption class="figure-caption text-center">Pemandangan sebuah kafe di kawasan Kalamaja, Tallinn.</figcaption>
 </figure>
 </div>
 
