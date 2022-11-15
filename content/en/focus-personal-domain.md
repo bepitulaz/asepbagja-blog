@@ -48,6 +48,6 @@ Fortunately, I only use Revue once a month to inform the published content on th
 
 ### Conclusion
 
-As a content creator, prioritizing our domain and website as the home of our content is the right decision. We have total control over our content. Indeed, some types of content are a bit difficult to self-hosted. Those are audio and video. It's complicated and expensive if we want to host them on our server. That's why my video content stays on YouTube.
+As a content creator, prioritizing our domain and website as the home of our content is the right decision. We have total control over our content. Indeed, some types of content are a bit difficult to self-hosted. Those are audio and video. It's complicated and expensive if we want to host them on our server. That's why my video content stays on <a href="https://www.youtube.com/channel/UCjGnuWk0n6BWx7rXshMysbw" target="_blank" rel="noopener noreferrer">YouTube</a>.
 
 Finally, I invite you to subscribe to the <a href="https://writecodemakesound.asepbagja.com" target="_blank" rel="noopener noreferrer">"Write Code, Make Sound"</a> newsletter. We will explore the topic of creative coding for music and electronic music production technology.
