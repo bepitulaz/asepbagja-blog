@@ -17,21 +17,49 @@ defmodule BlogWeb.Router do
   scope "/", BlogWeb do
     pipe_through :browser
 
+    # Homepages
     get "/", PageController, :home
+    get "/id", PageController, :home_id
+
+    # Static pages – English
+    get "/about", PageController, :about
+    get "/discography", PageController, :discography
+    get "/workspace", PageController, :workspace
+    get "/blog", PostController, :all_posts
+
+    # Static pages – Indonesian
+    get "/id/tentang", PageController, :about_id
+    get "/id/diskografi", PageController, :discography_id
+    get "/id/blog", PostController, :all_posts_id
+
+    # RSS feeds
+    get "/en/feed.xml", FeedController, :rss_en
+    get "/id/feed.xml", FeedController, :rss_id
+
+    # Sitemap
+    get "/sitemap.xml", FeedController, :sitemap
+
+    # Comment submission – must come before the catch-all slug routes
+    post "/:category/:slug/comments", CommentController, :create_en
+    post "/id/:category/:slug/comments", CommentController, :create_id
+
+    # Indonesian post routes (must precede English catch-all)
+    get "/id/:category", PostController, :index_id
+    get "/id/:category/:slug", PostController, :show_id
+
+    # English post routes (catch-all)
+    get "/:category", PostController, :index
+    get "/:category/:slug", PostController, :show
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", BlogWeb do
-  #   pipe_through :api
-  # end
+  # GitHub webhook (no CSRF, accepts JSON)
+  scope "/api", BlogWeb do
+    pipe_through :api
 
-  # Enable LiveDashboard in development
+    post "/webhook/github", WebhookController, :github
+  end
+
   if Application.compile_env(:blog, :dev_routes) do
-    # If you want to use the LiveDashboard in production, you should put
-    # it behind authentication and allow only admins to access it.
-    # If your application does not have an admins-only section yet,
-    # you can use Plug.BasicAuth to set up some basic authentication
-    # as long as you are also using SSL (which you should anyway).
     import Phoenix.LiveDashboard.Router
 
     scope "/dev" do

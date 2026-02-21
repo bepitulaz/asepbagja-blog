@@ -1,36 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
-    <.live_title default="Blog" suffix=" · Phoenix Framework">
-      {assigns[:page_title]}
-    </.live_title>
+    <meta
+      name="description"
+      content={assigns[:meta_description] || "Asep Bagja's personal blog about code and music."}
+    />
+
+    <%!-- Open Graph --%>
+    <meta property="og:title" content={assigns[:meta_title] || "Asep Bagja"} />
+    <meta
+      property="og:description"
+      content={assigns[:meta_description] || "Personal blog about code and music."}
+    />
+    <meta
+      property="og:image"
+      content={assigns[:og_image] || "https://www.asepbagja.com/images/paljassaare.jpg"}
+    />
+    <meta property="og:url" content={assigns[:og_url] || "https://www.asepbagja.com"} />
+    <meta property="og:type" content={assigns[:og_type] || "website"} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@bepituLaz" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#af2424" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Asep Bagja Blog (EN)"
+      href="/en/feed.xml"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Asep Bagja Blog (ID)"
+      href="/id/feed.xml"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{assigns[:meta_title] || "Asep Bagja"}</title>
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}>
     </script>
-    <script>
-      (() => {
-        const setTheme = (theme) => {
-          if (theme === "system") {
-            localStorage.removeItem("phx:theme");
-            document.documentElement.removeAttribute("data-theme");
-          } else {
-            localStorage.setItem("phx:theme", theme);
-            document.documentElement.setAttribute("data-theme", theme);
-          }
-        };
-        if (!document.documentElement.hasAttribute("data-theme")) {
-          setTheme(localStorage.getItem("phx:theme") || "system");
-        }
-        window.addEventListener("storage", (e) => e.key === "phx:theme" && setTheme(e.newValue || "system"));
-        
-        window.addEventListener("phx:set-theme", (e) => setTheme(e.target.dataset.phxTheme));
-      })();
+    <script defer data-domain="asepbagja.com" src="https://plausible.io/js/script.js">
     </script>
   </head>
-  <body>
+  <body class="bg-white dark:bg-slate-800 dark:text-neutral-200 flex flex-col min-h-screen">
     {@inner_content}
   </body>
 </html>

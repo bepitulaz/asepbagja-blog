@@ -1,5 +1,16 @@
 import Config
 
+# Blog content configuration
+config :blog,
+  content_repo_url:
+    System.get_env("CONTENT_REPO_URL") ||
+      "https://github.com/asepbagja/asepbagja-content.git",
+  content_local_path: System.get_env("CONTENT_LOCAL_PATH") || "priv/content",
+  github_token: System.get_env("GITHUB_TOKEN"),
+  github_webhook_secret: System.get_env("GITHUB_WEBHOOK_SECRET"),
+  github_repo_owner: System.get_env("GITHUB_REPO_OWNER") || "asepbagja",
+  github_repo_name: System.get_env("GITHUB_REPO_NAME") || "asepbagja-content"
+
 # config/runtime.exs is executed for all environments, including
 # during releases. It is executed after compilation and before the
 # system starts, so it is typically used to load production configuration

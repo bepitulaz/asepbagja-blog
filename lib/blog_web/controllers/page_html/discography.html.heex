@@ -1,0 +1,44 @@
+<.navbar />
+
+<div class="max-w-[85rem] px-4 pt-10 mt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
+  <div class="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
+    <h2 class="text-5xl lg:text-4xl text-gray-800 font-bold dark:text-neutral-200">
+      Discography
+    </h2>
+    <p class="mt-3 text-xl text-gray-800 dark:text-neutral-200">
+      All my music releases
+    </p>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+    <%= for release <- @music do %>
+      <a
+        href={release["link"]}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group block"
+      >
+        <div class="overflow-hidden rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
+          <img
+            src={release["artwork"]}
+            alt={release["title"]}
+            class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        <div class="mt-3">
+          <p class="font-semibold text-gray-800 dark:text-neutral-200 group-hover:text-blue-600 transition-colors">
+            {release["title"]}
+          </p>
+          <p class="text-sm text-gray-500 dark:text-neutral-400">{release["year"]}</p>
+          <%= if release["single"] do %>
+            <span class="text-xs bg-gray-100 text-gray-700 dark:bg-neutral-700 dark:text-neutral-300 rounded-full px-2 py-0.5 mt-1 inline-block">
+              Single
+            </span>
+          <% end %>
+        </div>
+      </a>
+    <% end %>
+  </div>
+</div>
+
+<.site_footer />

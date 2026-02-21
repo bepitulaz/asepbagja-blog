@@ -1,0 +1,147 @@
+<.navbar />
+
+<div class="max-w-3xl px-4 mt-10 pt-6 pb-12 sm:px-6 lg:px-8 mx-auto">
+  <article>
+    <%!-- Post metadata header --%>
+    <header class="mb-8">
+      <div class="flex items-center gap-3 mb-4 text-sm text-gray-500 dark:text-neutral-400">
+        <.link
+          href={"/" <> @post.category}
+          class="capitalize font-semibold text-gray-700 dark:text-neutral-300 bg-gray-100 dark:bg-neutral-700 px-3 py-1 rounded-full hover:bg-gray-200 dark:hover:bg-neutral-600 transition-colors"
+        >
+          {@post.category}
+        </.link>
+        <span>{@post.date}</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-neutral-100 leading-tight">
+        {@post.title}
+      </h1>
+
+      <%= if @post.summary do %>
+        <p class="mt-4 text-xl text-gray-500 dark:text-neutral-400 leading-relaxed">
+          {@post.summary}
+        </p>
+      <% end %>
+
+      <%= if @post.featured_image do %>
+        <figure class="mt-8">
+          <img
+            src={@post.featured_image}
+            alt={@post.title}
+            class="w-full rounded-2xl object-cover max-h-[500px] shadow-lg"
+          />
+        </figure>
+      <% end %>
+    </header>
+
+    <%!-- Post body --%>
+    <div class="blog text-xl text-gray-700 dark:text-neutral-300 leading-relaxed">
+      {Phoenix.HTML.raw(@post.body_html)}
+    </div>
+
+    <%!-- Category tags --%>
+    <div class="mt-10 pt-6 border-t border-gray-200 dark:border-neutral-700">
+      <span class="text-sm text-gray-500 dark:text-neutral-400 mr-2">Category:</span>
+      <.link
+        href={"/" <> @post.category}
+        class="capitalize text-sm font-medium text-white bg-gray-700 dark:bg-neutral-600 px-3 py-1 rounded-full hover:bg-gray-600 dark:hover:bg-neutral-500 transition-colors"
+      >
+        {@post.category}
+      </.link>
+    </div>
+  </article>
+
+  <%!-- Comments section --%>
+  <section class="mt-16" id="comments">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-neutral-100 mb-8">Comments</h2>
+
+    <%= if @comments == [] do %>
+      <p class="text-gray-500 dark:text-neutral-400 italic mb-10">
+        No comments yet. Be the first to leave a comment!
+      </p>
+    <% else %>
+      <div class="space-y-8 mb-12">
+        <%= for comment <- @comments do %>
+          <div
+            class="border-l-4 border-emerald-400 dark:border-emerald-600 pl-5 py-1"
+            id={"comment-" <> comment.id}
+          >
+            <div class="flex items-center gap-3 mb-2">
+              <div class="size-8 rounded-full bg-emerald-100 dark:bg-emerald-900 flex items-center justify-center text-sm font-bold text-emerald-700 dark:text-emerald-300">
+                {String.first(comment.author || "A")}
+              </div>
+              <div>
+                <span class="font-semibold text-gray-800 dark:text-neutral-200">
+                  {comment.author}
+                </span>
+                <span class="text-gray-400 dark:text-neutral-500 text-sm ml-2">
+                  {comment.date}
+                </span>
+              </div>
+            </div>
+            <div class="blog text-base text-gray-600 dark:text-neutral-400 ml-11">
+              {Phoenix.HTML.raw(comment.body_html)}
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%!-- Comment form --%>
+    <div class="bg-gray-50 dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-2xl p-6 sm:p-8">
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-neutral-100 mb-6">
+        Leave a comment
+      </h3>
+      <form
+        action={"/" <> @post.category <> "/" <> @post.slug <> "/comments"}
+        method="post"
+        id="comment-form"
+      >
+        <input type="hidden" name="_csrf_token" value={get_csrf_token()} />
+        <div class="mb-5">
+          <label
+            for="comment_author"
+            class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2"
+          >
+            Your name
+          </label>
+          <input
+            type="text"
+            id="comment_author"
+            name="comment[author]"
+            required
+            maxlength="100"
+            placeholder="Jane Doe"
+            class="w-full border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-neutral-100 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors placeholder-gray-400 dark:placeholder-neutral-500"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            for="comment_body"
+            class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2"
+          >
+            Comment (Markdown supported)
+          </label>
+          <textarea
+            id="comment_body"
+            name="comment[body]"
+            required
+            rows="5"
+            maxlength="5000"
+            placeholder="Write your comment here..."
+            class="w-full border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-900 text-gray-900 dark:text-neutral-100 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors placeholder-gray-400 dark:placeholder-neutral-500 resize-y"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+        >
+          Submit Comment
+        </button>
+      </form>
+    </div>
+  </section>
+</div>
+
+<.site_footer />

@@ -103,3 +103,100 @@
 [data-phx-session], [data-phx-teleported-src] { display: contents }
 
 /* This file is for your main application CSS */
+
+@theme {
+  --font-archivo: "Archivo Black", sans-serif;
+}
+
+/* Blog post content styles */
+.blog a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.blog a:hover {
+  color: #1d4ed8;
+}
+.blog p {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.blog h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.blog h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.blog h4 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.blog ol,
+.blog ul {
+  margin-left: 2.5rem;
+  font-size: 1.2rem;
+  line-height: 2.25rem;
+  list-style-type: disc;
+}
+.blog ol {
+  list-style-type: decimal;
+}
+.blog .figure {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.blog .figure img,
+.blog p img {
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+.blog blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+.blog blockquote::before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+.blog blockquote p {
+  display: inline;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+.blog figcaption {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+.blog pre {
+  background: #f4f4f4;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.blog code {
+  font-size: 0.9rem;
+}
+@media (max-width: 767px) {
+  .blog .figure img,
+  .blog p img {
+    width: 100%;
+  }
+}

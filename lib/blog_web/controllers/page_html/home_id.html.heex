@@ -1,0 +1,134 @@
+<.navbar lang="id" />
+
+<%!-- Hero --%>
+<div class="container mt-10 mx-auto">
+  <div class="container mx-auto pt-5">
+    <h1 class="font-archivo text-6xl sm:text-7xl lg:text-9xl dark:text-white text-center">
+      ASEP BAGJA
+    </h1>
+    <h2 class="font-archivo text-xl sm:text-2xl lg:text-4xl dark:text-white text-center">
+      Kode &amp; Musik
+    </h2>
+  </div>
+</div>
+
+<%!-- Music Releases --%>
+<%= if @music != [] do %>
+  <div class="bg-blue-200 dark:bg-blue-900 mt-10">
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+      <div class="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
+        <h2 class="text-5xl lg:text-4xl text-gray-800 font-bold dark:text-neutral-200">
+          Rilis Musik
+        </h2>
+        <p class="mt-3 text-xl text-gray-800 dark:text-neutral-200">
+          Rekaman dan karya musik terbaru
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <%= for release <- Enum.take(@music, 4) do %>
+          <a
+            href={release["link"]}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group block"
+          >
+            <div class="overflow-hidden rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
+              <img
+                src={release["artwork"]}
+                alt={release["title"]}
+                class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="mt-3">
+              <p class="font-semibold text-gray-800 dark:text-neutral-200 group-hover:text-blue-600 transition-colors">
+                {release["title"]}
+              </p>
+              <p class="text-sm text-gray-500 dark:text-neutral-400">{release["year"]}</p>
+              <%= if release["single"] do %>
+                <span class="text-xs bg-gray-100 text-gray-700 dark:bg-neutral-700 dark:text-neutral-300 rounded-full px-2 py-0.5 mt-1 inline-block">
+                  Single
+                </span>
+              <% end %>
+            </div>
+          </a>
+        <% end %>
+      </div>
+      <div class="text-center mt-10">
+        <.link
+          href="/id/diskografi"
+          class="inline-block border-2 border-gray-800 dark:border-neutral-200 text-gray-800 dark:text-neutral-200 font-semibold px-8 py-3 rounded-full hover:bg-gray-800 hover:text-white dark:hover:bg-neutral-200 dark:hover:text-gray-800 transition-colors duration-200"
+        >
+          Lihat semua rilis
+        </.link>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%!-- Patreon Support --%>
+<div class="bg-yellow-200 dark:bg-yellow-900">
+  <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 mx-auto">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-neutral-200 mb-4">
+        Dukung karya saya
+      </h2>
+      <p class="text-xl text-gray-700 dark:text-neutral-300 mb-6 max-w-2xl mx-auto">
+        Jika kamu menikmati tulisan blog, musik, atau proyek open-source saya, pertimbangkan untuk mendukung saya di Patreon.
+      </p>
+      <a
+        href="https://www.patreon.com/c/asepbagja"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-200"
+      >
+        Dukung di Patreon
+      </a>
+    </div>
+  </div>
+</div>
+
+<%!-- Latest Blog Posts --%>
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div class="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
+    <h2 class="text-5xl lg:text-4xl text-gray-800 font-bold dark:text-neutral-200">
+      Tulisan Terbaru
+    </h2>
+    <p class="mt-3 text-xl text-gray-800 dark:text-neutral-200">
+      Tulisan saya tentang pemrograman, elektronika, dan pengembangan diri.
+    </p>
+  </div>
+  <div class="grid lg:grid-cols-2 gap-6">
+    <%= for post <- @recent_posts do %>
+      <.link
+        class="group relative block rounded-xl focus:outline-none"
+        href={"/id/" <> post.category <> "/" <> post.slug}
+      >
+        <div class="shrink-0 relative rounded-xl overflow-hidden w-full h-[350px] before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-gray-900/70">
+          <%= if post.featured_image do %>
+            <img
+              class="size-full absolute top-0 start-0 object-cover"
+              src={post.featured_image}
+              alt={post.title}
+            />
+          <% end %>
+        </div>
+        <div class="absolute top-0 inset-x-0 z-10 p-4 sm:p-6">
+          <div class="flex items-center">
+            <div class="ms-2.5">
+              <h4 class="font-semibold text-white capitalize">{post.category}</h4>
+              <p class="text-xs text-white/80">{post.date}</p>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-0 inset-x-0 z-10 p-4 sm:p-6">
+          <h3 class="text-2xl sm:text-3xl font-semibold text-white group-hover:text-white/80">
+            {post.title}
+          </h3>
+          <p class="text-xl mt-2 text-white/80">{post.summary}</p>
+        </div>
+      </.link>
+    <% end %>
+  </div>
+</div>
+
+<.site_footer />

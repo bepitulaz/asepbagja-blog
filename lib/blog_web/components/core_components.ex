@@ -445,6 +445,189 @@ defmodule BlogWeb.CoreComponents do
     """
   end
 
+  @doc """
+  Renders the site navbar.
+
+  ## Examples
+
+      <.navbar />
+      <.navbar lang="id" />
+  """
+  attr :lang, :string, default: "en"
+
+  def navbar(assigns) do
+    ~H"""
+    <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-lg md:my-5">
+      <nav class="mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-[2rem] mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto dark:bg-neutral-900 dark:border-neutral-700">
+        <div class="px-4 md:px-0 flex justify-between items-center">
+          <div>
+            <.link
+              class="flex-none rounded-md text-xl inline-block focus:outline-none focus:opacity-80 dark:text-neutral-400 font-bold"
+              href={if @lang == "id", do: "/id", else: "/"}
+            >
+              asep.bagja
+            </.link>
+          </div>
+          <div class="md:hidden">
+            <button
+              type="button"
+              id="navbar-toggle"
+              class="flex justify-center items-center size-6 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-none dark:border-neutral-700 dark:text-neutral-400"
+              aria-label="Toggle navigation"
+            >
+              <svg
+                class="shrink-0 size-3.5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="3" x2="21" y1="6" y2="6" /><line x1="3" x2="21" y1="12" y2="12" /><line
+                  x1="3"
+                  x2="21"
+                  y1="18"
+                  y2="18"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          id="navbar-menu"
+          class="hidden md:block overflow-hidden transition-all duration-300 basis-full grow"
+        >
+          <div class="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:ps-7">
+            <%= if @lang == "id" do %>
+              <.link
+                class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200"
+                href="/id/diskografi"
+              >
+                diskografi
+              </.link>
+              <.link
+                class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200"
+                href="/id/blog"
+              >
+                blog
+              </.link>
+              <.link
+                class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200"
+                href="/id/tentang"
+              >
+                tentang
+              </.link>
+            <% else %>
+              <.link
+                class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200"
+                href="/discography"
+              >
+                discography
+              </.link>
+              <.link
+                class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200"
+                href="/blog"
+              >
+                blog
+              </.link>
+              <.link
+                class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200"
+                href="/about"
+              >
+                about
+              </.link>
+            <% end %>
+          </div>
+        </div>
+      </nav>
+    </header>
+    """
+  end
+
+  @doc """
+  Renders the site footer.
+
+  ## Examples
+
+      <.site_footer />
+  """
+  def site_footer(assigns) do
+    ~H"""
+    <footer class="bg-emerald-300 dark:bg-emerald-900 mt-auto w-full py-10 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
+        <div>
+          <.link
+            class="flex-none text-xl font-semibold text-black focus:outline-none dark:text-white"
+            href="/"
+          >
+            asep.bagja
+          </.link>
+        </div>
+        <div class="text-left md:text-center">
+          <p>All rights reserved &copy; 2014-{Date.utc_today().year} Asep Bagja Priandana</p>
+        </div>
+        <div class="md:text-end space-x-2">
+          <a
+            class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700"
+            href="https://www.x.com/bepitulaz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="shrink-0 size-3.5"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+            </svg>
+          </a>
+          <a
+            class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700"
+            href="https://www.github.com/bepitulaz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="shrink-0 size-3.5"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+          </a>
+          <a
+            class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700"
+            href="https://www.patreon.com/c/asepbagja"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="shrink-0 size-3.5"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path d="M10.283.29c-2.985 0-5.417 2.433-5.417 5.417 0 2.982 2.432 5.408 5.417 5.408 2.979 0 5.405-2.426 5.405-5.408C15.688 2.723 13.262.29 10.283.29M.002 15.337h2.649V.291H.002" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+    """
+  end
+
   ## JS Commands
 
   def show(js \\ %JS{}, selector) do
