@@ -1,280 +1,333 @@
 defmodule Blog.Content do
   @moduledoc """
-  GenServer responsible for syncing the content repository and populating the ETS cache.
+  GenServer that owns ETS tables and loads all blog content.
 
-  On startup it clones (or pulls) the content repo defined in application config,
-  then parses all markdown posts, comments, and JSON data files into ETS via `Blog.Cache`.
+  On startup it reads content from the local content path (cloning or
+  pulling the git repo if configured). All writes serialize through this
+  process; reads bypass it entirely via `Blog.Cache`.
 
-  A `:refresh` cast triggers a `git pull` followed by a full re-parse.
+  Cast `:refresh` to trigger a `git pull` + full reload, used by the
+  GitHub webhook handler.
   """
+
   use GenServer
   require Logger
 
-  # ---------------------------------------------------------------------------
-  # Public API
-  # ---------------------------------------------------------------------------
+  # ── Public API ──────────────────────────────────────────────────────────────
 
-  @doc "Start the Content GenServer, linked to the calling process."
   def start_link(opts \\ []) do
     GenServer.start_link(__MODULE__, opts, name: __MODULE__)
   end
 
-  @doc "Trigger an async content refresh (git pull + re-parse)."
-  def refresh do
-    GenServer.cast(__MODULE__, :refresh)
-  end
+  @doc "Async reload triggered by the GitHub webhook."
+  def refresh, do: GenServer.cast(__MODULE__, :refresh)
 
-  # ---------------------------------------------------------------------------
-  # GenServer callbacks
-  # ---------------------------------------------------------------------------
+  # ── GenServer callbacks ─────────────────────────────────────────────────────
 
   @impl true
   def init(_opts) do
-    Blog.Cache.init()
+    # Fast init — delegate heavy work to handle_continue so the supervisor
+    # does not time out waiting for this process to start.
     {:ok, %{}, {:continue, :load}}
   end
 
   @impl true
   def handle_continue(:load, state) do
-    sync_content()
+    Blog.Cache.init_tables()
+    load_all_content()
     {:noreply, state}
   end
 
   @impl true
   def handle_cast(:refresh, state) do
-    Logger.info("[Blog.Content] Received :refresh — pulling latest content")
-    sync_content()
+    git_pull()
+    load_all_content()
+    Logger.info("[Blog.Content] Cache refreshed")
     {:noreply, state}
   end
 
-  # ---------------------------------------------------------------------------
-  # Private helpers
-  # ---------------------------------------------------------------------------
+  # ── Content loading ─────────────────────────────────────────────────────────
 
-  defp sync_content do
-    local_path = Application.get_env(:blog, :content_local_path, "priv/content")
-    repo_url = Application.get_env(:blog, :content_repo_url, "")
+  defp load_all_content do
+    base = content_path()
 
-    git_dir = Path.join(local_path, ".git")
+    posts = load_posts(base)
+    Enum.each(posts, &Blog.Cache.put_post/1)
+    Blog.Cache.rebuild_category_index(posts)
 
-    if File.exists?(git_dir) do
-      Logger.info("[Blog.Content] git pull at #{local_path}")
-      {output, code} = System.cmd("git", ["-C", local_path, "pull"], stderr_to_stdout: true)
-      Logger.info("[Blog.Content] git pull exited #{code}: #{String.trim(output)}")
-    else
-      Logger.info("[Blog.Content] Cloning #{repo_url} → #{local_path}")
-      File.mkdir_p!(local_path)
+    load_comments(base)
+    load_about_pages(base)
+    load_music(base)
+    load_workspace(base)
 
-      {output, code} =
-        System.cmd("git", ["clone", repo_url, local_path], stderr_to_stdout: true)
-
-      Logger.info("[Blog.Content] git clone exited #{code}: #{String.trim(output)}")
-    end
-
-    Blog.Cache.clear_all()
-    parse_all_content(local_path)
-    Logger.info("[Blog.Content] Content sync complete")
+    Logger.info("[Blog.Content] Loaded #{length(posts)} posts")
   end
 
-  defp parse_all_content(base_path) do
-    parse_posts(base_path, "en")
-    parse_posts(base_path, "id")
-    parse_about(base_path)
-    parse_music(base_path)
-    parse_workspace(base_path)
-    parse_comments(base_path, "en")
-    parse_comments(base_path, "id")
+  # ── Posts ───────────────────────────────────────────────────────────────────
+
+  defp load_posts(base) do
+    Path.wildcard("#{base}/content/blog/**/*.md")
+    |> Task.async_stream(&parse_post_file/1, timeout: :infinity)
+    |> Enum.flat_map(fn
+      {:ok, {:ok, post}} ->
+        [post]
+
+      {:ok, :skip} ->
+        []
+
+      {:exit, reason} ->
+        Logger.warning("[Blog.Content] Post parse error: #{inspect(reason)}")
+        []
+    end)
   end
 
-  # --- Posts ------------------------------------------------------------------
+  defp parse_post_file(path) do
+    lang = lang_from_path(path)
+    slug = slug_from_path(path)
+    raw = File.read!(path)
+    {fm, body_html} = Blog.Markdown.parse(raw)
 
-  defp parse_posts(base_path, lang) do
-    dir = Path.join([base_path, "content", "blog", lang])
-
-    case File.ls(dir) do
-      {:ok, files} ->
-        files
-        |> Enum.filter(&String.ends_with?(&1, ".md"))
-        |> Enum.each(fn filename ->
-          path = Path.join(dir, filename)
-          slug = Path.rootname(filename)
-          parse_post_file(path, slug, lang)
-        end)
+    case build_post(fm, body_html, lang, slug) do
+      {:ok, post} ->
+        {:ok, post}
 
       {:error, reason} ->
-        Logger.warning("[Blog.Content] Cannot read posts dir #{dir}: #{inspect(reason)}")
+        Logger.warning("[Blog.Content] Skipping #{path}: #{reason}")
+        :skip
     end
   end
 
-  defp parse_post_file(path, slug, lang) do
-    with {:ok, raw} <- File.read(path),
-         {fm, body_html} <- Blog.Markdown.parse(raw),
+  defp build_post(fm, body_html, lang, slug) do
+    with {:ok, title} <- required(fm, "title"),
          {:ok, date} <- parse_date(fm["date"]),
-         [first_category | _] <- fm["categories"] || [] do
+         {:ok, category} <- first_category(fm["categories"]) do
       post = %Blog.Post{
-        title: fm["title"] || "",
+        title: title,
         slug: slug,
         date: date,
-        category: String.downcase(first_category),
+        category: category,
         lang: lang,
         body_html: body_html,
-        summary: fm["summary"] || "",
-        featured_image: List.first(fm["images"] || []),
+        summary: fm["summary"],
+        featured_image: first_image(fm["images"]),
         featured: fm["featured"] || false
       }
 
-      Blog.Cache.put_post(post)
-    else
-      {:error, reason} ->
-        Logger.warning("[Blog.Content] Cannot read #{path}: #{inspect(reason)}")
-
-      [] ->
-        Logger.warning("[Blog.Content] Skipping #{path}: missing 'categories' field")
-
-      other ->
-        Logger.warning("[Blog.Content] Skipping #{path}: #{inspect(other)}")
+      {:ok, post}
     end
   end
 
-  # --- About pages ------------------------------------------------------------
-
-  defp parse_about(base_path) do
-    for lang <- ["en", "id"] do
-      path = Path.join([base_path, "content", "about", "#{lang}.md"])
-
-      case File.read(path) do
-        {:ok, raw} ->
-          {_fm, html} = Blog.Markdown.parse(raw)
-          Blog.Cache.put_page(:about, lang, html)
-
-        {:error, reason} ->
-          Logger.warning("[Blog.Content] Cannot read about/#{lang}.md: #{inspect(reason)}")
-      end
+  defp required(map, key) do
+    case Map.get(map, key) do
+      nil -> {:error, "missing required field: #{key}"}
+      val -> {:ok, to_string(val)}
     end
   end
 
-  # --- Music releases ---------------------------------------------------------
-
-  defp parse_music(base_path) do
-    path = Path.join([base_path, "content", "music", "releases.json"])
-
-    case File.read(path) do
-      {:ok, raw} ->
-        case Jason.decode(raw) do
-          {:ok, %{"records" => records}} ->
-            sorted = Enum.sort_by(records, & &1["year"], :desc)
-            Blog.Cache.put_page(:music, "en", sorted)
-            Blog.Cache.put_page(:music, "id", sorted)
-
-          {:ok, data} ->
-            Blog.Cache.put_page(:music, "en", data)
-            Blog.Cache.put_page(:music, "id", data)
-
-          {:error, reason} ->
-            Logger.warning("[Blog.Content] Cannot parse releases.json: #{inspect(reason)}")
-        end
-
-      {:error, reason} ->
-        Logger.warning("[Blog.Content] Cannot read releases.json: #{inspect(reason)}")
-    end
-  end
-
-  # --- Workspace data ---------------------------------------------------------
-
-  defp parse_workspace(base_path) do
-    path = Path.join([base_path, "content", "workspace", "en.json"])
-
-    case File.read(path) do
-      {:ok, raw} ->
-        case Jason.decode(raw) do
-          {:ok, data} ->
-            Blog.Cache.put_page(:workspace, "en", data)
-
-          {:error, reason} ->
-            Logger.warning("[Blog.Content] Cannot parse workspace/en.json: #{inspect(reason)}")
-        end
-
-      {:error, reason} ->
-        Logger.warning("[Blog.Content] Cannot read workspace/en.json: #{inspect(reason)}")
-    end
-  end
-
-  # --- Comments ---------------------------------------------------------------
-
-  defp parse_comments(base_path, lang) do
-    dir = Path.join([base_path, "comments", lang])
-
-    case File.ls(dir) do
-      {:ok, entries} ->
-        Enum.each(entries, fn entry ->
-          slug_path = Path.join(dir, entry)
-
-          if File.dir?(slug_path) do
-            parse_comment_dir(slug_path, entry, lang)
-          end
-        end)
-
-      {:error, _} ->
-        Logger.info("[Blog.Content] No comments directory at #{dir}")
-    end
-  end
-
-  defp parse_comment_dir(dir_path, slug, lang) do
-    case File.ls(dir_path) do
-      {:ok, files} ->
-        comments =
-          files
-          |> Enum.filter(&String.ends_with?(&1, ".md"))
-          |> Enum.sort()
-          |> Enum.map(fn filename ->
-            path = Path.join(dir_path, filename)
-            id = Path.rootname(filename)
-            parse_comment_file(path, id)
-          end)
-          |> Enum.reject(&is_nil/1)
-
-        Blog.Cache.put_comments(lang, slug, comments)
-
-      {:error, reason} ->
-        Logger.warning("[Blog.Content] Cannot read comment dir #{dir_path}: #{inspect(reason)}")
-    end
-  end
-
-  defp parse_comment_file(path, id) do
-    with {:ok, raw} <- File.read(path),
-         {fm, body_html} <- Blog.Markdown.parse(raw) do
-      %Blog.Comment{
-        id: id,
-        author: fm["author"] || "Anonymous",
-        date: fm["date"],
-        reply_to: fm["reply_to"],
-        source: fm["source"] || "web",
-        body_html: body_html
-      }
-    else
-      _ -> nil
-    end
-  end
-
-  # --- Date parsing -----------------------------------------------------------
+  defp parse_date(nil), do: {:error, "missing date"}
 
   defp parse_date(%Date{} = d), do: {:ok, d}
+
   defp parse_date(%NaiveDateTime{} = ndt), do: {:ok, NaiveDateTime.to_date(ndt)}
+
   defp parse_date(%DateTime{} = dt), do: {:ok, DateTime.to_date(dt)}
 
-  defp parse_date(s) when is_binary(s) do
-    # Some frontmatter dates include time components; try date-only first
-    case Date.from_iso8601(s) do
+  defp parse_date(val) when is_binary(val) do
+    case Date.from_iso8601(val) do
       {:ok, d} ->
         {:ok, d}
 
       _ ->
-        case DateTime.from_iso8601(s) do
-          {:ok, dt, _} -> {:ok, DateTime.to_date(dt)}
-          _ -> {:error, :invalid_date}
+        case DateTime.from_iso8601(val) do
+          {:ok, dt, _offset} -> {:ok, DateTime.to_date(dt)}
+          _ -> {:error, "invalid date: #{val}"}
         end
     end
   end
 
-  defp parse_date(_), do: {:error, :invalid_date}
+  # yaml_elixir may return the date as an Erlang date tuple
+  defp parse_date({{y, m, d}, _time}), do: Date.new(y, m, d)
+  defp parse_date({y, m, d}), do: Date.new(y, m, d)
+  defp parse_date(val), do: {:error, "unparseable date: #{inspect(val)}"}
+
+  defp first_category(nil), do: {:error, "missing categories"}
+  defp first_category([]), do: {:error, "empty categories"}
+
+  defp first_category([cat | _]) do
+    {:ok, cat |> to_string() |> String.downcase()}
+  end
+
+  defp first_image(nil), do: nil
+  defp first_image([]), do: nil
+  defp first_image([img | _]), do: to_string(img)
+
+  # ── Slug / lang helpers ─────────────────────────────────────────────────────
+
+  defp slug_from_path(path) do
+    path
+    |> Path.basename(".md")
+    |> strip_date_prefix()
+  end
+
+  # Strip leading YYYY-MM-DD- prefix (e.g. "2023-01-15-my-post" → "my-post")
+  defp strip_date_prefix(name) do
+    case Regex.run(~r/^\d{4}-\d{2}-\d{2}-(.+)$/, name) do
+      [_, rest] -> rest
+      _ -> name
+    end
+  end
+
+  defp lang_from_path(path) do
+    cond do
+      String.contains?(path, "/blog/en/") -> "en"
+      String.contains?(path, "/blog/id/") -> "id"
+      true -> "en"
+    end
+  end
+
+  # ── Comments ────────────────────────────────────────────────────────────────
+
+  defp load_comments(base) do
+    Path.wildcard("#{base}/comments/**/*.md")
+    |> Enum.group_by(&comment_key_from_path/1)
+    |> Enum.each(fn {{lang, slug}, paths} ->
+      comments =
+        paths
+        |> Enum.sort()
+        |> Enum.flat_map(fn path ->
+          case parse_comment_file(path) do
+            {:ok, c} -> [c]
+            _ -> []
+          end
+        end)
+
+      Blog.Cache.put_comments(lang, slug, comments)
+    end)
+  end
+
+  defp comment_key_from_path(path) do
+    # path: .../comments/en/my-post/001_2024-01-01T00-00-00Z.md
+    parts = path |> Path.split() |> Enum.reverse()
+
+    case parts do
+      [_file, slug, lang | _] -> {lang, slug}
+      _ -> {"en", "unknown"}
+    end
+  end
+
+  defp parse_comment_file(path) do
+    raw = File.read!(path)
+    {fm, body_html} = Blog.Markdown.parse(raw)
+    id = Path.basename(path, ".md")
+
+    with {:ok, author} <- required(fm, "author"),
+         {:ok, date} <- parse_datetime(fm["date"]) do
+      comment = %Blog.Comment{
+        id: id,
+        author: author,
+        date: date,
+        source: fm["source"] || "web",
+        body_html: body_html,
+        reply_to: fm["reply_to"],
+        original_disqus_id: fm["original_disqus_id"]
+      }
+
+      {:ok, comment}
+    end
+  end
+
+  defp parse_datetime(nil), do: {:error, "missing date"}
+  defp parse_datetime(%DateTime{} = dt), do: {:ok, dt}
+
+  defp parse_datetime(val) when is_binary(val) do
+    case DateTime.from_iso8601(val) do
+      {:ok, dt, _offset} -> {:ok, dt}
+      _ -> {:error, "invalid datetime: #{val}"}
+    end
+  end
+
+  defp parse_datetime(val), do: {:error, "unparseable datetime: #{inspect(val)}"}
+
+  # ── About pages ─────────────────────────────────────────────────────────────
+
+  defp load_about_pages(base) do
+    for lang <- ["en", "id"] do
+      path = "#{base}/content/about/#{lang}.md"
+
+      if File.exists?(path) do
+        raw = File.read!(path)
+        {_fm, body_html} = Blog.Markdown.parse(raw)
+        Blog.Cache.put_page(:about, lang, body_html)
+      end
+    end
+  end
+
+  # ── Music ────────────────────────────────────────────────────────────────────
+
+  defp load_music(base) do
+    path = "#{base}/content/music/releases.json"
+
+    if File.exists?(path) do
+      case File.read!(path) |> Jason.decode() do
+        {:ok, %{"records" => records}} ->
+          sorted = Enum.sort_by(records, & &1["year"], :desc)
+          Blog.Cache.put_page(:music, "en", sorted)
+          Blog.Cache.put_page(:music, "id", sorted)
+
+        {:ok, data} ->
+          Blog.Cache.put_page(:music, "en", data)
+          Blog.Cache.put_page(:music, "id", data)
+
+        _ ->
+          Logger.warning("[Blog.Content] Failed to parse releases.json")
+      end
+    end
+  end
+
+  # ── Workspace ────────────────────────────────────────────────────────────────
+
+  defp load_workspace(base) do
+    path = "#{base}/content/workspace/en.json"
+
+    if File.exists?(path) do
+      case File.read!(path) |> Jason.decode() do
+        {:ok, data} ->
+          Blog.Cache.put_page(:workspace, "en", data)
+
+        _ ->
+          Logger.warning("[Blog.Content] Failed to parse workspace en.json")
+      end
+    end
+  end
+
+  # ── Git operations ────────────────────────────────────────────────────────────
+
+  defp git_pull do
+    path = content_path()
+    repo_url = Application.get_env(:blog, :content_repo_url)
+
+    cond do
+      File.exists?(Path.join(path, ".git")) ->
+        case System.cmd("git", ["-C", path, "pull", "--ff-only"], stderr_to_stdout: true) do
+          {output, 0} -> Logger.info("[Blog.Content] git pull: #{String.trim(output)}")
+          {output, code} -> Logger.warning("[Blog.Content] git pull failed (#{code}): #{output}")
+        end
+
+      repo_url != nil ->
+        Logger.info("[Blog.Content] Cloning #{repo_url} → #{path}")
+        File.mkdir_p!(Path.dirname(path))
+
+        case System.cmd("git", ["clone", repo_url, path], stderr_to_stdout: true) do
+          {_, 0} -> :ok
+          {output, code} -> Logger.error("[Blog.Content] git clone failed (#{code}): #{output}")
+        end
+
+      true ->
+        Logger.info("[Blog.Content] No git repo configured, using local path: #{path}")
+    end
+  end
+
+  defp content_path do
+    Application.get_env(:blog, :content_local_path, "priv/content")
+  end
 end

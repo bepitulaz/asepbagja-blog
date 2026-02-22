@@ -1,14 +1,26 @@
 defmodule Blog.Comment do
-  @moduledoc "Comment struct representing a parsed markdown comment file."
+  @moduledoc """
+  Struct representing a parsed comment.
+  """
 
-  defstruct [:id, :author, :date, :reply_to, :source, :body_html]
+  @enforce_keys [:author, :source, :body_html]
+  defstruct [
+    :id,
+    :author,
+    :date,
+    :source,
+    :body_html,
+    reply_to: nil,
+    original_disqus_id: nil
+  ]
 
   @type t :: %__MODULE__{
-          id: String.t(),
+          id: String.t() | nil,
           author: String.t(),
           date: DateTime.t() | nil,
-          reply_to: String.t() | nil,
           source: String.t(),
-          body_html: String.t()
+          body_html: String.t(),
+          reply_to: String.t() | nil,
+          original_disqus_id: String.t() | nil
         }
 end

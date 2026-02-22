@@ -65,7 +65,7 @@
         <%= for comment <- @comments do %>
           <div
             class="border-l-4 border-emerald-400 dark:border-emerald-600 pl-5 py-1"
-            id={"comment-" <> comment.id}
+            id={"comment-" <> (comment.id || "unknown")}
           >
             <div class="flex items-center gap-3 mb-2">
               <div class="size-8 rounded-full bg-emerald-100 dark:bg-emerald-900 flex items-center justify-center text-sm font-bold text-emerald-700 dark:text-emerald-300">

@@ -31,6 +31,25 @@ if System.get_env("PHX_SERVER") do
   config :blog, BlogWeb.Endpoint, server: true
 end
 
+blog_config =
+  [
+    content_repo_url: System.get_env("CONTENT_REPO_URL"),
+    github_token: System.get_env("GITHUB_TOKEN"),
+    github_webhook_secret: System.get_env("GITHUB_WEBHOOK_SECRET"),
+    github_repo_owner: System.get_env("GITHUB_REPO_OWNER") || "asepbagja",
+    github_repo_name: System.get_env("GITHUB_REPO_NAME") || "asepbagja-content"
+  ]
+
+# Only override content_local_path when explicitly set via env var,
+# so dev.exs (which points at the local clone) takes precedence otherwise.
+blog_config =
+  case System.get_env("CONTENT_LOCAL_PATH") do
+    nil -> blog_config
+    path -> Keyword.put(blog_config, :content_local_path, path)
+  end
+
+config :blog, blog_config
+
 config :blog, BlogWeb.Endpoint, http: [port: String.to_integer(System.get_env("PORT", "4000"))]
 
 if config_env() == :prod do

@@ -55,5 +55,15 @@ defmodule BlogWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  plug :serve_blog_images
   plug BlogWeb.Router
+
+  defp serve_blog_images(%{request_path: "/blog-img/" <> _} = conn, _opts) do
+    content_base = Application.get_env(:blog, :content_local_path, "priv/content")
+    from = Path.join(content_base, "public/blog-img")
+    opts = Plug.Static.init(at: "/blog-img", from: from, gzip: false)
+    Plug.Static.call(conn, opts)
+  end
+
+  defp serve_blog_images(conn, _opts), do: conn
 end

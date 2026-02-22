@@ -11,12 +11,16 @@ defmodule Blog.Application do
       BlogWeb.Telemetry,
       {DNSCluster, query: Application.get_env(:blog, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Blog.PubSub},
+      # Content GenServer must start before the web endpoint so ETS tables
+      # exist when the first request arrives. Uses handle_continue internally
+      # so init/1 returns immediately without blocking the supervisor.
       Blog.Content,
+      # Start to serve requests, typically the last entry
       BlogWeb.Endpoint
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
+    # :one_for_one — children are independent. If Content crashes it restarts
+    # on its own; the web endpoint keeps serving (from ETS or empty state).
     opts = [strategy: :one_for_one, name: Blog.Supervisor]
     Supervisor.start_link(children, opts)
   end

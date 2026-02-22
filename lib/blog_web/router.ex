@@ -32,6 +32,13 @@ defmodule BlogWeb.Router do
     get "/id/diskografi", PageController, :discography_id
     get "/id/blog", PostController, :all_posts_id
 
+    # /en/ prefix routes (mirrors of English routes for SEO compatibility)
+    get "/en", PageController, :home
+    get "/en/about", PageController, :about
+    get "/en/discography", PageController, :discography
+    get "/en/blog", PostController, :all_posts
+    get "/en/:category/:slug", PostController, :show
+
     # RSS feeds
     get "/en/feed.xml", FeedController, :rss_en
     get "/id/feed.xml", FeedController, :rss_id

@@ -1,6 +1,9 @@
 defmodule Blog.Post do
-  @moduledoc "Blog post struct representing a parsed markdown post."
+  @moduledoc """
+  Struct representing a parsed blog post.
+  """
 
+  @enforce_keys [:title, :slug, :date, :category, :lang, :body_html]
   defstruct [
     :title,
     :slug,
@@ -10,7 +13,7 @@ defmodule Blog.Post do
     :body_html,
     :summary,
     :featured_image,
-    :featured
+    featured: false
   ]
 
   @type t :: %__MODULE__{
@@ -20,7 +23,7 @@ defmodule Blog.Post do
           category: String.t(),
           lang: String.t(),
           body_html: String.t(),
-          summary: String.t(),
+          summary: String.t() | nil,
           featured_image: String.t() | nil,
           featured: boolean()
         }

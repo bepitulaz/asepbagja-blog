@@ -1,80 +1,117 @@
 defmodule Blog.Cache do
-  @moduledoc "ETS-backed cache for blog posts, comments, and pages."
+  @moduledoc """
+  ETS-backed read cache for blog content.
 
-  @doc "Initialise all ETS tables. Must be called once before any put/get calls."
-  def init do
-    tables = [:blog_posts, :blog_posts_by_category, :blog_comments, :blog_pages]
+  All reads bypass the GenServer entirely via direct ETS lookups.
+  `Blog.Content` (the GenServer) is the sole writer to these tables.
 
-    Enum.each(tables, fn table ->
-      if :ets.whereis(table) == :undefined do
-        :ets.new(table, [:named_table, :public, read_concurrency: true])
+  Tables:
+  - `:blog_posts`            key: `{lang, slug}`        value: `%Post{}`
+  - `:blog_posts_by_category` key: `{lang, category}`   value: `[%Post{}]` (date desc)
+  - `:blog_comments`         key: `{lang, slug}`        value: `[%Comment{}]` (date asc)
+  - `:blog_pages`            key: `{type, lang}`        value: any (about html, music/workspace maps)
+  """
+
+  @tables [:blog_posts, :blog_posts_by_category, :blog_comments, :blog_pages]
+
+  @doc "Creates all ETS tables. Called by Blog.Content on startup."
+  def init_tables do
+    Enum.each(@tables, fn name ->
+      if :ets.info(name) == :undefined do
+        :ets.new(name, [:named_table, :set, :public, read_concurrency: true])
       end
     end)
   end
 
-  @doc "Insert a %Blog.Post{} into the cache and update the by-category index."
-  @spec put_post(Blog.Post.t()) :: true
-  def put_post(%Blog.Post{} = post) do
-    :ets.insert(:blog_posts, {{post.lang, post.slug}, post})
+  # ── Posts ──────────────────────────────────────────────────────────────────
 
-    existing = get_posts_by_category(post.lang, post.category)
-    posts = [post | existing] |> Enum.uniq_by(& &1.slug) |> Enum.sort_by(& &1.date, {:desc, Date})
-    :ets.insert(:blog_posts_by_category, {{post.lang, post.category}, posts})
-  end
-
-  @doc "Look up a single post by language and slug. Returns nil if not found."
+  @doc "Fetches a single post by language and slug."
   @spec get_post(String.t(), String.t()) :: Blog.Post.t() | nil
   def get_post(lang, slug) do
     case :ets.lookup(:blog_posts, {lang, slug}) do
-      [{_, post}] -> post
+      [{_key, post}] -> post
       [] -> nil
+    end
+  end
+
+  @doc "Returns all posts for a language, sorted by date descending."
+  @spec list_posts(String.t()) :: [Blog.Post.t()]
+  def list_posts(lang) do
+    :ets.match_object(:blog_posts, {{lang, :_}, :_})
+    |> Enum.map(fn {_key, post} -> post end)
+    |> Enum.sort_by(& &1.date, {:desc, Date})
+  end
+
+  @doc "Return all posts for a given language, sorted by date descending."
+  @spec get_all_posts(String.t()) :: [Blog.Post.t()]
+  def get_all_posts(lang), do: list_posts(lang)
+
+  @doc "Returns posts for a language + category, sorted by date descending."
+  @spec list_posts_by_category(String.t(), String.t()) :: [Blog.Post.t()]
+  def list_posts_by_category(lang, category) do
+    case :ets.lookup(:blog_posts_by_category, {lang, category}) do
+      [{_key, posts}] -> posts
+      [] -> []
     end
   end
 
   @doc "Return all posts for a given language and category, sorted by date descending."
   @spec get_posts_by_category(String.t(), String.t()) :: [Blog.Post.t()]
-  def get_posts_by_category(lang, category) do
-    case :ets.lookup(:blog_posts_by_category, {lang, category}) do
-      [{_, posts}] -> posts
+  def get_posts_by_category(lang, category), do: list_posts_by_category(lang, category)
+
+  @doc "Inserts or replaces a post."
+  @spec put_post(Blog.Post.t()) :: true
+  def put_post(post) do
+    :ets.insert(:blog_posts, {{post.lang, post.slug}, post})
+  end
+
+  @doc "Rebuilds the by-category index. Call after all posts are inserted."
+  @spec rebuild_category_index([Blog.Post.t()]) :: :ok
+  def rebuild_category_index(posts) do
+    :ets.delete_all_objects(:blog_posts_by_category)
+
+    posts
+    |> Enum.group_by(fn p -> {p.lang, p.category} end)
+    |> Enum.each(fn {{lang, category}, group} ->
+      sorted = Enum.sort_by(group, & &1.date, {:desc, Date})
+      :ets.insert(:blog_posts_by_category, {{lang, category}, sorted})
+    end)
+
+    :ok
+  end
+
+  # ── Comments ───────────────────────────────────────────────────────────────
+
+  @doc "Returns comments for a post, sorted by date ascending."
+  @spec get_comments(String.t(), String.t()) :: [Blog.Comment.t()]
+  def get_comments(lang, slug) do
+    case :ets.lookup(:blog_comments, {lang, slug}) do
+      [{_key, comments}] -> comments
       [] -> []
     end
   end
 
-  @doc "Return all posts for a given language, sorted by date descending."
-  @spec get_all_posts(String.t()) :: [Blog.Post.t()]
-  def get_all_posts(lang) do
-    :ets.select(:blog_posts, [{{{lang, :_}, :"$1"}, [], [:"$1"]}])
-    |> Enum.sort_by(& &1.date, {:desc, Date})
-  end
-
-  @doc "Store a list of comments for a given language and post slug."
+  @doc "Inserts or replaces comments for a post."
   @spec put_comments(String.t(), String.t(), [Blog.Comment.t()]) :: true
   def put_comments(lang, slug, comments) do
     :ets.insert(:blog_comments, {{lang, slug}, comments})
   end
 
-  @doc "Return comments for a given language and slug, sorted by date ascending."
-  @spec get_comments(String.t(), String.t()) :: [Blog.Comment.t()]
-  def get_comments(lang, slug) do
-    case :ets.lookup(:blog_comments, {lang, slug}) do
-      [{_, comments}] -> comments
-      [] -> []
-    end
-  end
+  # ── Pages (about, music, workspace) ───────────────────────────────────────
 
-  @doc "Store arbitrary page data (about, music, workspace) keyed by type and language."
-  @spec put_page(atom(), String.t(), any()) :: true
-  def put_page(type, lang, data) do
-    :ets.insert(:blog_pages, {{type, lang}, data})
-  end
-
-  @doc "Retrieve page data by type and language. Returns nil if not found."
+  @doc "Fetches a page by type and language. Type is an atom like :about, :music, :workspace."
   @spec get_page(atom(), String.t()) :: any() | nil
   def get_page(type, lang) do
     case :ets.lookup(:blog_pages, {type, lang}) do
-      [{_, data}] -> data
+      [{_key, value}] -> value
       [] -> nil
     end
+  end
+
+  @doc "Stores a page value."
+  @spec put_page(atom(), String.t(), any()) :: true
+  def put_page(type, lang, value) do
+    :ets.insert(:blog_pages, {{type, lang}, value})
   end
 
   @doc "Remove all entries from every cache table."
