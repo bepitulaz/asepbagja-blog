@@ -1,0 +1,59 @@
+<Layouts.app flash={@flash} lang={@lang}>
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <%!-- Section title --%>
+    <div class="mb-10">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white">About</h1>
+      <p class="mt-2 text-lg text-gray-600 dark:text-neutral-400">
+        A little bit about who I am and what I do.
+      </p>
+    </div>
+
+    <%!-- Profile row --%>
+    <div class="flex items-center gap-4 mb-10">
+      <img
+        src="/images/hero.jpg"
+        alt="Asep Bagja Priandana"
+        class="size-16 rounded-full object-cover shadow-md flex-shrink-0"
+      />
+      <div>
+        <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Asep Bagja Priandana</h2>
+        <p class="text-gray-500 dark:text-neutral-400 text-sm">
+          Software developer &amp; musician · {Date.utc_today().year - 2008}+ years of experience
+        </p>
+      </div>
+    </div>
+
+    <%!-- Bio from content repo --%>
+    <%= if @body_html do %>
+      <div class="blog text-xl text-gray-600 dark:text-neutral-400 leading-relaxed space-y-4">
+        {raw(@body_html)}
+      </div>
+    <% else %>
+      <p class="text-xl text-gray-600 dark:text-neutral-400">Content coming soon.</p>
+    <% end %>
+
+    <%!-- Email link --%>
+    <div class="mt-10">
+      <a
+        href="mailto:asep@asepbagja.com"
+        class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline font-medium text-lg"
+      >
+        <svg
+          class="size-5"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+          />
+        </svg>
+        asep@asepbagja.com
+      </a>
+    </div>
+  </section>
+</Layouts.app>

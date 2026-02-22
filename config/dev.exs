@@ -60,6 +60,11 @@ config :blog, BlogWeb.Endpoint,
 # Enable dev routes for dashboard and mailbox
 config :blog, dev_routes: true
 
+# Point at the already-cloned content repo in development.
+# Override with CONTENT_LOCAL_PATH env var if needed.
+config :blog,
+  content_local_path: Path.expand("../../../../../asepbagja-content", __DIR__)
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :default_formatter, format: "[$level] $message\n"
 

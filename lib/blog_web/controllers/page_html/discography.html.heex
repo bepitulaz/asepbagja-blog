@@ -1,0 +1,72 @@
+<Layouts.app flash={@flash} lang={@lang}>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <%!-- Section title --%>
+    <div class="mb-10">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Discography</h1>
+      <p class="mt-2 text-lg text-gray-600 dark:text-neutral-400">
+        Albums, EPs, and singles I've released.
+      </p>
+    </div>
+
+    <%= if @releases == [] do %>
+      <div class="rounded-2xl border border-dashed border-gray-300 dark:border-neutral-600 p-12 text-center">
+        <p class="text-gray-500 dark:text-neutral-400 text-lg">
+          No releases yet. Check back soon!
+        </p>
+      </div>
+    <% else %>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <%= for release <- @releases do %>
+          <div class="group">
+            <a
+              href={release["link"] || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block overflow-hidden rounded-xl shadow hover:shadow-lg transition-shadow"
+            >
+              <%= if release["artwork"] do %>
+                <img
+                  src={release["artwork"]}
+                  alt={release["title"]}
+                  class="w-full aspect-square object-cover group-hover:scale-105 transition-transform"
+                />
+              <% else %>
+                <div class="w-full aspect-square bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                  <svg
+                    class="size-12 text-white opacity-50"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z"
+                    />
+                  </svg>
+                </div>
+              <% end %>
+            </a>
+            <div class="mt-3">
+              <h3 class="font-semibold text-gray-900 dark:text-white truncate">
+                <a
+                  href={release["link"] || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:underline"
+                >
+                  {release["title"]}
+                </a>
+              </h3>
+              <%= if release["year"] do %>
+                <p class="text-sm text-gray-500 dark:text-neutral-400">{release["year"]}</p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </section>
+</Layouts.app>

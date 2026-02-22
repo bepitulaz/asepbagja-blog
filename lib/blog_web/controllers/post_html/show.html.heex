@@ -1,0 +1,130 @@
+<Layouts.app flash={@flash} lang={@lang}>
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <%= if @post == nil do %>
+      <div class="text-center py-20">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Post not found</h1>
+        <p class="mt-4 text-gray-600 dark:text-neutral-400">
+          The post you're looking for doesn't exist or has been removed.
+        </p>
+        <a
+          href={if @lang == "id", do: "/id/blog", else: "/blog"}
+          class="mt-6 inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline font-medium"
+        >
+          &larr; Back to blog
+        </a>
+      </div>
+    <% else %>
+      <%!-- Back link --%>
+      <div class="mb-8">
+        <a
+          href={if @lang == "id", do: "/id/blog", else: "/blog"}
+          class="inline-flex items-center gap-2 text-gray-500 dark:text-neutral-400 hover:text-gray-800 dark:hover:text-neutral-200 text-sm transition-colors"
+        >
+          <svg
+            class="size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+            />
+          </svg>
+          Back to blog
+        </a>
+      </div>
+
+      <%!-- Author / meta row --%>
+      <div class="flex items-center gap-3 mb-6">
+        <img
+          src="/images/hero.jpg"
+          alt="Asep Bagja Priandana"
+          class="size-10 rounded-full object-cover flex-shrink-0"
+        />
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-500 dark:text-neutral-400">
+          <span class="font-medium text-gray-800 dark:text-neutral-200">
+            Asep Bagja Priandana
+          </span>
+          <span>&middot;</span>
+          <span class="bg-gray-100 dark:bg-neutral-700 px-2 py-0.5 rounded-full text-xs uppercase tracking-wide">
+            {@post.lang}
+          </span>
+          <span>&middot;</span>
+          <time>{@post.date}</time>
+        </div>
+      </div>
+
+      <%!-- Post title --%>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white leading-tight mb-8">
+        {@post.title}
+      </h2>
+
+      <%!-- Featured image --%>
+      <%= if @post.featured_image do %>
+        <div class="mb-8 rounded-2xl overflow-hidden">
+          <img
+            src={@post.featured_image}
+            alt={@post.title}
+            class="w-full object-cover"
+          />
+        </div>
+      <% end %>
+
+      <%!-- Post body --%>
+      <div class="blog text-xl font-sans text-gray-800 dark:text-neutral-200 leading-relaxed">
+        {raw(@post.body_html)}
+      </div>
+
+      <%!-- Category tags --%>
+      <div class="mt-10 pt-6 border-t border-gray-200 dark:border-neutral-700 flex flex-wrap gap-2">
+        <a
+          href={"/" <> @post.lang <> "/" <> @post.category}
+          class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-neutral-300 hover:bg-gray-200 dark:hover:bg-neutral-700 transition-colors"
+        >
+          {@post.category}
+        </a>
+      </div>
+
+      <%!-- Comments section placeholder --%>
+      <div class="mt-12">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          Comments ({length(@comments)})
+        </h3>
+
+        <%= if @comments == [] do %>
+          <p class="text-gray-500 dark:text-neutral-400">
+            No comments yet. Be the first to comment!
+          </p>
+        <% else %>
+          <div class="space-y-6">
+            <%= for comment <- @comments do %>
+              <div class="bg-gray-50 dark:bg-neutral-800 rounded-xl p-5">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="size-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-400 font-semibold text-sm">
+                    {String.first(comment.author)}
+                  </div>
+                  <div>
+                    <span class="font-medium text-gray-900 dark:text-white">
+                      {comment.author}
+                    </span>
+                    <span class="mx-2 text-gray-400">&middot;</span>
+                    <time class="text-sm text-gray-500 dark:text-neutral-400">
+                      {comment.date}
+                    </time>
+                  </div>
+                </div>
+                <div class="text-gray-700 dark:text-neutral-300 prose dark:prose-invert max-w-none">
+                  {raw(comment.body_html)}
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </section>
+</Layouts.app>
